@@ -1,0 +1,64 @@
+@import "normalize";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+//******************************************//
+// COLOR PALETTE 
+//******************************************//
+$color1: #00171f; //rgba(0, 23, 31, 255)
+$color2: #104357; //rgba(16, 67, 87, 255)
+$color3: #00a8e8; //rgba(0, 168, 232, 255)
+$color4: #ffffff; //rgba(255, 255, 255, 255)
+$color5: #df691a; //rgba(239, 127, 10, 255)
+
+//******************************************//
+// FONTS
+//******************************************//
+@import url('https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Open+Sans+Condensed:300|Raleway');
+
+$fontBrand: 'Annie Use Your Telescope', cursive;
+$fontHeading: 'Open Sans Condensed', sans-serif;
+$fontText: 'Raleway', sans-serif;
+
+$fontThin: 100;
+$fontLight: 300;
+$fontNormal: 400;
+$fontBold: 600;
+$fontUltraBold: 700;
+
+//******************************************//
+// POSITIONING HELPERS
+//******************************************//
+.center { margin-left: auto; margin-right: auto; }
+.left   {	float: left;                           }
+.right  {	float: right;                          }
+
+.text-left      {	text-align: left !important;         }
+.text-center    {	text-align: center !important;       }
+.text-right     {	text-align: right !important;        }
+.text-justify   {	text-align: justify !important;      }
+.text-uppercase { text-transform: uppercase!important; }
+
+//******************************************//
+// TEXT
+//******************************************//
+h1, h2, h3, h4, h5 {
+	font-family: $fontHeading;
+	font-weight: 300;
+	margin: 0.5em 0 0.5em 0;
+}
+
+h1 { font-size: 2.5rem; line-height: 1.4; }
+h2 { font-size: 2.2rem; line-height: 1.4; }
+h3 { font-size: 2.0rem; line-height: 1.4; }
+h4 { font-size: 1.8rem; line-height: 1.4; }
+h5 { font-size: 1.6rem; line-height: 1.4; }
+
+

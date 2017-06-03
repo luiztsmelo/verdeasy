@@ -1,0 +1,26 @@
+
+
+//******************************************//
+// FLEXBOX GRID
+//******************************************//
+.row {
+  display: flex;
+  flex-direction: column;
+}
+.col {
+  flex: 1;
+  margin: 0.1em;
+  padding: 1em;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 500px){
+  .row {flex-flow: row wrap;}
+  .col {flex: 1 1 40%;}
+  .row:nth-child(3) .col {flex: 1}
+}
+@media screen and (min-width: 900px){
+  .col {flex: 1;}
+}

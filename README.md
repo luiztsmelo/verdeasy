@@ -1,4 +1,4 @@
-# Verdeasy hahaha
+# Verdeasy
 
 
 ## Build Setup

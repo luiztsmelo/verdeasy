@@ -32,7 +32,7 @@ header {
   padding: 0.9rem 3rem 0.3rem 3rem;
 }
   .logo {
-    width: 3.4rem;
+    width: 3rem;
     height: auto;
     margin-right: 0.2cm;
   }
@@ -42,7 +42,7 @@ header {
   .brand {
     color: $white;
     margin: 0;
-    font-size: 2.4rem;
+    font-size: 2rem;
     font-family: $fontBrand;
   }
   nav {

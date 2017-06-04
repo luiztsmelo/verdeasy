@@ -21,11 +21,12 @@ $black: rgb(20, 20, 20);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope|Open+Sans+Condensed:300|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon|Handlee|Lato');
 
-$fontBrand: 'Annie Use Your Telescope', cursive;
-$fontHeading: 'Open Sans Condensed', sans-serif;
-$fontText: 'Raleway', sans-serif;
+$fontBrand: 'Coming Soon', cursive;
+$fontHeading: 'Handlee', cursive;
+$fontText: 'Lato', sans-serif;
+
 
 $fontThin: 100;
 $fontLight: 300;
@@ -61,4 +62,11 @@ h3 { font-size: 2.0rem; }
 h4 { font-size: 1.8rem; }
 h5 { font-size: 1.6rem; }
 
+a, button, li {
+	font-family: $fontHeading;
+}
 
+p {
+	font-family: $fontText;
+	font-size: 1.1rem;
+}

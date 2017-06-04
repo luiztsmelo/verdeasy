@@ -1,12 +1,12 @@
 <template>
   <header>
     <img class="logo" src="./../../assets/verdeasyW.png" alt="verdeasy logo">
-    <a href="/"><h1 class="brand">VERDEASY</h1></a>
+    <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>
-        <li><router-link class="link" to="#">SOBRE</router-link></li>
-        <li><router-link class="link" to="#">BLOG</router-link></li>
-        <button>Login</button>
+        <li><router-link class="link" to="#">Sobre</router-link></li>
+        <li><router-link class="link" to="#">Blog</router-link></li>
+        <li><router-link class="link" to="#">Contato</router-link></li>
       </ul>
     </nav>
   </header>  
@@ -26,9 +26,9 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex: 0 1 20%;
+  flex: 0 1 25%;
   flex-wrap: wrap;
-  background: rgba(60, 60, 60, 0.9);
+  background: rgba(80, 80, 80, 0.9);
   padding: 0.9rem 3rem 0.3rem 3rem;
 }
   .logo {
@@ -40,25 +40,27 @@ header {
     text-decoration: none;
   }
   .brand {
-    font-family: $fontBrand;
-    color: white;
+    color: $white;
     margin: 0;
-    
+    font-size: 2.4rem;
+    font-family: $fontBrand;
   }
   nav {
-    flex: 0 1 80%;
+    flex: 0 1 75%;
   }
     ul {
+      padding: 0;
+      margin: 0;
       display: flex;
       list-style: none;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: center;
     }
     .link {
-      padding: 0 1rem;
+      padding: 0 0.7rem;
+      color: $white;
+      font-size: 1.1rem;
       font-family: $fontHeading;
-      font-size: 1.2rem;
-      color: white;
     }
     .link:hover {
       color: $lightgreen;

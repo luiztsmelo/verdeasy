@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>FILTROS</h2>
+    <h2>Filtros</h2>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
 
 .container {
   display: flex;
-  background: rgba(60, 60, 60, 0.96);
+  background: rgba(60, 60, 60, 0.9);
   color: white;
   padding: 0 3rem;
 }

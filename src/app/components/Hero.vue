@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <section class="hero">
     <div>
       <div>
         <h2 class="msg">Mora em apartamento?</h2>
@@ -8,7 +8,7 @@
         <h2 class="msg2">Não sabe como, e o quê plantar?</h2>
       </div>
     </div>
-  </div>  
+  </section>  
 </template>
 
 <script>
@@ -24,20 +24,20 @@ export default {
 .hero {
   display: flex;
   padding-bottom: 8rem;
-  background: rgba(30, 30, 30, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   justify-content: center;
   flex-wrap: wrap;
 }
   .msg {
     color: white;
     font-family: $fontHeading;
-    font-size: 3.4rem;
+    font-size: 4.5rem;
     text-align: center;
   }
   .msg2 {
     color: white;
     font-family: $fontHeading;
-    font-size: 2.3rem;
+    font-size: 3rem;
     text-align: center;
   }
 

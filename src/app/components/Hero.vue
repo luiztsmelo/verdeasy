@@ -24,7 +24,7 @@ export default {
 .hero {
   display: flex;
   padding-bottom: 8rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   justify-content: center;
   flex-wrap: wrap;
 }

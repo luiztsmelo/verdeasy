@@ -21,11 +21,11 @@ $black: rgb(20, 20, 20);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Coming+Soon|Handlee|Lato');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon|Handlee|Raleway:300,400');
 
 $fontBrand: 'Coming Soon', cursive;
 $fontHeading: 'Handlee', cursive;
-$fontText: 'Lato', sans-serif;
+$fontText: 'Raleway', sans-serif;
 
 
 $fontThin: 100;
@@ -69,4 +69,29 @@ a, button, li {
 p {
 	font-family: $fontText;
 	font-size: 1.1rem;
+}
+
+//******************************************//
+// FLEXBOX GRID
+//******************************************//
+.row {
+  display: flex;
+  flex-direction: column;
+}
+.col {
+  flex: 1;
+  margin: 0.1em;
+  padding: 1em;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 500px){
+  .row {flex-flow: row wrap;}
+  .col {flex: 1 1 40%;}
+  .row:nth-child(3) .col {flex: 1}
+}
+@media screen and (min-width: 900px){
+  .col {flex: 1;}
 }

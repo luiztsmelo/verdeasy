@@ -1,18 +1,27 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar>
-      <router-view></router-view>
-
+    <router-view></router-view>
+    <app-hero></app-hero>
+    <app-plants></app-plants>
+    <app-footer></app-footer>
+    
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Plants from './components/Plants';
+import Footer from './components/Footer';
 
 
 export default {
   components: {
     'app-navbar': Navbar,
+    'app-hero': Hero,
+    'app-plants': Plants,
+    'app-footer': Footer,
 
   },
   name: 'app',

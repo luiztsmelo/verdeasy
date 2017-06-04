@@ -14,7 +14,7 @@
 
 <script>
 export default {
-
+  
 };
 
 </script>
@@ -28,18 +28,18 @@ header {
   align-items: center;
   flex: 0 1 20%;
   flex-wrap: wrap;
-  background: rgba(60, 60, 60, 0.95);
-  padding: 0.9rem 4rem 0.3rem 4rem;
+  background: rgba(60, 60, 60, 0.9);
+  padding: 0.9rem 3rem 0.3rem 3rem;
 }
   .logo {
-    width: 3.5rem;
+    width: 3.4rem;
     height: auto;
-    margin: 0 0.5rem; 
+    margin-right: 0.2cm;
   }
   a {
     text-decoration: none;
   }
-  h1 {
+  .brand {
     font-family: $fontBrand;
     color: white;
     margin: 0;
@@ -61,7 +61,11 @@ header {
       color: white;
     }
     .link:hover {
-      color: lightgreen;
+      color: $lightgreen;
     }
+
+@media screen and (max-width: 768px){
+  
+}
 
 </style>

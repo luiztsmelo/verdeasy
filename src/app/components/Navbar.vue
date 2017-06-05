@@ -26,7 +26,7 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex: 0 1 25%;
+  flex: 1 0 0;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.4);
   padding: 0.9rem 3rem 0.3rem 3rem;
@@ -45,7 +45,7 @@ header {
     font-size: 2.5rem;
   }
   nav {
-    flex: 0 1 75%;
+    flex: 3 0 0;
   }
     ul {
       padding: 0;

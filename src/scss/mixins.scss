@@ -1,13 +1,13 @@
 
 @mixin cardText {
   p {
-     margin: 0;
-     padding: .4rem .4rem;
-     background: rgba(0, 0, 0, 0.3);
-     font-size: 1.5rem;
-     font-family: $fontMain;
-     font-weight: 300;
-     color: $white;
+    margin: 0;
+    padding: .4rem .4rem;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    font-family: $fontMain;
+    font-weight: 300;
+    color: $white;
   }
 }
 

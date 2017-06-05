@@ -28,7 +28,7 @@ header {
   align-items: center;
   flex: 0 1 25%;
   flex-wrap: wrap;
-  background: rgba(80, 80, 80, 0.9);
+  background: rgba(0, 0, 0, 0.4);
   padding: 0.9rem 3rem 0.3rem 3rem;
 }
   .logo {
@@ -60,7 +60,7 @@ header {
       padding: 0 0.7rem;
       color: $white;
       font-size: 1.1rem;
-      font-family: $fontHeading;
+      font-family: $fontText;
     }
     .link:hover {
       color: $lightgreen;

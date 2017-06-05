@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <p><span>Verdeasy 2017</span>. Todos os direitos reservados.</p>
+    <p>&copy <span>Verdeasy 2017</span>. Todos os direitos reservados.</p>
   </footer>
 </template>
 
@@ -18,6 +18,10 @@ footer {
   justify-content: center;
   background: $green;
   color: $white;
+  p {
+      font-family: $fontMain;
+      font-size: 1.1rem;
+  }
   span {
     font-weight: 700;
   }

@@ -27,22 +27,21 @@ export default {
   background: rgba(0, 0, 0, 0.3);
   justify-content: center;
   flex-wrap: wrap;
-}
   .msg {
     color: white;
-    font-family: $fontHeading;
-    font-size: 4rem;
+    font-size: 3.5rem;
+    font-weight: 700;
     text-align: center;
     color: $white;
   }
   .msg2 {
     color: white;
-    font-family: $fontHeading;
     font-size: 3rem;
     text-align: center;
     color: $white;
     line-height: 0.7;
-  }
+  }  
+}
 
 @media screen and (max-width: 1024px){
   .hero {

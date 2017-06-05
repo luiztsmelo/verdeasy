@@ -42,8 +42,7 @@ header {
   .brand {
     color: $white;
     margin: 0;
-    font-size: 2rem;
-    font-family: $fontBrand;
+    font-size: 2.5rem;
   }
   nav {
     flex: 0 1 75%;
@@ -59,11 +58,11 @@ header {
     .link {
       padding: 0 0.7rem;
       color: $white;
-      font-size: 1.1rem;
-      font-family: $fontText;
+      font-size: 1.22rem;
     }
     .link:hover {
       color: $lightgreen;
+      font-weight: 300;
     }
 
 @media screen and (max-width: 768px){

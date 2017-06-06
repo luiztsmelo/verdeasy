@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img class="logo" src="./../../assets/verdeasyW.png" alt="verdeasy logo">
+    <img class="logo" src="./../../assets/verdeasyG.png" alt="verdeasy logo">
     <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>
@@ -32,9 +32,8 @@ header {
   padding: 0.9rem 3rem 0.3rem 3rem;
 }
   .logo {
-    width: 3rem;
+    width: 4rem;
     height: auto;
-    margin-right: 0.2cm;
   }
   a {
     text-decoration: none;
@@ -42,7 +41,8 @@ header {
   .brand {
     color: $white;
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-family: $fontBrand;
   }
   nav {
     flex: 3 0 0;
@@ -58,7 +58,7 @@ header {
     .link {
       padding: 0 0.7rem;
       color: $white;
-      font-size: 1.22rem;
+      font-size: 1.15rem;
     }
     .link:hover {
       color: $lightgreen;

@@ -13,17 +13,19 @@ html {
 // COLOR PALETTE 
 //******************************************//
 $grey: rgb(60, 60, 60);
-$green: rgb(0, 200, 83);
-$lightgreen: rgb(0, 230, 118); 
+$green: rgb(141, 180, 92);
+$lightgreen: rgb(174, 213, 129); 
 $white: rgb(255, 255, 255); 
 $black: rgb(20, 20, 20); 
 
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Open+Sans:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Amatica+SC|Amatic+SC|Open+Sans:400,400i,700');
 
+$fontBrand: 'Amatic SC', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
+$fontHero: 'Amatica SC', cursive;
 $fontText: 'Open Sans', sans-serif;
 
 $fontThin: 100;

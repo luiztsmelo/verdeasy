@@ -2,6 +2,30 @@
   <div class="container">
 
 
+    <h2>ERVAS AROMÁTICAS</h2>
+
+    <div class="row">
+      <div class="card-11">
+        <p>Menta</p>
+      </div>
+      <div class="card-12">
+        <p>Alecrim</p>
+      </div>
+      <div class="card-13">
+        <p>Tomilho</p>
+      </div>
+      <div class="card-14">
+        <p>Orégano</p>
+      </div>
+      <div class="card-15">
+        <p>Lavanda</p>
+      </div>
+      <div class="card-16">
+        <p>Patchouli</p>
+      </div>
+    </div>
+
+
     <h2>PLANTAS QUE EXIGEM POUCO SOL</h2>
 
     <div class="row">
@@ -26,27 +50,28 @@
     </div>
 
 
-    <h2>ERVAS AROMÁTICAS</h2>
+    <h2>ERVAS FITOTERÁPICAS</h2>
 
     <div class="row">
-      <div class="card-21">
-        <p>Hortelã</p>
-      </div>
-      <div class="card-22">
+      <div class="card-11">
         <p>Menta</p>
       </div>
-      <div class="card-23">
-        <p>Hortelã</p>
+      <div class="card-12">
+        <p>Alecrim</p>
       </div>
-      <div class="card-24">
+      <div class="card-13">
+        <p>Tomilho</p>
+      </div>
+      <div class="card-14">
         <p>Menta</p>
       </div>
-      <div class="card-25">
-        <p>Hortelã</p>
-      </div>
-      <div class="card-26">
+      <div class="card-15">
         <p>Menta</p>
       </div>
+      <div class="card-16">
+        <p>Menta</p>
+      </div>
+    </div>
 
 
     </div>
@@ -70,10 +95,11 @@ export default {
   padding: 0 3rem;
   h2 {
     margin: 0;
-    padding: 1.4rem 0 0.7rem 0;
-    color: rgb(177, 177, 177);
+    padding: 1.7rem 0 0.7rem 0;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 600;
+    color: rgb(222, 222, 222);
+
   }   
   .row {
     display: flex;
@@ -89,13 +115,13 @@ export default {
       @include card(tomilho, jpg);
     }
     .card-14 {
-      @include card(alecrim, jpg);
+      @include card(oregano, jpg);
     }
     .card-15 {
-      @include card(menta, jpg);
+      @include card(lavanda, jpg);
     }
     .card-16 {
-      @include card(alecrim, jpg);
+      @include card(patchouli, jpg);
     }
   }
 }

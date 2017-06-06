@@ -59,10 +59,10 @@ header {
       padding: 0 0.7rem;
       color: $white;
       font-size: 1.15rem;
+      transition: .5s ease;
     }
     .link:hover {
       color: $lightgreen;
-      font-weight: 300;
     }
 
 @media screen and (max-width: 768px){

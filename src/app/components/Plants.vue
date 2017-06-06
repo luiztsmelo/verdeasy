@@ -1,77 +1,26 @@
 <template>
   <div class="container">
 
-
     <h2>ERVAS AROMÁTICAS</h2>
 
     <div class="row">
-      <div class="card-11">
-        <p>Menta</p>
+
+      <div class="card" v-for="plant in plants">
+        <div class="img">
+          <img :src="plant.img" :alt="plant.name" class="image">
+        </div>
+        <div class="plantName">
+          <h3>{{ plant.name }}</h3>
+        </div>
+        <div class="overlay">
+          <h5>Sol: {{ plant.sun }}</h5>
+          <h5>Rega: {{ plant.water }}</h5>
+          <h5>Cuidados: {{ plant.care }}</h5>
+        </div>
       </div>
-      <div class="card-12">
-        <p>Alecrim</p>
-      </div>
-      <div class="card-13">
-        <p>Tomilho</p>
-      </div>
-      <div class="card-14">
-        <p>Orégano</p>
-      </div>
-      <div class="card-15">
-        <p>Lavanda</p>
-      </div>
-      <div class="card-16">
-        <p>Patchouli</p>
-      </div>
-    </div>
 
 
-    <h2>PLANTAS QUE EXIGEM POUCO SOL</h2>
-
-    <div class="row">
-      <div class="card-11">
-        <p>Menta</p>
-      </div>
-      <div class="card-12">
-        <p>Alecrim</p>
-      </div>
-      <div class="card-13">
-        <p>Tomilho</p>
-      </div>
-      <div class="card-14">
-        <p>Menta</p>
-      </div>
-      <div class="card-15">
-        <p>Menta</p>
-      </div>
-      <div class="card-16">
-        <p>Menta</p>
-      </div>
-    </div>
-
-
-    <h2>ERVAS FITOTERÁPICAS</h2>
-
-    <div class="row">
-      <div class="card-11">
-        <p>Menta</p>
-      </div>
-      <div class="card-12">
-        <p>Alecrim</p>
-      </div>
-      <div class="card-13">
-        <p>Tomilho</p>
-      </div>
-      <div class="card-14">
-        <p>Menta</p>
-      </div>
-      <div class="card-15">
-        <p>Menta</p>
-      </div>
-      <div class="card-16">
-        <p>Menta</p>
-      </div>
-    </div>
+    <h2>ERVAS AROMÁTICAS</h2>
 
 
     </div>
@@ -79,9 +28,12 @@
 </template>
 
 <script>
-import { plantsMixin } from './plantsMixin';
+import { plantsData } from './plantsData';
 export default {
-  
+  mixins: [plantsData],
+  computed: {
+
+  }
 };
 </script>
 
@@ -90,41 +42,44 @@ export default {
 @import "./../../scss/mixins.scss";
 
 .container {
-  background: rgba(20, 20, 20, 0.9);
-  color: white;
-  padding: 0 3rem;
-  h2 {
-    margin: 0;
-    padding: 1.7rem 0 0.7rem 0;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: rgb(222, 222, 222);
-
-  }   
+  @include container();
+   
   .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    .card-11 {
-      @include card(menta, jpg);
-    }
-    .card-12 {
-      @include card(alecrim, jpg);
-    }
-    .card-13 {
-      @include card(tomilho, jpg);
-    }
-    .card-14 {
-      @include card(oregano, jpg);
-    }
-    .card-15 {
-      @include card(lavanda, jpg);
-    }
-    .card-16 {
-      @include card(patchouli, jpg);
+    @include row(); 
+      .overlay {
+        h5 { margin:0; }
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 80%;
+        opacity: 0;
+        background: rgba(0, 0, 0, 0);
+        transition: .4s ease;
+        &:hover { 
+          opacity: 1;
+          background: rgba(0, 0, 0 , 0.3); 
+        }
+      }
+    .card {
+      margin-right: 0.7rem;
+      height: 15rem;
+      width: 12.32rem;
+      box-shadow: 7px 10px 17px 3px rgba(0,0,0,0.8);
+      img {
+
+      }
+      h3 {
+        width: 100%;
+        margin: 0;
+        padding: .4rem .4rem;
+        background: rgba(0, 0, 0, 0.3);
+        font-size: 1.3rem;
+        font-family: $fontMain;
+        font-weight: 300;
+        color: $white;
+      }
     }
   }
-}
-
+};
 
 </style>

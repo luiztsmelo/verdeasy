@@ -14,12 +14,12 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./../scss/style.scss";
 
 .hero {
   display: flex;
-  padding: 6rem 0 8rem 0;
+  padding: 5rem 0 9rem 0;
   background: rgba(0, 0, 0, 0.3);
   justify-content: center;
   flex-wrap: wrap;

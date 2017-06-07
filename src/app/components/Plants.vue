@@ -3,8 +3,8 @@
     <h2>Ervas Aromáticas</h2>
     <div class="row">
       <div class="card" v-for="plant in plants">
-        <div class="img">
-          <img src="./../../assets/plants/menta.jpg" :alt="plant.name" class="image">
+        <div>
+          <img :src="'./../../../static/plants/' + plant.name + '.jpg'" :alt="plant.name" class="plantImg">
         </div>
         <div class="plantName">
           <h3>{{ plant.name }}</h3>
@@ -24,12 +24,11 @@ import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
-  computed: {
-  }
-}
+
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./../scss/style.scss";
 @import "./../scss/mixins.scss";
 
@@ -48,7 +47,7 @@ export default {
     transition: .4s ease;
     &:hover {
       opacity: 1;
-      background: rgba(0, 0, 0 , 0.3);
+      background: rgba(0, 0, 0, 0.3);
     }
     h5 {
       margin: 0;
@@ -60,6 +59,10 @@ export default {
     height: 15rem;
     width: 12.32rem;
     box-shadow: 7px 10px 17px 3px rgba(0,0,0,0.8);
+    .plantImg {
+      height: 15rem;
+      width: 12.32rem;
+    }
     h3 {
       width: 100%;
       margin: 0;

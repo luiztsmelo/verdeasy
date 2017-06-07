@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img class="logo" src="./../../assets/verdeasyG.png" alt="verdeasy logo">
+    <img class="logo" src="./../../../static/verdeasyG.png" alt="verdeasy logo">
     <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>

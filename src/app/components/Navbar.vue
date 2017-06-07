@@ -4,8 +4,8 @@
     <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>
-        <li><router-link class="link" to="#">Sobre</router-link></li>
-        <li><router-link class="link" to="#">Blog</router-link></li>
+        <li><router-link class="link" to="/sobre">Sobre</router-link></li>
+        <li><router-link class="link" to="/blog">Blog</router-link></li>
         <li><router-link class="link" to="#">Contato</router-link></li>
       </ul>
     </nav>

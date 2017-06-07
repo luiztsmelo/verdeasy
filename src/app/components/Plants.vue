@@ -4,9 +4,9 @@
     <div class="row">
       <div class="card" v-for="plant in plants">
         <div>
-          <img :src="'./../../../static/plants/' + plant.name + '.jpg'" :alt="plant.name" class="plantImg">
+          <img :src="'./../../../static/plants/' + plant.name + '.jpg'" :alt="plant.name">
         </div>
-        <div class="plantName">
+        <div>
           <h3>{{ plant.name }}</h3>
         </div>
         <div class="overlay">
@@ -38,10 +38,11 @@ export default {
 .row {
   @include row();
   .overlay {
+    position: relative;
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 80%;
+    height: 88%;
     opacity: 0;
     background: rgba(0, 0, 0, 0);
     transition: .4s ease;
@@ -56,14 +57,16 @@ export default {
   .card {
     margin-right: 0.7rem;
     margin-bottom: 2rem;
-    height: 15rem;
+    height: 15.32rem;
     width: 12.32rem;
     box-shadow: 7px 10px 17px 3px rgba(0,0,0,0.8);
-    .plantImg {
-      height: 15rem;
+    img {
+      position: absolute;
+      height: 15.32rem;
       width: 12.32rem;
     }
     h3 {
+      position: relative;
       width: 100%;
       margin: 0;
       padding: .4rem .4rem;

@@ -33,6 +33,7 @@ header {
 .logo {
   width: 4rem;
   height: auto;
+  margin-left: 2rem;
 }
 
 a {
@@ -40,7 +41,6 @@ a {
 }
 
 .brand {
-  color: $white;
   margin: 0;
   font-size: 2.8rem;
   font-family: $fontBrand;
@@ -52,17 +52,17 @@ nav {
 
 ul {
   padding: 0;
-  margin: 0;
+  margin: 0 1.2rem 0 0;
   display: flex;
   list-style: none;
   justify-content: flex-end;
   align-items: center;
 }
-
 .link {
   padding: 0 0.7rem;
   color: $white;
   font-size: 1.15rem;
+  font-weight: $fontThin;
   transition: .5s ease;
 }
 

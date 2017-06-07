@@ -28,14 +28,12 @@ export default {
     font-size: 5rem;
     font-weight: 700;
     text-align: center;
-    color: $white;
     font-family: $fontHero;
   }
   .subtitle {
     color: white;
     font-size: 3.2rem;
     text-align: center;
-    color: $white;
     line-height: 0.7;
     font-family: $fontHero;
   }

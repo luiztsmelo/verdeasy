@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Ervas Aromáticas</h2>
+    <h2>Melhores Ervas Aromáticas</h2>
     <div class="row">
       <div class="card" v-for="plant in plants">
         <div>
@@ -10,9 +10,21 @@
           <h3>{{ plant.name }}</h3>
         </div>
         <div class="overlay">
-          <h5>Sol: {{ plant.sun }}</h5>
-          <h5>Rega: {{ plant.water }}</h5>
-          <h5>Cuidados: {{ plant.care }}</h5>
+      
+        </div>
+      </div>
+    </div>
+    <h2>Plantas Mais Cheirosas</h2>
+    <div class="row">
+      <div class="card" v-for="plant in plants">
+        <div>
+          <img :src="'./../../../static/plants/' + plant.name + '.jpg'" :alt="plant.name">
+        </div>
+        <div>
+          <h3>{{ plant.name }}</h3>
+        </div>
+        <div class="overlay">
+      
         </div>
       </div>
     </div>
@@ -38,43 +50,35 @@ export default {
 .row {
   @include row();
   .overlay {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 88%;
-    opacity: 0;
-    background: rgba(0, 0, 0, 0);
-    transition: .4s ease;
-    &:hover {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    h5 {
-      margin: 0;
-    }
+  
   }
   .card {
     margin-right: 0.7rem;
     margin-bottom: 2rem;
-    height: 15.32rem;
-    width: 12.32rem;
+    height: 13.32rem;
+    width: 14.3rem;
     box-shadow: 7px 10px 17px 3px rgba(0,0,0,0.8);
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 0 0;
+    }
     img {
       position: absolute;
-      height: 15.32rem;
-      width: 12.32rem;
+      height: 11.32rem;
+      width: 14.3rem;
     }
     h3 {
       position: relative;
       width: 100%;
-      margin: 0;
-      padding: .4rem .4rem;
-      background: rgba(0, 0, 0, 0.3);
+      margin-top: 11.32rem;
+      margin-bottom: 0;
+      padding: .3rem 0;
+      background: white;
       font-size: 1.3rem;
       font-family: $fontMain;
       font-weight: 300;
-      color: $white;
+      text-align: center;
+      color: black;
     }
   }
 }

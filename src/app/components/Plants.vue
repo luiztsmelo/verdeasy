@@ -30,8 +30,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./../../scss/style.scss";
-@import "./../../scss/mixins.scss";
+@import "./../scss/style.scss";
+@import "./../scss/mixins.scss";
 
 .container {
   @include container();

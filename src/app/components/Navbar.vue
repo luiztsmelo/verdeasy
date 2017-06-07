@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "./../../scss/style.scss";
+@import "./../scss/style.scss";
 
 header {
   display: flex;

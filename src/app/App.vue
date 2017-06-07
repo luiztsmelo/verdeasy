@@ -5,7 +5,6 @@
     <app-hero></app-hero>
     <app-plants></app-plants>
     <app-footer></app-footer>
-    
   </div>
 </template>
 
@@ -15,17 +14,16 @@ import Hero from './components/Hero';
 import Plants from './components/Plants';
 import Footer from './components/Footer';
 
-
 export default {
+  name: 'app',
+
   components: {
     'app-navbar': Navbar,
     'app-hero': Hero,
     'app-plants': Plants,
     'app-footer': Footer,
-
   },
-  name: 'app',
-};
+}
 </script>
 
 <style lang="scss">
@@ -38,5 +36,4 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
-
 </style>

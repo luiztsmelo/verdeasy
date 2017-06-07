@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  
-};
+  name: 'footer'
+}
 </script>
 
 <style lang="scss">
@@ -18,13 +18,14 @@ footer {
   justify-content: center;
   background: $green;
   color: $white;
+
   p {
-      font-family: $fontMain;
-      font-size: 1.1rem;
+    font-family: $fontMain;
+    font-size: 1.1rem;
   }
+
   span {
-    font-weight: 700;
+    font-weight: $fontThin;
   }
 }
-
 </style>

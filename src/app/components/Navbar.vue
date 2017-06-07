@@ -9,14 +9,13 @@
         <li><router-link class="link" to="#">Contato</router-link></li>
       </ul>
     </nav>
-  </header>  
+  </header>
 </template>
 
 <script>
 export default {
-  
-};
-
+  name: 'navbar'
+}
 </script>
 
 <style lang="scss" scoped>
@@ -31,42 +30,43 @@ header {
   background: rgba(0, 0, 0, 0.4);
   padding: 0.9rem 3rem 0.3rem 3rem;
 }
-  .logo {
-    width: 4rem;
-    height: auto;
-  }
-  a {
-    text-decoration: none;
-  }
-  .brand {
-    color: $white;
-    margin: 0;
-    font-size: 3rem;
-    font-family: $fontBrand;
-  }
-  nav {
-    flex: 3 0 0;
-  }
-    ul {
-      padding: 0;
-      margin: 0;
-      display: flex;
-      list-style: none;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    .link {
-      padding: 0 0.7rem;
-      color: $white;
-      font-size: 1.15rem;
-      transition: .5s ease;
-    }
-    .link:hover {
-      color: $lightgreen;
-    }
-
-@media screen and (max-width: 768px){
-  
+.logo {
+  width: 4rem;
+  height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
+.brand {
+  color: $white;
+  margin: 0;
+  font-size: 3rem;
+  font-family: $fontBrand;
+}
+
+nav {
+  flex: 3 0 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.link {
+  padding: 0 0.7rem;
+  color: $white;
+  font-size: 1.15rem;
+  transition: .5s ease;
+}
+
+.link:hover {
+  color: $lightgreen;
+}
 </style>

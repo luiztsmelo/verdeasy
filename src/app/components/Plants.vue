@@ -57,10 +57,11 @@ export default {
     margin-bottom: 2rem;
     height: 13.32rem;
     width: 14.3rem;
-    box-shadow: 7px 10px 17px 3px rgba(0,0,0,0.8);
+    box-shadow: 6px 8px 14px 10px rgba(0,0,0,0.8);
     cursor: pointer;
+    transition: .3s ease-in-out;
     &:hover {
-      box-shadow: 0 0 0 0;
+      box-shadow: 0 0 0 0 rgba(174, 213, 129, 0.4);
     }
     img {
       position: absolute;

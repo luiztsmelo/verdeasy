@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img class="logo" src="./../../../static/verdeasyG.png" alt="verdeasy logo">
+    <a href="/"><img class="logo" src="./../../../static/verdeasyG.png" alt="verdeasy logo"></a>
     <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>
@@ -63,7 +63,7 @@ ul {
   color: $white;
   font-size: 1.15rem;
   font-weight: $fontThin;
-  transition: .5s ease;
+  transition: .3s ease-in-out;
 }
 
 .link:hover {

@@ -59,8 +59,8 @@ export default {
     width: 14.3rem;
     box-shadow: 5px 7px 12px 5px rgba(0,0,0,0.8);
     cursor: pointer;
-    transition: .3s ease-in-out;
-    opacity: 0.75;
+    transition: .222s ease-in-out;
+    opacity: 0.77;
     &:hover {
       box-shadow: 0 0 0 0 rgba(100, 100, 100, 0.222);
       opacity: 1;

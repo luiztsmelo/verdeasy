@@ -27,7 +27,7 @@ header {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   padding: 0.5rem 3rem 0.5rem 3rem;
 }
 .logo {

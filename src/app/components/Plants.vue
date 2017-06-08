@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <h2>Plantas Mais Cheirosas</h2>
+    <h2>exigem pouco sol</h2>
     <div class="row">
       <div class="card" v-for="plant in plants">
         <div>
@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "./../scss/style.scss";
-@import "./../scss/mixins.scss";
+@import "./../scss/mixinsPlants.scss";
 
 .container {
   @include container();
@@ -57,11 +57,13 @@ export default {
     margin-bottom: 2rem;
     height: 13.32rem;
     width: 14.3rem;
-    box-shadow: 6px 8px 14px 10px rgba(0,0,0,0.8);
+    box-shadow: 5px 7px 12px 5px rgba(0,0,0,0.8);
     cursor: pointer;
     transition: .3s ease-in-out;
+    background: rgba(0, 0, 0, 0.8);
     &:hover {
-      box-shadow: 0 0 0 0 rgba(174, 213, 129, 0.4);
+      box-shadow: 0 0 0 0 rgba(174, 213, 129, 0.222);
+      background: rgba(0, 0, 0, 0);
     }
     img {
       position: absolute;

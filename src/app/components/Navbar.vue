@@ -23,12 +23,12 @@ export default {
 
 header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.4);
-  padding: 0.8rem 3rem 0.2rem 3rem;
+  padding: 0.5rem 3rem 0.5rem 3rem;
 }
 .logo {
   width: 4rem;
@@ -56,7 +56,6 @@ ul {
   display: flex;
   list-style: none;
   justify-content: flex-end;
-  align-items: center;
 }
 .link {
   padding: 0 0.7rem;

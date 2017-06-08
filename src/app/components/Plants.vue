@@ -62,7 +62,7 @@ export default {
     transition: .3s ease-in-out;
     opacity: 0.75;
     &:hover {
-      box-shadow: 0 0 0 0 rgba(174, 213, 129, 0.222);
+      box-shadow: 0 0 0 0 rgba(100, 100, 100, 0.222);
       opacity: 1;
     }
     img {

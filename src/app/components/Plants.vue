@@ -71,7 +71,8 @@ export default {
         transform: translate(0, -110%);
       }
       &:hover .card-image {
-        opacity: 0.222;
+        opacity: 0.3;
+        height: 13.4rem;
       } 
       &:hover .card-title {
      
@@ -87,10 +88,11 @@ export default {
   }
 }
 .card-content {
-  transform: translateY(0);
-  transition: all .777s cubic-bezier(0.000, 1.050, 0.315, 1.160);
+  transition: all .9s cubic-bezier(0.000, 1.050, 0.315, 1.160);
+  
   .card-title {
-    margin-top: 11.32rem;
+    position: relative;
+    margin-top: 11.3rem;
     margin-bottom: auto;
     padding: .3rem 0;
     background: white;
@@ -101,13 +103,11 @@ export default {
     color: black;
   }
   .card-overlay {
-    background-color: white;
+    background: rgba(100, 100, 100, 0.3);
     padding: .4rem 0;
     .card-subtitle {
-      color: white;
       font-weight: $fontThin;
       text-align: center;
-      
     }
     .card-bar-sun {
       margin: auto;

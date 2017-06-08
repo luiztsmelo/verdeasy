@@ -23,9 +23,9 @@ $black: rgb(0, 0, 0);
 //******************************************//
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Amatica+SC|Amatic+SC|Open+Sans:400,400i,700');
 
-$fontBrand: 'Amatic SC', cursive;
+$fontBrand: 'Amatic SC', sans-serif;
 $fontMain: 'Josefin Sans', sans-serif;
-$fontHero: 'Amatica SC', cursive;
+$fontHero: 'Amatica SC', sans-serif;
 $fontText: 'Open Sans', sans-serif;
 
 $fontThin: 100;
@@ -41,14 +41,13 @@ h1, h2, h3, h4, h5 {
 	font-family: $fontMain;
 	font-weight: 300;
 	margin: 0.5em 0 0.5em 0;
-  color: $white;
 }
 
 h1 { font-size: 2.0rem; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.6rem; }
-h4 { font-size: 1.4rem; }
-h5 { font-size: 1.2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.1rem; }
+h5 { font-size: 0.8rem; }
 
 a, button, li {
 	font-family: $fontMain;

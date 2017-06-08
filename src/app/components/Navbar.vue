@@ -44,6 +44,7 @@ a {
   margin: 0;
   font-size: 2.8rem;
   font-family: $fontBrand;
+  color: white;
 }
 
 nav {
@@ -59,7 +60,7 @@ ul {
 }
 .link {
   padding: 0 0.7rem;
-  color: $white;
+  color: white;
   font-size: 1.15rem;
   font-weight: $fontThin;
   transition: .3s ease-in-out;
@@ -68,4 +69,5 @@ ul {
 .link:hover {
   color: $lightgreen;
 }
+
 </style>

@@ -95,16 +95,17 @@ export default {
 @media screen and (max-width: 768px){
   .hero {
     margin: 0;
-  }
-
-  .title {
-    font-size: 2.5rem;
-    line-height: 1;
-  }
-
-  .subtitle {
-    font-size: 2rem;
-    line-height: 1.5;
+    .title {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .subtitle {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+    .verdeasy {
+      font-size: 4rem;
+    }
   }
 }
 </style>

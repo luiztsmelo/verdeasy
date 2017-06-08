@@ -60,10 +60,10 @@ export default {
     box-shadow: 5px 7px 12px 5px rgba(0,0,0,0.8);
     cursor: pointer;
     transition: .3s ease-in-out;
-    background: rgba(0, 0, 0, 0.8);
+    opacity: 0.75;
     &:hover {
       box-shadow: 0 0 0 0 rgba(174, 213, 129, 0.222);
-      background: rgba(0, 0, 0, 0);
+      opacity: 1;
     }
     img {
       position: absolute;

@@ -1,7 +1,7 @@
 <template>
   <div class="container-card">
     
-    <h2 class="title-row">Melhores Ervas Aromáticas</h2>
+    <h2 class="title-row">Ervas Aromáticas</h2>
 
     <div class="row-cards">
 
@@ -99,7 +99,7 @@ export default {
   }
 }
 .card-content {
-  transition: all 1s cubic-bezier(0.000, 1.050, 0.315, 1.160);
+  transition: all 0.7s cubic-bezier(0.230, 1.000, 0.320, 1.000);
   
   .card-title {
     margin-top: 11.3rem;
@@ -142,7 +142,7 @@ export default {
     #progress-bar-sun {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(255, 245, 157, 0.7);
+      background-color: rgba(255, 238, 88, 0.7);
     }
     #progress-bar-water {
       height: 1.4rem;
@@ -152,7 +152,7 @@ export default {
     #progress-bar-care {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(233, 30, 99, 0.7);
+      background-color: rgba(255, 112, 67, 0.7);
     }
   }
 }

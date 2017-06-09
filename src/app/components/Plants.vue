@@ -32,6 +32,10 @@
                 <h4 class="card-subtitle">Cuidados</h4>
               <p id="more">+</p>
             </div>
+
+          <div class="card-footer">
+            <h4 id="footer-subtitle">Mais informações</h4>
+          </div>
         
         </div>
       </div>
@@ -79,7 +83,7 @@ export default {
       cursor: pointer;
       overflow: hidden;
       &:hover .card-content{
-        transform: translate(0, -110%);
+        transform: translate(0, -90%);
       }
       &:hover .card-image {
         opacity: .6;
@@ -116,7 +120,7 @@ export default {
     position: relative;
     text-align: center;
     font-weight: 400;
-    transform: translateY(-1.8rem);
+    transform: translateY(-1.87rem);
   }
   #less {
     font-weight: 600;
@@ -154,7 +158,16 @@ export default {
       border-radius: 25px;
       background-color: rgba(255, 112, 67, 0.7);
     }
+ 
   }
 }
-
+ .card-footer {
+    #footer-subtitle {
+      margin: auto 1rem;
+      padding-top: .4rem; 
+      display: block;
+      position: relative;
+      text-align: center;
+      }
+    }
 </style>

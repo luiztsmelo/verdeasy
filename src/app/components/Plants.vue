@@ -13,11 +13,23 @@
           <h3 class="card-title">{{ plant.name }}</h3>
           <div class="card-overlay">
             
-              <div class="card-bar-sun"><h4 class="card-subtitle">Sol</h4></div>
+              <div class="card-bar-sun">
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Sol</h4>
+                <p id="more">+</p>
+              </div>
 
-              <div class="card-bar-water"><h4 class="card-subtitle">Rega</h4></div>
+              <div class="card-bar-water">
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Rega</h4>
+                <p id="more">+</p>
+              </div>
 
-              <div class="card-bar-care"><h4 class="card-subtitle">Cuidados</h4></div>
+              <div class="card-bar-care">
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Cuidados</h4>
+                <p id="more">+</p>
+              </div>
 
           </div>
         
@@ -74,9 +86,6 @@ export default {
         opacity: 0.3;
         height: 13.4rem;
       } 
-      &:hover .card-title {
-     
-      }
       .card-image {
         position: absolute;
         height: 11.3rem;
@@ -88,7 +97,7 @@ export default {
   }
 }
 .card-content {
-  transition: all .9s cubic-bezier(0.000, 1.050, 0.315, 1.160);
+  transition: all 1s cubic-bezier(0.000, 1.050, 0.315, 1.160);
   
   .card-title {
     position: relative;
@@ -106,26 +115,40 @@ export default {
     background: rgba(100, 100, 100, 0.3);
     padding: .4rem 0;
     .card-subtitle {
-      font-weight: $fontThin;
       text-align: center;
+      font-weight: 400;
+    }
+    #less {
+      color: black;
+      font-weight: 400;
+      float: left;
+      margin: auto;
+      padding: 0 .5rem;
+    }
+    #more {
+      color: black;
+      font-weight: 400;
+      float: right;
+      margin: -1.7rem auto;
+      padding: 0 .5rem;
     }
     .card-bar-sun {
       margin: auto;
       width: 95%;
       height: 1.3rem;
-      background-color: #FFEB3B;
+      background-color: rgba(255, 245, 157, 0.8);
     }
     .card-bar-water {
       margin: auto;
       width: 95%;
       height: 1.3rem;
-      background-color: #82B1FF;
+      background-color: rgba(130, 177, 255, 0.8);
     }
     .card-bar-care {
       margin: auto;
       width: 95%;
       height: 1.3rem;
-      background-color: #AED581;
+      background-color: rgba(174, 213, 129, 0.8);
     }
   }
 }

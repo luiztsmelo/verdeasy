@@ -84,7 +84,7 @@ export default {
         transform: translate(0, -110%);
       }
       &:hover .card-image {
-        opacity: .4;
+        opacity: .6;
         height: 13.4rem;
       } 
       &:hover .card-title {
@@ -109,12 +109,10 @@ export default {
     padding: .3rem 0;
     background: white;
     font-size: 1.3rem;
-    font-family: $fontMain;
     font-weight: 300;
     text-align: center;
     color: black;
     transition: .5s ease;
-  
   }
   .card-subtitle {
     position: relative;
@@ -143,17 +141,17 @@ export default {
     #progress-bar-sun {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(255, 245, 157, 0.6)
+      background-color: rgba(255, 245, 157, 0.7)
     }
     #progress-bar-water {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(130, 177, 255, 0.6)
+      background-color: rgba(130, 177, 255, 0.7)
     }
     #progress-bar-care {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(174, 213, 129, 0.6)
+      background-color: rgba(174, 213, 129, 0.7)
     }
   }
 }

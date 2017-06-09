@@ -13,21 +13,21 @@
           <h3 class="card-title">{{ plant.name }}</h3>
             
             <div class="card-bar">
-              <div id="progress-bar-sun" style="width: 33%"></div>
+              <div id="progress-bar-sun" style="width: 90%"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Sol</h4>
               <p id="more">+</p>
             </div>
 
             <div class="card-bar">
-              <div id="progress-bar-water" style="width: 50%"></div>
+              <div id="progress-bar-water" style="width: 40%"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Rega</h4>
               <p id="more">+</p>
             </div>
 
             <div class="card-bar">
-              <div id="progress-bar-care" style="width: 75%"></div>
+              <div id="progress-bar-care" style="width: 70%"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Cuidados</h4>
               <p id="more">+</p>
@@ -37,8 +37,6 @@
       </div>
     </div>
     
-    
-
   </div>
 </template>
 
@@ -58,7 +56,7 @@ export default {
 @import "./../scss/mixinsPlants.scss";
 
 .container-card {
-  background: rgba(20, 20, 20, 0.9);
+  background: rgba(30, 30, 30, 0.93);
   color: white;
   padding: 0 3rem;
   .title-row {
@@ -118,18 +116,21 @@ export default {
     position: relative;
     text-align: center;
     font-weight: 400;
+    transform: translateY(-1.8rem);
   }
   #less {
-    font-weight: 400;
+    font-weight: 600;
     float: left;
     margin: auto;
     padding: 0 .5rem;
+    transform: translateY(-1.4rem);
   }
   #more {
-    font-weight: 400;
+    font-weight: 600;
     float: right;
-    margin: -1.777rem auto;
+    margin: -1.7rem auto;
     padding: 0 .5rem;
+    transform: translateY(-2rem);
   }
   .card-bar {
     position: relative;
@@ -137,21 +138,21 @@ export default {
     margin: .777rem auto;
     width: 95%;
     height: 1.4rem;
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: rgba(177, 177, 177, 0.4);
     #progress-bar-sun {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(255, 245, 157, 0.7)
+      background-color: rgba(255, 245, 157, 0.7);
     }
     #progress-bar-water {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(130, 177, 255, 0.7)
+      background-color: rgba(130, 177, 255, 0.7);
     }
     #progress-bar-care {
       height: 1.4rem;
       border-radius: 25px;
-      background-color: rgba(174, 213, 129, 0.7)
+      background-color: rgba(233, 30, 99, 0.7);
     }
   }
 }

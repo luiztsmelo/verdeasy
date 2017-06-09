@@ -11,27 +11,27 @@
         
         <div class="card-content">
           <h3 class="card-title">{{ plant.name }}</h3>
-          <div class="card-overlay">
             
-              <div class="card-bar-sun">
-                <p id="less">-</p>
-                  <h4 class="card-subtitle">Sol</h4>
-                <p id="more">+</p>
-              </div>
+            <div class="card-bar">
+              <div id="progress-bar-sun" style="width: 33%"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Sol</h4>
+              <p id="more">+</p>
+            </div>
 
-              <div class="card-bar-water">
-                <p id="less">-</p>
-                  <h4 class="card-subtitle">Rega</h4>
-                <p id="more">+</p>
-              </div>
+            <div class="card-bar">
+              <div id="progress-bar-water" style="width: 50%"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Rega</h4>
+              <p id="more">+</p>
+            </div>
 
-              <div class="card-bar-care">
-                <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
-                <p id="more">+</p>
-              </div>
-
-          </div>
+            <div class="card-bar">
+              <div id="progress-bar-care" style="width: 75%"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Cuidados</h4>
+              <p id="more">+</p>
+            </div>
         
         </div>
       </div>
@@ -47,7 +47,9 @@ import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
-
+  methods: {
+  
+  }
 };
 </script>
 
@@ -61,7 +63,7 @@ export default {
   padding: 0 3rem;
   .title-row {
     margin: 0;
-    padding: 1.2rem 0 0.7rem 1.7rem;
+    padding: 1.2rem 0 .7rem 1.7rem;
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 600;
@@ -72,26 +74,28 @@ export default {
     flex-direction: row;
     justify-content: center;
     .card {
-      margin-right: 0.7rem;
+      margin-right: .7rem;
       margin-bottom: 2rem;
       height: 13.3rem;
       width: 14.3rem;
       cursor: pointer;
       overflow: hidden;
-
       &:hover .card-content{
         transform: translate(0, -110%);
       }
       &:hover .card-image {
-        opacity: 0.3;
+        opacity: .4;
         height: 13.4rem;
       } 
+      &:hover .card-title {
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+      }
       .card-image {
         position: absolute;
         height: 11.3rem;
         width: 14.3rem;
-        opacity: 1;
-        transition: .5s ease;
+        transition: .7s ease;
       }
     }
   }
@@ -100,7 +104,6 @@ export default {
   transition: all 1s cubic-bezier(0.000, 1.050, 0.315, 1.160);
   
   .card-title {
-    position: relative;
     margin-top: 11.3rem;
     margin-bottom: auto;
     padding: .3rem 0;
@@ -110,45 +113,47 @@ export default {
     font-weight: 300;
     text-align: center;
     color: black;
+    transition: .5s ease;
+  
   }
-  .card-overlay {
-    background: rgba(100, 100, 100, 0.3);
-    padding: .4rem 0;
-    .card-subtitle {
-      text-align: center;
-      font-weight: 400;
+  .card-subtitle {
+    position: relative;
+    text-align: center;
+    font-weight: 400;
+  }
+  #less {
+    font-weight: 400;
+    float: left;
+    margin: auto;
+    padding: 0 .5rem;
+  }
+  #more {
+    font-weight: 400;
+    float: right;
+    margin: -1.777rem auto;
+    padding: 0 .5rem;
+  }
+  .card-bar {
+    position: relative;
+    border-radius: 25px;
+    margin: .777rem auto;
+    width: 95%;
+    height: 1.4rem;
+    background-color: rgba(200, 200, 200, 0.4);
+    #progress-bar-sun {
+      height: 1.4rem;
+      border-radius: 25px;
+      background-color: rgba(255, 245, 157, 0.6)
     }
-    #less {
-      color: black;
-      font-weight: 400;
-      float: left;
-      margin: auto;
-      padding: 0 .5rem;
+    #progress-bar-water {
+      height: 1.4rem;
+      border-radius: 25px;
+      background-color: rgba(130, 177, 255, 0.6)
     }
-    #more {
-      color: black;
-      font-weight: 400;
-      float: right;
-      margin: -1.7rem auto;
-      padding: 0 .5rem;
-    }
-    .card-bar-sun {
-      margin: auto;
-      width: 95%;
-      height: 1.3rem;
-      background-color: rgba(255, 245, 157, 0.8);
-    }
-    .card-bar-water {
-      margin: auto;
-      width: 95%;
-      height: 1.3rem;
-      background-color: rgba(130, 177, 255, 0.8);
-    }
-    .card-bar-care {
-      margin: auto;
-      width: 95%;
-      height: 1.3rem;
-      background-color: rgba(174, 213, 129, 0.8);
+    #progress-bar-care {
+      height: 1.4rem;
+      border-radius: 25px;
+      background-color: rgba(174, 213, 129, 0.6)
     }
   }
 }

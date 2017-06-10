@@ -5,9 +5,7 @@
 
     <div class="row-cards">
 
-      <div class="card" v-for="plant in plants">
-        
-        <img class="card-image" :src="'./../../../static/plants/' + plant.name + '.jpg'" :alt="plant.name">
+      <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
         
         <div class="card-content">
           <h3 class="card-title">{{ plant.name }}</h3>
@@ -73,28 +71,24 @@ export default {
     flex-direction: row;
     justify-content: center;
     .card {
-      margin-right: .7rem;
-      margin-bottom: 2rem;
-      height: 13.3rem;
-      width: 14.3rem;
+      margin: 0 .3rem 2rem .3rem;
+      height: 13rem;
+      width: 14rem;
       cursor: pointer;
       overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 100% 11.3rem;
+      transition: .35s ease;
       &:hover .card-content{
         transform: translate(0, -90%);
       }
-      &:hover .card-image {
-        opacity: .6;
-        height: 13.4rem;
-      } 
       &:hover .card-title {
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
       }
-      .card-image {
-        position: absolute;
-        height: 11.3rem;
-        width: 14.3rem;
-        transition: .7s ease;
+      &:hover {
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+        background-size: 100% 13.3rem;
       }
     }
   }
@@ -103,7 +97,7 @@ export default {
   transition: all 0.7s cubic-bezier(0.230, 1.000, 0.320, 1.000);
   
   .card-title {
-    margin-top: 11.3rem;
+    margin-top: 11rem;
     margin-bottom: auto;
     padding: .3rem 0;
     background: white;
@@ -155,7 +149,6 @@ export default {
       border-radius: 25px;
       background-color: rgba(255, 112, 67, 0.7);
     }
- 
   }
 }
  .card-footer {

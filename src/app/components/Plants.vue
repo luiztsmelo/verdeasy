@@ -52,7 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "./../scss/style.scss";
-@import "./../scss/mixinsPlants.scss";
 
 .container-card {
   background: rgba(30, 30, 30, 0.93);

@@ -13,21 +13,21 @@
           <h3 class="card-title">{{ plant.name }}</h3>
             
             <div class="card-bar">
-              <div id="progress-bar-sun" style="width: 90%"></div>
+              <div id="progress-bar-sun" :style="'width:' + (plant.sun * 10) + '%'"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Sol</h4>
               <p id="more">+</p>
             </div>
 
             <div class="card-bar">
-              <div id="progress-bar-water" style="width: 40%"></div>
+              <div id="progress-bar-water" :style="'width:' + (plant.water * 10) + '%'"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Rega</h4>
               <p id="more">+</p>
             </div>
 
             <div class="card-bar">
-              <div id="progress-bar-care" style="width: 70%"></div>
+              <div id="progress-bar-care" :style="'width:' + (plant.care * 10) + '%'"></div>
               <p id="less">-</p>
                 <h4 class="card-subtitle">Cuidados</h4>
               <p id="more">+</p>
@@ -49,9 +49,6 @@ import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
-  methods: {
-  
-  }
 };
 </script>
 
@@ -123,14 +120,14 @@ export default {
     transform: translateY(-1.87rem);
   }
   #less {
-    font-weight: 600;
+    font-family: $fontText;
     float: left;
     margin: auto;
     padding: 0 .5rem;
     transform: translateY(-1.4rem);
   }
   #more {
-    font-weight: 600;
+    font-family: $fontText;
     float: right;
     margin: -1.7rem auto;
     padding: 0 .5rem;

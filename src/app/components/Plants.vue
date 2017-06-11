@@ -2,11 +2,12 @@
   <div class="container-card">
     
     <h2 class="title-row">Ervas Aromáticas</h2>
+    
     <div class="arrow-left">
       <img src="./../../../static/arrowL.png">
     </div>
     
-    <div class="row-cards">
+    <div class="row-cards" :style="{ 'transform': 'translateX(' + moveCardsLeft + ')' }">
       
       <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
         
@@ -41,10 +42,12 @@
         </div>
       </div>
     </div>
-    <div class="arrow-right">
+    
+    <div class="arrow-right" @click="moveCardsLeft">
       <img src="./../../../static/arrowR.png">
     </div>
-  </div>
+
+  </div> 
 </template>
 
 <script>
@@ -52,6 +55,16 @@ import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
+  data() {
+    return {
+      moveCardsLeftWidth: '-55rem',
+    }
+  },
+  methods: {
+    moveCardsLeft() {
+      this.moveCardsLeftWidth
+    }
+  }
 };
 </script>
 
@@ -65,16 +78,17 @@ export default {
   white-space: nowrap;
   width: 100%;
   overflow-x: hidden;
+  
   .title-row {
     margin: 0;
     padding: 1.2rem 0 .8rem 3.3rem;
-    font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 600;
     color: $whitegreen;
   }
   .arrow-left {
     display: inline-block;
+    position: absolute;
     float: left;
     cursor: pointer;
     height: 13rem;
@@ -93,7 +107,7 @@ export default {
     }
   }
   .arrow-right {
-    display: inline-block;
+    display: fixed;
     float: right;
     cursor: pointer;
     height: 13rem;
@@ -123,6 +137,8 @@ export default {
       background-repeat: no-repeat;
       background-size: 100% 11.3rem;
       transition: .3s ease;
+      transform: translateX(3rem);
+      /*transform: translateX(-40.25rem);*/
       &:hover .card-content{
         transform: translate(0, -90%);
       }
@@ -143,7 +159,7 @@ export default {
   .card-title {
     margin-top: 11rem;
     margin-bottom: auto;
-    padding: .3rem 0;
+    padding: .22rem 0;
     background: $whitegreen;
     font-size: 1.3rem;
     font-weight: 300;
@@ -155,7 +171,7 @@ export default {
     position: relative;
     text-align: center;
     font-weight: 400;
-    transform: translateY(-1.87rem);
+    transform: translateY(-1.67rem);
   }
   #less {
     font-family: $fontText;
@@ -179,17 +195,17 @@ export default {
     height: 1.4rem;
     background-color: rgba(177, 177, 177, 0.4);
     #progress-bar-sun {
-      height: 1.4rem;
+      height: 1.3rem;
       border-radius: 25px;
       background-color: rgba(255, 238, 88, 0.7);
     }
     #progress-bar-water {
-      height: 1.4rem;
+      height: 1.3rem;
       border-radius: 25px;
       background-color: rgba(130, 177, 255, 0.7);
     }
     #progress-bar-care {
-      height: 1.4rem;
+      height: 1.3rem;
       border-radius: 25px;
       background-color: rgba(255, 112, 67, 0.7);
     }
@@ -197,11 +213,11 @@ export default {
 }
  .card-footer {
     #footer-subtitle {
-      margin: auto 1rem;
+      margin: auto 2rem;
       padding-top: .4rem; 
       display: block;
       position: relative;
       text-align: center;
-      }
     }
+  }   
 </style>

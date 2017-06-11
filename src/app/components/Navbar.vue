@@ -63,7 +63,7 @@ ul {
   color: white;
   font-size: 1.15rem;
   font-weight: $fontThin;
-  transition: .3s ease-in-out;
+  transition: .222s ease-in-out;
 }
 
 .link:hover {

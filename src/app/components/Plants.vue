@@ -46,6 +46,51 @@
     <div class="arrow-right" @click="moveCardsLeft">
       <img src="./../../../static/arrowR.png">
     </div>
+    <h2 class="title-row">Ervas Aromáticas</h2>
+    
+    <div class="arrow-left">
+      <img src="./../../../static/arrowL.png">
+    </div>
+    
+    <div class="row-cards" :style="{ 'transform': 'translateX(' + moveCardsLeft + ')' }">
+      
+      <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
+        
+        <div class="card-content">
+          <h3 class="card-title">{{ plant.name }}</h3>
+            
+            <div class="card-bar">
+              <div id="progress-bar-sun" :style="'width:' + (plant.sun * 10) + '%'"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Sol</h4>
+              <p id="more">+</p>
+            </div>
+
+            <div class="card-bar">
+              <div id="progress-bar-water" :style="'width:' + (plant.water * 10) + '%'"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Rega</h4>
+              <p id="more">+</p>
+            </div>
+
+            <div class="card-bar">
+              <div id="progress-bar-care" :style="'width:' + (plant.care * 10) + '%'"></div>
+              <p id="less">-</p>
+                <h4 class="card-subtitle">Cuidados</h4>
+              <p id="more">+</p>
+            </div>
+
+          <div class="card-footer">
+            <h4 id="footer-subtitle">Mais informações</h4>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    
+    <div class="arrow-right" @click="moveCardsLeft">
+      <img src="./../../../static/arrowR.png">
+    </div>
 
   </div> 
 </template>
@@ -91,7 +136,7 @@ export default {
     position: absolute;
     float: left;
     cursor: pointer;
-    height: 13rem;
+    height: 12rem;
     transition: .4s ease;
     img {
       margin: 5rem 0;
@@ -107,12 +152,13 @@ export default {
     }
   }
   .arrow-right {
+    position: absolute;
     display: fixed;
     float: right;
     cursor: pointer;
-    height: 13rem;
+    height: 12rem;
     transition: .4s ease;
-    transform: translateY(-15.25rem);
+    transform: translate(80.7rem, -14.25rem);
     img {
       margin: 5rem 0;
       width: 3rem;
@@ -130,21 +176,18 @@ export default {
     .card {
       display: inline-block;
       margin: 0 .3rem 2rem .3rem;
-      height: 13rem;
+      height: 12rem;
       width: 14rem;
       cursor: pointer;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: 100% 11.3rem;
+      background-size: 100% 10rem;
       transition: .3s ease;
       transform: translateX(3rem);
+   
       /*transform: translateX(-40.25rem);*/
       &:hover .card-content{
         transform: translate(0, -90%);
-      }
-      &:hover .card-title {
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
@@ -157,9 +200,9 @@ export default {
   transition: all 0.7s cubic-bezier(0.230, 1.000, 0.320, 1.000);
   
   .card-title {
-    margin-top: 11rem;
+    margin-top: 10rem;
     margin-bottom: auto;
-    padding: .22rem 0;
+    padding: .2rem 0;
     background: $whitegreen;
     font-size: 1.3rem;
     font-weight: 300;
@@ -190,22 +233,22 @@ export default {
   .card-bar {
     position: relative;
     border-radius: 25px;
-    margin: .777rem auto;
+    margin: .85rem auto;
     width: 95%;
-    height: 1.4rem;
+    height: 1.2rem;
     background-color: rgba(177, 177, 177, 0.4);
     #progress-bar-sun {
-      height: 1.3rem;
+      height: 1.2rem;
       border-radius: 25px;
       background-color: rgba(255, 238, 88, 0.7);
     }
     #progress-bar-water {
-      height: 1.3rem;
+      height: 1.2rem;
       border-radius: 25px;
       background-color: rgba(130, 177, 255, 0.7);
     }
     #progress-bar-care {
-      height: 1.3rem;
+      height: 1.2rem;
       border-radius: 25px;
       background-color: rgba(255, 112, 67, 0.7);
     }
@@ -213,11 +256,12 @@ export default {
 }
  .card-footer {
     #footer-subtitle {
-      margin: auto 2rem;
-      padding-top: .4rem; 
-      display: block;
-      position: relative;
+      margin: 1rem auto;
+      padding: .2rem 0;
       text-align: center;
+      width: 95%;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 25px;
     }
   }   
 </style>

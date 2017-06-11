@@ -61,7 +61,7 @@ export default {
     }
   },
   methods: {
-   
+
   }
 };
 </script>
@@ -85,11 +85,10 @@ export default {
     color: $offwhite;
   }
   .arrow-left {
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     height: 12rem;
     transition: .3s ease;
-    transform: translateY(-12.777rem);
     z-index: 1;
     img {
       margin: 5rem 0;
@@ -105,11 +104,11 @@ export default {
     }
   }
   .arrow-right {
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     height: 12rem;
     transition: .3s ease;
-    transform: translate(81.5rem, -27.1rem);
+    transform: translate(81.5rem, -14.3rem);
     z-index: 1;
     img {
       margin: 5rem 0;
@@ -119,9 +118,6 @@ export default {
     }
     &:hover {
       background-color: rgba(0, 0, 0, 0.6);
-    }
-     &:hover img {
-      opacity: 1;
     }
   }
   .row-cards {

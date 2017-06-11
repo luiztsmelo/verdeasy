@@ -46,51 +46,6 @@
     <div class="arrow-right" @click="moveCardsLeft">
       <img src="./../../../static/arrowR.png">
     </div>
-    <h2 class="title-row">Ervas Aromáticas</h2>
-    
-    <div class="arrow-left">
-      <img src="./../../../static/arrowL.png">
-    </div>
-    
-    <div class="row-cards" :style="{ 'transform': 'translateX(' + moveCardsLeft + ')' }">
-      
-      <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
-        
-        <div class="card-content">
-          <h3 class="card-title">{{ plant.name }}</h3>
-            
-            <div class="card-bar">
-              <div id="progress-bar-sun" :style="'width:' + (plant.sun * 10) + '%'"></div>
-              <p id="less">-</p>
-                <h4 class="card-subtitle">Sol</h4>
-              <p id="more">+</p>
-            </div>
-
-            <div class="card-bar">
-              <div id="progress-bar-water" :style="'width:' + (plant.water * 10) + '%'"></div>
-              <p id="less">-</p>
-                <h4 class="card-subtitle">Rega</h4>
-              <p id="more">+</p>
-            </div>
-
-            <div class="card-bar">
-              <div id="progress-bar-care" :style="'width:' + (plant.care * 10) + '%'"></div>
-              <p id="less">-</p>
-                <h4 class="card-subtitle">Cuidados</h4>
-              <p id="more">+</p>
-            </div>
-
-          <div class="card-footer">
-            <h4 id="footer-subtitle">Mais informações</h4>
-          </div>
-        
-        </div>
-      </div>
-    </div>
-    
-    <div class="arrow-right" @click="moveCardsLeft">
-      <img src="./../../../static/arrowR.png">
-    </div>
 
   </div> 
 </template>
@@ -102,13 +57,11 @@ export default {
   mixins: [plantsData],
   data() {
     return {
-      moveCardsLeftWidth: '-55rem',
+      moveCardsLeft: '-0rem',
     }
   },
   methods: {
-    moveCardsLeft() {
-      this.moveCardsLeftWidth
-    }
+   
   }
 };
 </script>
@@ -117,9 +70,9 @@ export default {
 @import "./../scss/style.scss";
 
 .container-card {
-  background: rgba(20, 20, 20, 0.93);
-  color: white;
-  padding: 0 0 0 .7rem;
+  background: rgb(50, 50, 50);
+  color: $offwhite;
+  padding: 0;
   white-space: nowrap;
   width: 100%;
   overflow-x: hidden;
@@ -128,16 +81,16 @@ export default {
     margin: 0;
     padding: 1.2rem 0 .8rem 3.3rem;
     text-transform: uppercase;
-    font-weight: 600;
-    color: $whitegreen;
+    font-weight: 400;
+    color: $offwhite;
   }
   .arrow-left {
-    display: inline-block;
-    position: absolute;
-    float: left;
+    position: fixed;
     cursor: pointer;
     height: 12rem;
-    transition: .4s ease;
+    transition: .3s ease;
+    transform: translateY(-12.777rem);
+    z-index: 1;
     img {
       margin: 5rem 0;
       width: 3rem;
@@ -145,20 +98,19 @@ export default {
       opacity: 0;
     }
     &:hover {
-      background-color: rgba(60, 60, 60, 0.3);
+      background-color: rgba(0, 0, 0, 0.6);
     }
     &:hover img {
       opacity: 1;
     }
   }
   .arrow-right {
-    position: absolute;
-    display: fixed;
-    float: right;
+    position: fixed;
     cursor: pointer;
     height: 12rem;
-    transition: .4s ease;
-    transform: translate(80.7rem, -14.25rem);
+    transition: .3s ease;
+    transform: translate(81.5rem, -27.1rem);
+    z-index: 1;
     img {
       margin: 5rem 0;
       width: 3rem;
@@ -166,7 +118,7 @@ export default {
       opacity: 1;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6);
     }
      &:hover img {
       opacity: 1;
@@ -203,11 +155,11 @@ export default {
     margin-top: 10rem;
     margin-bottom: auto;
     padding: .2rem 0;
-    background: $whitegreen;
+    background: $offwhite;
     font-size: 1.3rem;
     font-weight: 300;
     text-align: center;
-    color: black;
+    color: $offblack;
     transition: .5s ease;
   }
   .card-subtitle {

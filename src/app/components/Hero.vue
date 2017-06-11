@@ -21,9 +21,10 @@ export default {
 .hero {
   display: block;
   padding: 3rem 0 8rem 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   justify-content: center;
   flex-wrap: wrap;
+
   .title {
     position: relative;
     color: white;

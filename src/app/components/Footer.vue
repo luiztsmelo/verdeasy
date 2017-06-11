@@ -17,7 +17,7 @@ footer {
   display: flex;
   justify-content: center;
   background: $green;
-  color: white;
+  color: $offwhite;
 
   p {
     font-family: $fontMain;

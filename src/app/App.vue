@@ -32,8 +32,8 @@ export default {
 body {
   background-image: url('./../../static/bgimg1.jpg');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
-}
+} 
 </style>

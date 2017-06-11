@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'navbar'
+  
 }
 </script>
 
@@ -27,13 +27,13 @@ header {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   padding: 0.5rem 3rem 0.5rem 3rem;
 }
 .logo {
-  width: 4rem;
+  width: 4.5rem;
   height: auto;
-  margin-left: 2rem;
+  margin: 0 0 0 2rem;
 }
 
 a {
@@ -53,7 +53,7 @@ nav {
 
 ul {
   padding: 0;
-  margin: 0 1.2rem 0 0;
+  margin: 0 2rem 0 0;
   display: flex;
   list-style: none;
   justify-content: flex-end;

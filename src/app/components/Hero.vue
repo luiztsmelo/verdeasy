@@ -20,14 +20,14 @@ export default {
 
 .hero {
   display: block;
-  padding: 4rem 0 9rem 0;
-  background: rgba(0, 0, 0, 0.2);
+  padding: 3rem 0 8rem 0;
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   flex-wrap: wrap;
   .title {
     position: relative;
     color: white;
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: 700;
     text-align: center;
     font-family: $fontHero;
@@ -39,7 +39,7 @@ export default {
   .subtitle {
     position: relative;
     color: white;
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     text-align: center;
     line-height: 0.7;
     font-family: $fontHero;
@@ -52,10 +52,9 @@ export default {
     position: absolute;
     left: 38%;
     color: white;
-    font-size: 8rem;
+    font-size: 8.5rem;
     font-family: $fontBrand;
     opacity: 0;
-    z-index: 0;
     animation: verdeasyAnimation 30s ease-in infinite 0s;
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container-card">
     
-    <h2 class="title-row">Ervas Aromáticas</h2>
+    <h2 class="title-row">Ervas</h2>
 
     <div class="row-cards">
 
@@ -54,16 +54,16 @@ export default {
 @import "./../scss/style.scss";
 
 .container-card {
-  background: rgba(30, 30, 30, 0.93);
+  background: rgba(20, 20, 20, 0.93);
   color: white;
-  padding: 0 3rem;
+  padding: 0 4.2rem;
   .title-row {
     margin: 0;
     padding: 1.2rem 0 .7rem 1.7rem;
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 600;
-    color: rgb(222, 222, 222);
+    color: $whitegreen;
   }
   .row-cards {
     display: flex;
@@ -99,7 +99,7 @@ export default {
     margin-top: 11rem;
     margin-bottom: auto;
     padding: .3rem 0;
-    background: white;
+    background: $whitegreen;
     font-size: 1.3rem;
     font-weight: 300;
     text-align: center;

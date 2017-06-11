@@ -1,10 +1,13 @@
 <template>
   <div class="container-card">
     
-    <h2 class="title-row">Ervas</h2>
-
+    <h2 class="title-row">Ervas Aromáticas</h2>
+    <div class="arrow-left">
+      <img src="./../../../static/arrowL.png">
+    </div>
+    
     <div class="row-cards">
-
+      
       <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
         
         <div class="card-content">
@@ -38,7 +41,9 @@
         </div>
       </div>
     </div>
-    
+    <div class="arrow-right">
+      <img src="./../../../static/arrowR.png">
+    </div>
   </div>
 </template>
 
@@ -56,20 +61,60 @@ export default {
 .container-card {
   background: rgba(20, 20, 20, 0.93);
   color: white;
-  padding: 0 4.2rem;
+  padding: 0 0 0 .7rem;
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: hidden;
   .title-row {
     margin: 0;
-    padding: 1.2rem 0 .7rem 1.7rem;
+    padding: 1.2rem 0 .8rem 3.3rem;
     font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 600;
     color: $whitegreen;
   }
+  .arrow-left {
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    height: 13rem;
+    transition: .4s ease;
+    img {
+      margin: 5rem 0;
+      width: 3rem;
+      height: 3rem;
+      opacity: 0;
+    }
+    &:hover {
+      background-color: rgba(60, 60, 60, 0.3);
+    }
+    &:hover img {
+      opacity: 1;
+    }
+  }
+  .arrow-right {
+    display: inline-block;
+    float: right;
+    cursor: pointer;
+    height: 13rem;
+    transition: .4s ease;
+    transform: translateY(-15.25rem);
+    img {
+      margin: 5rem 0;
+      width: 3rem;
+      height: 3rem;
+      opacity: 1;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+     &:hover img {
+      opacity: 1;
+    }
+  }
   .row-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     .card {
+      display: inline-block;
       margin: 0 .3rem 2rem .3rem;
       height: 13rem;
       width: 14rem;
@@ -77,7 +122,7 @@ export default {
       overflow: hidden;
       background-repeat: no-repeat;
       background-size: 100% 11.3rem;
-      transition: .35s ease;
+      transition: .3s ease;
       &:hover .card-content{
         transform: translate(0, -90%);
       }

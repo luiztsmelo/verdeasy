@@ -1,11 +1,9 @@
 <template>
-  <section class="hero">
-    <div class="hero-info">
-      <h2 class="verdeasy">VERDEASY</h2>
-      <h2 class="title">MORA EM APARTAMENTO?</h2>
-      <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
-    </div>
-  </section>
+  <div class="hero">
+    <h2 class="verdeasy">VERDEASY</h2>
+    <h2 class="title">MORA EM APARTAMENTO?</h2>
+    <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
+  </div>
 </template>
 
 <script>
@@ -19,43 +17,39 @@ export default {
 @import "./../scss/style.scss";
 
 .hero {
-  display: block;
-  padding: 3rem 0 8rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 7rem 0;
+  
   background: rgba(0, 0, 0, 0.4);
-  justify-content: center;
-  flex-wrap: wrap;
-
   .title {
-    position: relative;
     color: white;
-    font-size: 5.5rem;
-    font-weight: 700;
+    font-size: 4.5rem;
     text-align: center;
     font-family: $fontHero;
+    line-height: 0.7;
     opacity: 0;
-    z-index: 0;
     animation: titleAnimation 36s linear infinite 0s;
     animation-iteration-count: 1;  
   }
   .subtitle {
-    position: relative;
     color: white;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: center;
     line-height: 0.7;
     font-family: $fontHero;
     opacity: 0;
-    z-index: 0;
     animation: subtitleAnimation 36s ease-in infinite 0s;
     animation-iteration-count: 1; 
   }
   .verdeasy {
-    position: absolute;
-    left: 38%;
+    text-align: center;
     color: white;
-    font-size: 8.5rem;
+    font-size: 6rem;
     font-family: $fontBrand;
+    line-height: 0;
     opacity: 0;
+    transform: translateY(12.3rem);
     animation: verdeasyAnimation 30s ease-in infinite 0s;
   }
 }

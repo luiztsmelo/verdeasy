@@ -9,7 +9,10 @@
     
     <div class="row-cards" :style="{ 'transform': 'translateX(' + moveCardsLeft + ')' }">
       
-      <div class="card" v-for="plant in plants" :style="{ 'background-image': 'url(' + plant.img + ')' }">
+      <div class="card" 
+        v-for="plant in plants" 
+        @click="showModal = !showModal" 
+        :style="{ 'background-image': 'url(' + plant.img + ')' }">
         
         <div class="card-content">
           <h3 class="card-title">{{ plant.name }}</h3>
@@ -80,6 +83,7 @@ export default {
     padding: 1.2rem 0 .8rem 3.1rem;
     text-transform: uppercase;
     font-weight: 400;
+    font-style: $fontBrand;
     color: $offwhite;
   }
   .arrow-left {

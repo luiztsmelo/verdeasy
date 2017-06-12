@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+
+    <modal v-show="showModal">
+      <app-plantmodal></app-plantmodal>
+    </modal>
+
     <app-navbar></app-navbar>
     <router-view></router-view>
     <app-hero></app-hero>
@@ -13,16 +18,22 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Plants from './components/Plants';
 import Footer from './components/Footer';
+import PlantModal from './components/PlantModal';
 
 export default {
   name: 'app',
-
   components: {
     'app-navbar': Navbar,
     'app-hero': Hero,
     'app-plants': Plants,
     'app-footer': Footer,
+    'app-plantmodal': PlantModal,
   },
+  data() {
+    return {
+      showModal: false,
+    }
+  }
 }
 </script>
 

@@ -21,11 +21,11 @@ $offblack: rgb(40, 40, 40);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Amatica+SC|Amatic+SC|Open+Sans:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Shadows+Into+Light+Two|Shadows+Into+Light|Open+Sans:400,400i,700');
 
-$fontBrand: 'Amatic SC', sans-serif;
+$fontBrand: 'Shadows Into Light', cursive;
+$fontHero: 'Shadows Into Light Two', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
-$fontHero: 'Amatica SC', sans-serif;
 $fontText: 'Open Sans', sans-serif;
 
 $fontThin: 100;
@@ -56,41 +56,4 @@ a, button, li {
 p {
 	font-family: $fontText;
 	font-size: 1.1rem;
-}
-
-//******************************************//
-// FLEXBOX GRID
-//******************************************//
-.row {
-  display: flex;
-  flex-direction: column;
-}
-
-.col {
-  flex: 1;
-  margin: 0.1em;
-  padding: 1em;
-  color: white;
-  background-color: black;
-  opacity: 0.8;
-}
-
-@media screen and (min-width: 500px){
-  .row {
-    flex-flow: row wrap;
-  }
-
-  .col {
-    flex: 1 1 40%;
-  }
-
-  .row:nth-child(3) .col {
-    flex: 1;
-  }
-}
-
-@media screen and (min-width: 900px){
-  .col {
-    flex: 1;
-  }
 }

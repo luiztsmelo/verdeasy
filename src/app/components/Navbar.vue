@@ -35,7 +35,7 @@ a {
 
 .brand {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.7rem;
   font-family: $fontBrand;
   color: white;
 }

@@ -3,11 +3,12 @@
     
     <h2 class="title-row">Ervas Aromáticas</h2>
     
-    <div class="arrow-left">
+    <div class="arrow-left" @click="moveCardsRight">
       <img src="./../../../static/arrowL.png">
     </div>
     
-    <div class="row-cards" :style="{ 'transform': 'translateX(' + moveCardsLeft + ')' }">
+    <div class="row-cards" 
+      :style="{ 'transform': 'translate(' + moveCardsLeftWidth + ')' }">
       
       <div class="card" 
         v-for="plant in plants" 
@@ -46,7 +47,7 @@
       </div>
     </div>
     
-    <div class="arrow-right" @click="moveCardsLeft">
+    <div class="arrow-right" @click.capture="moveCardsLeft">
       <img src="./../../../static/arrowR.png">
     </div>
 
@@ -60,11 +61,18 @@ export default {
   mixins: [plantsData],
   data() {
     return {
-      moveCardsLeft: '-0rem',
+      moveCardsLeftWidth: '',
     }
   },
   methods: {
-
+    moveCardsLeft() {
+      this.moveCardsLeftWidth = '-80%'
+        return moveCardsLeftWidth;
+    },
+    moveCardsRight() {
+      this.moveCardsLeftWidth = '0%'
+        return moveCardsLeftWidth;
+    }
   }
 };
 </script>
@@ -123,6 +131,7 @@ export default {
     }
   }
   .row-cards {
+    transition: .5s ease;
     .card {
       display: inline-block;
       margin: 0 .2rem 2rem .2rem;

@@ -7,10 +7,13 @@
     <meta name="description" content="Plants">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <style>
-      [v-cloak] {
-        display: none !important;
-        content: 'Loading...';
-        background-color: green;
+      [v-cloak] > * { display:none !important; }
+      [v-cloak]::before { 
+        content: "Loading...";
+        display: flex;
+        margin: 0;
+        font-size: 2rem;
+        font-family: sans-serif;
       }
     </style>
   </head>

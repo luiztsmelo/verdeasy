@@ -70,16 +70,14 @@ export default {
 @import "./../scss/style.scss";
 
 .container-card {
-  background: rgb(50, 50, 50);
+  background: rgb(50, 57, 50);
   color: $offwhite;
-  padding: 0;
   white-space: nowrap;
-  width: 100%;
   overflow-x: hidden;
   
   .title-row {
     margin: 0;
-    padding: 1.2rem 0 .8rem 3.3rem;
+    padding: 1.2rem 0 .8rem 3.1rem;
     text-transform: uppercase;
     font-weight: 400;
     color: $offwhite;
@@ -108,7 +106,7 @@ export default {
     cursor: pointer;
     height: 12rem;
     transition: .3s ease;
-    transform: translate(81.5rem, -14.3rem);
+    transform: translate(81.3rem, -14.3rem);
     z-index: 1;
     img {
       margin: 5rem 0;
@@ -123,7 +121,7 @@ export default {
   .row-cards {
     .card {
       display: inline-block;
-      margin: 0 .3rem 2rem .3rem;
+      margin: 0 .2rem 2rem .2rem;
       height: 12rem;
       width: 14rem;
       cursor: pointer;
@@ -169,14 +167,14 @@ export default {
     float: left;
     margin: auto;
     padding: 0 .5rem;
-    transform: translateY(-1.4rem);
+    transform: translateY(-1.3rem);
   }
   #more {
     font-family: $fontText;
     float: right;
     margin: -1.7rem auto;
     padding: 0 .5rem;
-    transform: translateY(-2rem);
+    transform: translateY(-1.9rem);
   }
   .card-bar {
     position: relative;

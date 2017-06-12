@@ -30,7 +30,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg1.jpg');
+  background-image: url('./../../static/bgimg2.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

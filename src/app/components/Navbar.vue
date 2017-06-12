@@ -1,6 +1,5 @@
 <template>
   <header>
-    <a href="/"><img class="logo" src="./../../../static/verdeasyG.png" alt="verdeasy logo"></a>
     <a href="/"><h1 class="brand">verdeasy</h1></a>
     <nav>
       <ul>
@@ -28,32 +27,23 @@ header {
   flex: 1 0 0;
   flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.4);
-  padding: 0.5rem 3rem 0.5rem 3rem;
+  padding: 0.5rem 4rem 0.5rem 4rem;
 }
-.logo {
-  width: 4.5rem;
-  height: auto;
-  margin: 0 0 0 2rem;
-}
-
 a {
   text-decoration: none;
 }
 
 .brand {
   margin: 0;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-family: $fontBrand;
   color: white;
 }
-
 nav {
   flex: 3 0 0;
 }
 
 ul {
-  padding: 0;
-  margin: 0 2rem 0 0;
   display: flex;
   list-style: none;
   justify-content: flex-end;
@@ -65,7 +55,6 @@ ul {
   font-weight: $fontThin;
   transition: .222s ease-in-out;
 }
-
 .link:hover {
   color: $lightgreen;
 }

@@ -1,31 +1,35 @@
 <template>
   <div id="app">
 
-    <modal v-show="showModal">
-      <app-plantmodal></app-plantmodal>
-    </modal>
-
-    <app-navbar></app-navbar>
+    <!--NAVBAR-->
+    <header>
+      <a href="/"><h1 class="brand">verdeasy</h1></a>
+      <nav>
+        <ul>
+          <li><router-link class="link" to="/sobre">Sobre</router-link></li>
+          <li><router-link class="link" to="/blog">Blog</router-link></li>
+          <li><router-link class="link" to="#">Contato</router-link></li>
+          <router-link to="/"><button class="login">Entrar</button></router-link>
+        </ul>
+      </nav>
+    </header> <!--NAVBAR-->
+    
+    <app-plantmodal v-show="showModal"></app-plantmodal>
+    
     <router-view></router-view>
-    <app-hero></app-hero>
-    <app-plants></app-plants>
+    
     <app-footer></app-footer>
+
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Plants from './components/Plants';
 import Footer from './components/Footer';
 import PlantModal from './components/PlantModal';
 
 export default {
   name: 'app',
   components: {
-    'app-navbar': Navbar,
-    'app-hero': Hero,
-    'app-plants': Plants,
     'app-footer': Footer,
     'app-plantmodal': PlantModal,
   },
@@ -47,4 +51,63 @@ body {
   background-attachment: fixed;
   background-size: cover;
 } 
+
+// NAVBAR
+header {
+  display: flex;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.3);
+  .brand {
+    margin: 0;
+    font-size: 2.7rem;
+    font-family: $fontBrand;
+    color: white;
+  }
+  nav {
+    flex: 3 0 0;
+    ul {
+      display: flex;
+      margin: 0;
+      justify-content: flex-end;
+      padding: 1rem 0;
+      .link {
+        padding: 0 0.7rem;
+        color: white;
+        font-size: 1.15rem;
+        font-weight: $fontThin;
+        transition: .222s ease;
+      &:hover {
+        color: $lightgreen;
+        }
+      }
+      button {
+      display: flex;
+      justify-content: flex-end;
+      background-color: $green;
+      border: none;
+      font-weight: $fontThin;
+      font-size: 1.25rem;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+      transition: .222s ease;
+      &:hover {
+        
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
 </style>

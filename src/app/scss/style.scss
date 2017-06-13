@@ -12,7 +12,7 @@ html {
 //******************************************//
 // COLOR PALETTE
 //******************************************//
-$grey: rgb(60, 60, 60);
+$grey: rgb(50, 55, 50);
 $green: rgb(141, 180, 92);
 $lightgreen: rgb(174, 213, 129);
 $offwhite: rgb(245, 245, 245);
@@ -49,11 +49,14 @@ h3 { font-size: 1.2rem; }
 h4 { font-size: 1.094rem; }
 h5 { font-size: 0.8rem; }
 
-a, button, li {
+a, button, ul, li {
 	font-family: $fontMain;
+	text-decoration: none;
+	list-style: none;
 }
 
 p {
 	font-family: $fontText;
 	font-size: 1.1rem;
 }
+

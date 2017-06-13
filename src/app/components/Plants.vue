@@ -6,7 +6,7 @@
       <h2 class="verdeasy">VERDEASY</h2>
       <h2 class="title">MORA EM APARTAMENTO?</h2>
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
-    </div>
+    </div><!--HERO-->
 
     <!--PLANTS-->
     <div class="container-card">
@@ -60,7 +60,8 @@
       <div class="arrow-right" @click.capture="moveCardsLeft">
         <img src="./../../../static/arrowR.png">
       </div>
-    </div>
+    </div><!--PLANTS-->
+
   </div> 
 </template>
 
@@ -141,7 +142,7 @@ export default {
     }
   }
   .row-cards {
-    transition: .7s ease;
+    transition: all .7s ease;
     .card {
       display: inline-block;
       margin: 0 .2rem 2rem .2rem;
@@ -151,12 +152,12 @@ export default {
       overflow: hidden;
       background-repeat: no-repeat;
       background-size: 100% 10rem;
-      transition: .3s ease;
+      transition: all 0.4s ease;
       transform: translateX(3rem);
    
       /*transform: translateX(-40.25rem);*/
       &:hover .card-content{
-        transform: translate(0, -90%);
+        transform: translate(0, -85%);
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
@@ -165,7 +166,7 @@ export default {
     }
   }
   .card-content {
-    transition: all 0.7s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    transition: all 0.4s ease;
     .card-title {
       margin-top: 10rem;
       margin-bottom: auto;

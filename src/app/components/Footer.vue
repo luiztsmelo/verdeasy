@@ -18,6 +18,9 @@ footer {
   justify-content: center;
   background: $green;
   color: $offwhite;
+  position: absolute; 
+  left: 0 ; right: 0; bottom: 0; 
+  height: 3rem;
 
   p {
     font-family: $fontMain;

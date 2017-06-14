@@ -54,6 +54,11 @@ body {
   background-size: cover;
 } 
 
+#app {
+  flex: 1 0 auto;
+  min-height: 100%;
+}
+
 // NAVBAR
 header {
   display: flex;

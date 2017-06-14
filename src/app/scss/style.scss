@@ -2,6 +2,7 @@
 
 html {
   box-sizing: border-box;
+	height: 100vh;
 }
 *,
 *:before,
@@ -9,12 +10,21 @@ html {
   box-sizing: inherit;
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	min-height:100vh; 
+  position:relative; 
+	padding-bottom: 3rem; 
+
+}
+
 //******************************************//
 // COLOR PALETTE
 //******************************************//
 $grey: rgb(40, 45, 40);
-$green: rgb(141, 180, 92);
-$lightgreen: rgb(141, 240, 92);
+$green: rgb(92, 199, 115);
+$lightgreen: rgb(141, 200, 92);
 $offwhite: rgb(245, 245, 245);
 $offblack: rgb(40, 40, 40);
 

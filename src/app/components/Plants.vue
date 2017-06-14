@@ -159,8 +159,6 @@ export default {
       background-size: 100% 10rem;
       transition: all 0.4s ease;
       transform: translateX(3rem);
-   
-      /*transform: translateX(-40.25rem);*/
       &:hover .card-content{
         transform: translate(0, -42%);
       }
@@ -190,18 +188,20 @@ export default {
       transform: translateY(-1.67rem);
     }
     #less {
-      font-family: $fontText;
+      font-family: $fontMain;
       float: left;
       margin: auto;
       padding: 0 .5rem;
-      transform: translateY(-1.3rem);
+      font-size: 1.7rem;
+      transform: translateY(-1.7rem);
     }
     #more {
-      font-family: $fontText;
+      font-family: $fontMain;
       float: right;
       margin: -1.7rem auto;
       padding: 0 .5rem;
-      transform: translateY(-1.9rem);
+      font-size: 1.5rem;
+      transform: translateY(-2.2rem);
     }
     .card-bar {
       position: relative;
@@ -213,7 +213,7 @@ export default {
       #progress-bar-sun {
         height: 1.2rem;
         border-radius: 25px;
-        background-color: rgba(255, 238, 88, 0.8);
+        background-color: rgba(245, 235, 85, 0.8);
       }
       #progress-bar-water {
         height: 1.2rem;

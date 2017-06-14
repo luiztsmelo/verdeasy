@@ -1,7 +1,9 @@
 <template>
   <div id="single-blog">
-    <h1 class="blog-title">{{ blog.title }}</h1>
-    <article class="blog-article">{{ blog.content }}</article>
+    <div class="box">
+      <h1 class="blog-title">{{ blog.title }}</h1>
+      <article class="blog-article">{{ blog.content }}</article>
+    </div>
   </div>
 </template>
 
@@ -30,16 +32,18 @@ export default {
   display: flex;
   flex-flow: column wrap;
   background: rgba(0, 0, 0, .2);
-  margin: .7rem auto;
-  width: 60%;
-  background-color: white;
-  .blog-title {
+  .box {
+    background-color: white;
+    margin: .7rem auto;
+    width: 60%;
+    .blog-title {
     padding: 0 1rem;
     line-height: 1;
     font-size: 2rem;
-  }
-  .blog-article {
-    padding: 0 1rem 1rem;
+    }
+    .blog-article {
+      padding: 0 1rem 1rem;
+    }
   }
 }
 </style>

@@ -31,7 +31,7 @@ export default {
   },
   filters: {
     snippet(value){
-      return value.slice(1, 150) + '...';
+      return value.slice(1, 200) + '...';
     }
   }
 }
@@ -42,9 +42,9 @@ export default {
 
 #blog {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   background: rgba(0, 0, 0, .2);
-  
+  height: 100%;
   .blog-card {
     margin: .7rem auto;
     width: 60%;

@@ -21,12 +21,12 @@ $offblack: rgb(40, 40, 40);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Shadows+Into+Light+Two|Shadows+Into+Light|Open+Sans:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Shadows+Into+Light+Two|Shadows+Into+Light|Raleway:400,400i,700');
 
 $fontBrand: 'Shadows Into Light', cursive;
 $fontHero: 'Shadows Into Light Two', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
-$fontText: 'Open Sans', sans-serif;
+$fontText: 'Raleway', sans-serif;
 
 $fontThin: 100;
 $fontLight: 300;
@@ -56,8 +56,8 @@ a, button, ul, li, label {
 	font-size: 1.3rem;
 }
 
-p {
+p, article {
 	font-family: $fontText;
-	font-size: 1rem;
+	font-size: 1.05rem;
 }
 

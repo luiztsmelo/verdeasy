@@ -47,7 +47,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg6.jpg');
+  background-image: url('./../../static/bgimg6ps.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -88,7 +88,7 @@ header {
         font-weight: $fontThin;
         transition: .222s ease;
       &:hover {
-        color: $lightgreen;
+        color: rgb(141, 222, 92);
         }
       }
       button {

@@ -45,7 +45,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg2.jpg');
+  background-image: url('./../../static/bgimg6.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -60,7 +60,7 @@ header {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   .brand {
     margin: 0;
     font-size: 2.7rem;
@@ -96,7 +96,7 @@ header {
       cursor: pointer;
       transition: .222s ease;
       &:hover {
-        
+        background-color: rgb(141, 220, 92);
         }
       }
     }

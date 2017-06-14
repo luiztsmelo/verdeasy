@@ -96,7 +96,9 @@ export default {
   color: $offwhite;
   white-space: nowrap;
   overflow-x: hidden;
-  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   .title-row {
     margin: 0;
     padding: 1.2rem 0 .8rem 3.1rem;
@@ -104,13 +106,15 @@ export default {
     font-weight: 400;
     font-style: $fontBrand;
     color: $offwhite;
+    font-size: 1.4rem;
   }
   .arrow-left {
     position: absolute;
     cursor: pointer;
     height: 12rem;
     transition: .3s ease;
-    z-index: 1;
+    transform: translate(0, 3.4rem);
+    z-index: 2;
     img {
       margin: 5rem 0;
       width: 3rem;
@@ -129,8 +133,8 @@ export default {
     cursor: pointer;
     height: 12rem;
     transition: .3s ease;
-    transform: translate(81.3rem, -14.3rem);
-    z-index: 1;
+    transform: translate(81.3rem, 3.4rem);
+    z-index: 2;
     img {
       margin: 5rem 0;
       width: 3rem;
@@ -142,12 +146,13 @@ export default {
     }
   }
   .row-cards {
+    display: flex;
     transition: all .7s ease;
     .card {
-      display: inline-block;
+      display: grid;
       margin: 0 .2rem 2rem .2rem;
       height: 12rem;
-      width: 14rem;
+      min-width: 14rem;
       cursor: pointer;
       overflow: hidden;
       background-repeat: no-repeat;
@@ -157,7 +162,7 @@ export default {
    
       /*transform: translateX(-40.25rem);*/
       &:hover .card-content{
-        transform: translate(0, -85%);
+        transform: translate(0, -42%);
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
@@ -204,21 +209,21 @@ export default {
       margin: .85rem auto;
       width: 95%;
       height: 1.2rem;
-      background-color: rgba(177, 177, 177, 0.4);
+      background-color: rgba(150, 150, 150, 0.5);
       #progress-bar-sun {
         height: 1.2rem;
         border-radius: 25px;
-        background-color: rgba(255, 238, 88, 0.7);
+        background-color: rgba(255, 238, 88, 0.8);
       }
       #progress-bar-water {
         height: 1.2rem;
         border-radius: 25px;
-        background-color: rgba(130, 177, 255, 0.7);
+        background-color: rgba(130, 177, 255, 0.8);
       }
       #progress-bar-care {
         height: 1.2rem;
         border-radius: 25px;
-        background-color: rgba(255, 112, 67, 0.7);
+        background-color: rgba(255, 112, 67, 0.8);
       }
     }
   }
@@ -241,7 +246,7 @@ export default {
   flex-direction: column;
   padding: 0 0 7rem 0;
   
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   .title {
     color: white;
     font-size: 4.5rem;

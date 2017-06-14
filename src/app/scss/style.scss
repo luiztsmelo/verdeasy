@@ -12,9 +12,9 @@ html {
 //******************************************//
 // COLOR PALETTE
 //******************************************//
-$grey: rgb(50, 55, 50);
+$grey: rgb(40, 45, 40);
 $green: rgb(141, 180, 92);
-$lightgreen: rgb(174, 213, 129);
+$lightgreen: rgb(141, 240, 92);
 $offwhite: rgb(245, 245, 245);
 $offblack: rgb(40, 40, 40);
 
@@ -43,20 +43,21 @@ h1, h2, h3, h4, h5 {
 	margin: 0.5em 0 0.5em 0;
 }
 
-h1 { font-size: 2.0rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.2rem; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.4rem; }
 h4 { font-size: 1.094rem; }
 h5 { font-size: 0.8rem; }
 
-a, button, ul, li {
+a, button, ul, li, label {
 	font-family: $fontMain;
 	text-decoration: none;
 	list-style: none;
+	font-size: 1.3rem;
 }
 
 p {
 	font-family: $fontText;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 

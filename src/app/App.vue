@@ -3,7 +3,7 @@
 
     <!--NAVBAR-->
     <header>
-      <a href="/"><h1 class="brand">verdeasy</h1></a>
+      <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
       <nav>
         <ul>
           <li><router-link class="link" to="/sobre">Sobre</router-link></li>

@@ -311,6 +311,7 @@ export default {
   }
 }
 
+//TABLET
 @media screen and (max-width: 768px){
   .hero {
     margin: 0;

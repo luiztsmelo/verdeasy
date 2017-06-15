@@ -87,7 +87,7 @@ export default {
   color: $offblack;
   margin: auto;
   border: none;
-  width: 70%;
+  width: 60%;
   height: 100%;
 }
 
@@ -117,7 +117,7 @@ export default {
   }
   #preview {
     margin: 5rem auto 1rem;
-    width: 70%;
+    width: 60%;
     padding: .5rem 1rem;
     background: white;
     color: black;
@@ -125,6 +125,9 @@ export default {
     border-radius: 20px;
     h2 {
       text-align: center;
+    }
+    h3 {
+      font-weight: 500;
     }
   }
   button {

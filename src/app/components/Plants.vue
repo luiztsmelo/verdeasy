@@ -156,14 +156,14 @@ export default {
       cursor: pointer;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: 100% 10rem;
+      background-size: 100% 9rem;
       transition: all 0.4s ease;
       transform: translateX(3rem);
       &:hover .card-content{
         transform: translate(0, -44%);
       }
       &:hover {
-        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
         background-size: 100% 13.3rem;
       }
     }
@@ -185,7 +185,7 @@ export default {
       position: relative;
       text-align: center;
       font-weight: 400;
-      transform: translateY(-1.67rem);
+      transform: translate(-.7rem, -1.67rem);
     }
     #less {
       font-family: $fontMain;
@@ -205,25 +205,21 @@ export default {
     }
     .card-bar {
       position: relative;
-    
       margin: .85rem auto;
       width: 95%;
       height: 1.2rem;
       background-color: rgba(150, 150, 150, 0.5);
       #progress-bar-sun {
         height: 1.2rem;
-  
-        background-color: rgba(245, 235, 85, 0.8);
+        background-color: rgba(245, 231, 118, 0.8);
       }
       #progress-bar-water {
         height: 1.2rem;
-    
-        background-color: rgba(130, 177, 255, 0.8);
+        background-color: rgba(100, 181, 246, 0.8);
       }
       #progress-bar-care {
         height: 1.2rem;
-    
-        background-color: rgba(255, 112, 67, 0.8);
+        background-color: rgba(239, 135, 105, 0.8);
       }
     }
   }
@@ -234,6 +230,7 @@ export default {
       text-align: center;
       width: 95%;
       font-size: 1.1rem;
+      transform: translateX(-.6rem);
     }
   }
 }

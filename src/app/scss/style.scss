@@ -28,7 +28,7 @@ $lightgreen: rgb(141, 200, 92);
 $white: rgb(255,255,255);
 $offblack: rgb(50, 50, 50);
 
-$bgopacity: rgba(0, 0, 0, 0.5);
+$bgopacity: rgba(0, 0, 0, 0.4);
 
 //******************************************//
 // FONTS
@@ -72,6 +72,8 @@ p {
 }
 article {
 	font-family: $fontText;
-	font-size: 1.1rem;
 	line-height: 1.7;
 }
+
+$fontSizeBlogTitle: 2.2rem;
+$fontSizeBlogArticle: 1.2rem;

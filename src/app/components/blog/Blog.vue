@@ -53,13 +53,14 @@ export default {
       padding: 0 1rem;
       line-height: 1;
       font-weight: 500;
-      font-size: 2rem;
+      font-size: $fontSizeBlogTitle;
       color: black;
       font-family: $fontHeading;
     }
     .blog-article {
       padding: 0 1rem 1rem;
       color: $offblack;
+      font-size: $fontSizeBlogArticle;
     }
   }
 }

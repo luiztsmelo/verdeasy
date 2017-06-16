@@ -39,7 +39,7 @@ export default {
     .blog-title {
     padding: 0 1rem;
     line-height: 1;
-    font-size: 2rem;
+    font-size: $fontSizeBlogTitle;
     font-weight: 500;
     color: black;
     font-family: $fontHeading;
@@ -47,6 +47,7 @@ export default {
     .blog-article {
       padding: 0 1rem 1rem;
       color: $offblack;
+      font-size: $fontSizeBlogArticle;
     }
   }
 }

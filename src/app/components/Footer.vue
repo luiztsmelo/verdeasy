@@ -25,12 +25,10 @@ footer {
   position: absolute; 
   left: 0 ; right: 0; bottom: 0; 
   height: 3rem;
-
   p {
     font-family: $fontMain;
     font-size: 1.1rem;
   }
-
   span {
     font-weight: $fontThin;
   }

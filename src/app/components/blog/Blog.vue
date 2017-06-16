@@ -43,7 +43,7 @@ export default {
 #blog {
   display: flex;
   flex-flow: column;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, .3);
   height: 100%;
   .blog-card {
     margin: .7rem auto;
@@ -52,11 +52,14 @@ export default {
     .blog-title {
       padding: 0 1rem;
       line-height: 1;
+      font-weight: 500;
       font-size: 2rem;
-      color: $offblack;
+      color: black;
+      font-family: $fontHeading;
     }
     .blog-article {
       padding: 0 1rem 1rem;
+      color: $offblack;
     }
   }
 }

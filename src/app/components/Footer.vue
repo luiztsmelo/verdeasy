@@ -1,12 +1,16 @@
 <template>
   <footer>
-    <p>&copy <span>Verdeasy 2017</span>. Todos os direitos reservados.</p>
+    <p>&copy <span>Verdeasy {{ year() }}</span>. Todos os direitos reservados.</p>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'footer'
+  methods: {
+    year() {
+      return new Date().getFullYear();
+    }
+  }
 }
 </script>
 
@@ -17,7 +21,7 @@ footer {
   display: flex;
   justify-content: center;
   background: $green;
-  color: $offwhite;
+  color: white;
   position: absolute; 
   left: 0 ; right: 0; bottom: 0; 
   height: 3rem;

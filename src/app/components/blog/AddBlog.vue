@@ -12,7 +12,7 @@
       <label>Conteúdo</label>
       
       <quill-editor 
-        v-model.lazy="blog.content"
+        v-model="blog.content"
         ref="myQuillEditor"
         :options="editorOption"
         @blur="onEditorBlur($event)"
@@ -27,7 +27,7 @@
       <h3>Título:</h3>
         <p>{{ blog.title }}</p>
       <h3>Conteúdo:</h3>
-        <p>{{ blog.content }}</p>
+        <article>{{ blog.content }}</article>
     </div>
 
     <button @click.prevent="post">Submit</button>

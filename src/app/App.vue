@@ -67,11 +67,11 @@ header {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   .brand {
     margin: 0;
-    font-size: 2.7rem;
-    font-family: $fontBrand;
+    font-size: 2.5rem;
+    font-family: $fontHeading;
     color: white;
   }
   nav {

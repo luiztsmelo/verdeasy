@@ -22,19 +22,18 @@ body {
 //******************************************//
 // COLOR PALETTE
 //******************************************//
-$grey: rgb(40, 45, 40);
-$green: rgb(92, 199, 115);
+$grey: rgb(35, 40, 35);
+$green: rgb(120,210,105);
 $lightgreen: rgb(141, 200, 92);
-$offwhite: rgb(245, 245, 245);
-$offblack: rgb(40, 40, 40);
+$white: rgb(255,255,255);
+$offblack: rgb(50, 50, 50);
 
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Shadows+Into+Light+Two|Shadows+Into+Light|Raleway:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600|Shadows+Into+Light+Two|Raleway:400,400i,700');
 
-$fontBrand: 'Shadows Into Light', cursive;
-$fontHero: 'Shadows Into Light Two', cursive;
+$fontHeading: 'Shadows Into Light Two', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
 $fontText: 'Raleway', sans-serif;
 
@@ -65,9 +64,12 @@ a, button, ul, li, label {
 	list-style: none;
 	font-size: 1.3rem;
 }
-
-p, article {
+p {
 	font-family: $fontText;
-	font-size: 1.05rem;
+	font-size: 1.1rem;
 }
-
+article {
+	font-family: $fontText;
+	font-size: 1.1rem;
+	line-height: 1.7;
+}

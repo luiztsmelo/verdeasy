@@ -93,7 +93,7 @@ export default {
 
 .container-card {
   background: $grey;
-  color: $offwhite;
+  color: white;
   white-space: nowrap;
   overflow-x: hidden;
   display: flex;
@@ -104,14 +104,14 @@ export default {
     padding: 1.2rem 0 .8rem 3.1rem;
     text-transform: uppercase;
     font-weight: 400;
-    font-style: $fontBrand;
-    color: $offwhite;
+    font-style: $fontHeading;
+    color: white;
     font-size: 1.4rem;
   }
   .arrow-left {
     position: absolute;
     cursor: pointer;
-    height: 12rem;
+    height: 11rem;
     transition: .3s ease;
     transform: translate(0, 3.4rem);
     z-index: 2;
@@ -131,7 +131,7 @@ export default {
   .arrow-right {
     position: absolute;
     cursor: pointer;
-    height: 12rem;
+    height: 11rem;
     transition: .3s ease;
     transform: translate(81.3rem, 3.4rem);
     z-index: 2;
@@ -151,7 +151,7 @@ export default {
     .card {
       display: grid;
       margin: 0 .2rem 2rem .2rem;
-      height: 12rem;
+      height: 11rem;
       min-width: 14rem;
       cursor: pointer;
       overflow: hidden;
@@ -160,10 +160,10 @@ export default {
       transition: all 0.4s ease;
       transform: translateX(3rem);
       &:hover .card-content{
-        transform: translate(0, -42%);
+        transform: translate(0, -44%);
       }
       &:hover {
-        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.3);
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
         background-size: 100% 13.3rem;
       }
     }
@@ -171,10 +171,10 @@ export default {
   .card-content {
     transition: all 0.4s ease;
     .card-title {
-      margin-top: 10rem;
-      margin-bottom: auto;
-      padding: .2rem 0;
-      background: $offwhite;
+      margin-top: 9rem;
+      margin-bottom: 1.1rem;
+      padding: .1rem 0;
+      background: white;
       font-size: 1.3rem;
       font-weight: 300;
       text-align: center;
@@ -205,36 +205,35 @@ export default {
     }
     .card-bar {
       position: relative;
-      border-radius: 25px;
+    
       margin: .85rem auto;
       width: 95%;
       height: 1.2rem;
       background-color: rgba(150, 150, 150, 0.5);
       #progress-bar-sun {
         height: 1.2rem;
-        border-radius: 25px;
+  
         background-color: rgba(245, 235, 85, 0.8);
       }
       #progress-bar-water {
         height: 1.2rem;
-        border-radius: 25px;
+    
         background-color: rgba(130, 177, 255, 0.8);
       }
       #progress-bar-care {
         height: 1.2rem;
-        border-radius: 25px;
+    
         background-color: rgba(255, 112, 67, 0.8);
       }
     }
   }
   .card-footer {
     #footer-subtitle {
-      margin: 1rem auto;
-      padding: .2rem 0;
+      margin: 1rem 0;
+      padding: 0;
       text-align: center;
       width: 95%;
-      background-color: rgba(0, 0, 0, 0.3);
-      border-radius: 25px;
+      font-size: 1.1rem;
     }
   }
 }
@@ -246,12 +245,12 @@ export default {
   flex-direction: column;
   padding: 0 0 7rem 0;
   
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   .title {
     color: white;
     font-size: 4.5rem;
     text-align: center;
-    font-family: $fontHero;
+    font-family: $fontHeading;
     line-height: 0.7;
     opacity: 0;
     animation: titleAnimation 36s linear infinite 0s;
@@ -262,7 +261,7 @@ export default {
     font-size: 3rem;
     text-align: center;
     line-height: 0.7;
-    font-family: $fontHero;
+    font-family: $fontHeading;
     opacity: 0;
     animation: subtitleAnimation 36s ease-in infinite 0s;
     animation-iteration-count: 1; 
@@ -271,7 +270,7 @@ export default {
     text-align: center;
     color: white;
     font-size: 6rem;
-    font-family: $fontBrand;
+    font-family: $fontHeading;
     line-height: 0;
     opacity: 0;
     transform: translateY(10.3rem);
@@ -299,6 +298,7 @@ export default {
     100% { opacity: 0 }
 }
 
+//PC
 @media screen and (max-width: 1024px){
   .hero {
     margin: 0;
@@ -324,7 +324,7 @@ export default {
       line-height: 1.5;
     }
     .verdeasy {
-      font-size: 4rem;
+      font-size: 3.7rem;
     }
   }
 }

@@ -43,7 +43,7 @@ export default {
 #blog {
   display: flex;
   flex-flow: column;
-  background: rgba(0, 0, 0, .3);
+  background: $bgopacity;
   height: 100%;
   .blog-card {
     margin: .7rem auto;

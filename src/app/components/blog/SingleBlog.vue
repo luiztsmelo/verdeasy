@@ -31,7 +31,7 @@ export default {
 #single-blog {
   display: flex;
   flex-flow: column wrap;
-  background: rgba(0, 0, 0, .2);
+  background: $bgopacity;
   .box {
     background-color: white;
     margin: .7rem auto;

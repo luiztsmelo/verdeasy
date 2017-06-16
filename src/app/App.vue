@@ -47,7 +47,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg6ps.jpg');
+  background-image: url('./../../static/bgimg3.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -67,7 +67,7 @@ header {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.3);
+  background: $bgopacity;
   .brand {
     margin: 0;
     font-size: 2.5rem;

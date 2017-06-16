@@ -245,7 +245,7 @@ export default {
   flex-direction: column;
   padding: 0 0 7rem 0;
   
-  background: rgba(0, 0, 0, 0.3);
+  background: $bgopacity;
   .title {
     color: white;
     font-size: 4.5rem;

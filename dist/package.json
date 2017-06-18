@@ -1,0 +1,10 @@
+{
+ "name": "verdeasy",
+ "version": "1.0.0",
+ "description": "",
+ "author": "Tarcísio Melo",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}

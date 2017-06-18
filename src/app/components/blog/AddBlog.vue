@@ -96,7 +96,7 @@ export default {
   flex-flow: column;
   margin: auto;
   width: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  background: $bgopacity;
   text-align: center;
   color: white;
   label {

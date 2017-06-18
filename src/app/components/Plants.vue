@@ -3,7 +3,6 @@
 
     <!--HERO-->
     <div class="hero">
-      <h2 class="verdeasy">VERDEASY</h2>
       <h2 class="title">MORA EM APARTAMENTO?</h2>
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
     </div><!--HERO-->
@@ -240,71 +239,21 @@ export default {
 .hero {
   display: flex;
   flex-direction: column;
-  padding: 0 0 7rem 0;
-  
+  padding: 5rem 0 8rem 0;
   background: $bgopacity;
   .title {
     color: white;
-    font-size: 4.5rem;
+    font-size: 4.2rem;
     text-align: center;
     font-family: $fontHeading;
     line-height: 0.7;
-    opacity: 0;
-    animation: titleAnimation 36s linear infinite 0s;
-    animation-iteration-count: 1;  
   }
   .subtitle {
     color: white;
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: center;
     line-height: 0.7;
     font-family: $fontHeading;
-    opacity: 0;
-    animation: subtitleAnimation 36s ease-in infinite 0s;
-    animation-iteration-count: 1; 
-  }
-  .verdeasy {
-    text-align: center;
-    color: white;
-    font-size: 6rem;
-    font-family: $fontHeading;
-    line-height: 0;
-    opacity: 0;
-    transform: translateY(10.3rem);
-    animation: verdeasyAnimation 30s ease-in infinite 0s;
-  }
-}
-@keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    14% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@keyframes subtitleAnimation { 
-    6% { opacity: 0 }
-    15% { opacity: 1 }
-    22% { opacity: 1 }
-    27% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@keyframes verdeasyAnimation { 
-    27% { opacity: 0; animation-timing-function: ease-in }
-    45% { opacity: 1 }
-    80% { opacity: 1 }
-    100% { opacity: 0 }
-}
-
-//PC
-@media screen and (max-width: 1024px){
-  .hero {
-    margin: 0;
-    .title {
-      font-size: 4rem;
-    }
-    .subtitle {
-      font-size: 3rem;
-    }
   }
 }
 
@@ -313,15 +262,27 @@ export default {
   .hero {
     margin: 0;
     .title {
-      font-size: 2.5rem;
+      font-size: 3.3rem;
       line-height: 1;
     }
     .subtitle {
-      font-size: 2rem;
-      line-height: 1.5;
+      font-size: 2.2rem;
+      line-height: 1;
     }
-    .verdeasy {
-      font-size: 3.7rem;
+  }
+}
+
+//SMARTPHONE L
+@media screen and (max-width: 425px){
+  .hero {
+    margin: 0;
+    .title {
+      font-size: 3.2rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 2.2rem;
+      line-height: 1.5;
     }
   }
 }

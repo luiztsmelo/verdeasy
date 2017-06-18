@@ -47,7 +47,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg/bgimg6.jpg');
+  background-image: url('./../../static/bgimg/bgimg4b.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -62,7 +62,7 @@ body {
 // NAVBAR
 header {
   display: flex;
-  padding: 0.5rem 4rem 0.5rem 4rem;
+  padding: 0.5rem 3.5rem 0.5rem 3.5rem;
   justify-content: center;
   align-items: center;
   flex: 1 0 0;

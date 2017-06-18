@@ -14,7 +14,7 @@
       <h2 class="title-row">Ervas Aromáticas</h2>
       
       <div class="arrow-left" @click="moveCardsRight">
-        <img src="./../../../static/arrowL.png">
+        <img src="./../../../static/utils/arrowL.png">
       </div>
       
       <div class="row-cards" 
@@ -58,7 +58,7 @@
       </div>
       
       <div class="arrow-right" @click.capture="moveCardsLeft">
-        <img src="./../../../static/arrowR.png">
+        <img src="./../../../static/utils/arrowR.png">
       </div>
     </div><!--PLANTS-->
 

@@ -47,7 +47,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('./../../static/bgimg/bgimg4b.jpg');
+  background-image: url('./../../static/bgimg/bgimg1b.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

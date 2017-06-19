@@ -47,7 +47,7 @@ export default {
 @import "./scss/style.scss";
 
 body {
-  background-image: url('../assets/bgimg/bgimg12b.jpg');
+  background-image: url('../assets/bgimg/bgimg1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -86,15 +86,18 @@ header {
         color: white;
         font-size: 1.15rem;
         font-weight: $fontThin;
-        transition: .222s ease;
+        transition: .3s ease;
+        border-radius: 2rem 0;
       &:hover {
-        color: rgb(141, 222, 92);
+        color: rgba(0, 0, 0, 0.8);
+        background: white;
+        border-radius: 0;
         }
       }
       button {
       display: flex;
       justify-content: flex-end;
-      background-color: $green;
+      background-color: rgb(110, 200, 80);;
       border: none;
       font-weight: $fontThin;
       font-size: 1.25rem;

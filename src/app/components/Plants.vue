@@ -16,7 +16,7 @@
         <img src="./../../../static/utils/arrowL.png">
       </div>
       
-      <div class="row-cards" 
+      <div class="carousel" 
         :style="{ 'transform': 'translate(' + moveCardsLeftWidth + ')' }">
         
         <div class="card" 
@@ -108,51 +108,52 @@ export default {
     font-size: 1.4rem;
   }
   .arrow-left {
+    margin: 3.3rem 0 0 0;
+    align-self: flex-start;
     position: absolute;
     cursor: pointer;
     height: 10.5rem;
     transition: .3s ease;
-    transform: translate(0, 3.4rem);
     z-index: 2;
     img {
-      margin: 5rem 0;
+      margin: 4rem 0;
       width: 3rem;
       height: 3rem;
       opacity: 0;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
     }
     &:hover img {
       opacity: 1;
     }
   }
   .arrow-right {
+    margin: 3.3rem 0 0 0;
+    align-self: flex-end;
     position: absolute;
     cursor: pointer;
     height: 10.5rem;
     transition: .3s ease;
-    transform: translate(81.3rem, 3.4rem);
     z-index: 2;
     img {
-      margin: 5rem 0;
+      margin: 4rem 0;
       width: 3rem;
       height: 3rem;
       opacity: 1;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
     }
   }
-  .row-cards {
+  .carousel {
     display: flex;
     transition: all .7s ease;
     .card {
-      display: grid;
       margin: 0 .2rem 2rem .2rem;
       height: 10.5rem;
       min-width: 13.5rem;
-      cursor: pointer; 
+      cursor: default; 
       overflow: hidden;
       background-repeat: no-repeat;
       background-size: 100% 8.5rem;
@@ -160,7 +161,7 @@ export default {
       transform: translateX(3rem);
       will-change: auto;
       &:hover .card-content {
-        transform: translate(0, -43%);
+        transform: translate(0, -83%);
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
@@ -241,7 +242,8 @@ export default {
   }
   .card-footer {
     #footer-subtitle {
-      margin: 1rem 0;
+      cursor: pointer; 
+      margin: 0 0 1rem 0;
       padding: 0;
       text-align: center;
       width: 95%;

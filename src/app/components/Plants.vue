@@ -100,7 +100,7 @@ export default {
   justify-content: flex-start;
   .title-row {
     margin: 0;
-    padding: 1.2rem 0 .8rem 3.1rem;
+    padding: 1rem 0 .8rem 3.1rem;
     text-transform: uppercase;
     font-weight: 400;
     font-style: $fontHeading;
@@ -152,12 +152,13 @@ export default {
       margin: 0 .2rem 2rem .2rem;
       height: 10.5rem;
       min-width: 13.5rem;
-      cursor: pointer;
+      cursor: pointer; 
       overflow: hidden;
       background-repeat: no-repeat;
       background-size: 100% 8.5rem;
       transition: all 0.4s ease;
       transform: translateX(3rem);
+      will-change: auto;
       &:hover .card-content{
         transform: translate(0, -43%);
       }
@@ -178,7 +179,6 @@ export default {
       font-weight: 300;
       text-align: center;
       color: $offblack;
-      transition: .5s ease;
     }
     .card-subtitle {
       position: relative;

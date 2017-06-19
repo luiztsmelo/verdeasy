@@ -54,7 +54,7 @@ export default {
       line-height: 1;
       font-weight: 500;
       font-size: $fontSizeBlogTitle;
-      color: black;
+      color: $grey;
       font-family: $fontHeading;
     }
     .blog-article {

@@ -159,18 +159,28 @@ export default {
       transition: all 0.4s ease;
       transform: translateX(3rem);
       will-change: auto;
-      &:hover .card-content{
+      &:hover .card-content {
         transform: translate(0, -43%);
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
-        background-size: 100% 13.3rem;
+        background-size: 100% 13.5rem;
+      }
+      &:hover #progress-bar-sun {
+        transform: translateX(0);
+      }
+      &:hover #progress-bar-water {
+        transform: translateX(0);
+      }
+      &:hover #progress-bar-care {
+        transform: translateX(0);
       }
     }
   }
   .card-content {
     transition: all 0.4s ease;
     .card-title {
+      position: relative;
       margin-top: 8.5rem;
       margin-bottom: 1.1rem;
       padding: .1rem 0;
@@ -211,14 +221,21 @@ export default {
       #progress-bar-sun {
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);
+        transform: translateX(-13.5rem);
+        transition: all 0.6s cubic-bezier(0.370, 0.000, 0.000, 1.235);
+      
       }
       #progress-bar-water {
         height: 1.2rem;
         background-color: rgba(100, 181, 246, 0.8);
+        transform: translateX(-13.5rem);
+        transition: all 0.8s cubic-bezier(0.370, 0.000, 0.000, 1.235);
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
+        transform: translateX(-13.5rem);
+        transition: all 1s cubic-bezier(0.370, 0.000, 0.000, 1.235);
       }
     }
   }

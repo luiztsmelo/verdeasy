@@ -91,7 +91,7 @@ export default {
 @import "./../scss/style.scss";
 
 .container-card {
-  background: $grey;
+  background: rgba(0, 0, 0, 0.7);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;
@@ -110,7 +110,7 @@ export default {
   .arrow-left {
     position: absolute;
     cursor: pointer;
-    height: 11rem;
+    height: 10.5rem;
     transition: .3s ease;
     transform: translate(0, 3.4rem);
     z-index: 2;
@@ -130,7 +130,7 @@ export default {
   .arrow-right {
     position: absolute;
     cursor: pointer;
-    height: 11rem;
+    height: 10.5rem;
     transition: .3s ease;
     transform: translate(81.3rem, 3.4rem);
     z-index: 2;
@@ -150,16 +150,16 @@ export default {
     .card {
       display: grid;
       margin: 0 .2rem 2rem .2rem;
-      height: 11rem;
-      min-width: 14rem;
+      height: 10.5rem;
+      min-width: 13.5rem;
       cursor: pointer;
       overflow: hidden;
       background-repeat: no-repeat;
-      background-size: 100% 9rem;
+      background-size: 100% 8.5rem;
       transition: all 0.4s ease;
       transform: translateX(3rem);
       &:hover .card-content{
-        transform: translate(0, -44%);
+        transform: translate(0, -43%);
       }
       &:hover {
         box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
@@ -170,7 +170,7 @@ export default {
   .card-content {
     transition: all 0.4s ease;
     .card-title {
-      margin-top: 9rem;
+      margin-top: 8.5rem;
       margin-bottom: 1.1rem;
       padding: .1rem 0;
       background: white;
@@ -207,7 +207,7 @@ export default {
       margin: .85rem auto;
       width: 95%;
       height: 1.2rem;
-      background-color: rgba(150, 150, 150, 0.5);
+      background-color: rgba(140, 140, 140, 0.5);
       #progress-bar-sun {
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);

@@ -10,23 +10,24 @@
     <!--PLANTS-->
     <div class="container-card">
       
-      <h2 class="title-row">Ervas Aromáticas</h2>
-      
-      <div class="arrow-left" @click="moveCardsRight">
+      <div class="arrow-left" @click="moveCardsRight" v-show="moveCardsLeftWidth < 0">
         <img src="./../../../static/utils/arrowL.png">
       </div>
       
-      <div class="carousel" 
-        :style="{ 'transform': 'translate(' + moveCardsLeftWidth + ')' }">
+      <!--ERVAS AROMÁTICAS-->
+      <h2 class="title-row">Ervas Aromáticas</h2>
+      
+      <div class="carousel-container">
+        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth + 'rem)' }">
         
-        <div class="card" 
-          v-for="plant in plants" 
-          @click="showModal = !showModal" 
-          :style="{ 'background-image': 'url(' + plant.img + ')' }">
-          
-          <div class="card-content">
-            <h3 class="card-title">{{ plant.name }}</h3>
-              
+          <li class="card" 
+            v-for="plant in plants" 
+            @click="showModal = !showModal" 
+            :style="{ 'background-image': 'url(' + plant.img + ')' }">
+            
+            <div class="card-content">
+              <h3 class="card-title">{{ plant.name }}</h3>
+                
               <div class="card-bar">
                 <div id="progress-bar-sun" :style="'width:' + (plant.sun * 10) + '%'"></div>
                 <p id="less">-</p>
@@ -48,18 +49,29 @@
                 <p id="more">+</p>
               </div>
 
-            <div class="card-footer">
-              <h4 id="footer-subtitle">Mais informações</h4>
+              <div class="card-footer">
+                <h4 id="footer-subtitle" @:click="showModal = !showModal">Mais informações</h4>
+              </div>
+            
             </div>
-          
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>  
+      </div><!--ERVAS AROMÁTICAS-->
       
-      <div class="arrow-right" @click.capture="moveCardsLeft">
+      <div class="arrow-right" @click="moveCardsLeft">
         <img src="./../../../static/utils/arrowR.png">
       </div>
+      
     </div><!--PLANTS-->
+
+    <!--MODAL-->
+    <transition name="modal-animation">
+      <div id="modal" v-show="showModal" @click="showModal = !showModal">
+        <div class="modal-body" @click.stop>
+          <h1>MODAL FODA!!</h1>
+        </div>
+      </div>
+    </transition><!--MODAL-->
 
   </div> 
 </template>
@@ -68,22 +80,26 @@
 import { plantsData } from './plantsData'
 
 export default {
+
   mixins: [plantsData],
+
   data() {
     return {
+      showModal: false,
       moveCardsLeftWidth: '',
     }
   },
+
   methods: {
     moveCardsLeft() {
-      this.moveCardsLeftWidth = '-80%'
-        return moveCardsLeftWidth;
+      this.moveCardsLeftWidth -= 50
+      return moveCardsLeftWidth;
     },
     moveCardsRight() {
-      this.moveCardsLeftWidth = '0%'
-        return moveCardsLeftWidth;
+      this.moveCardsLeftWidth += 50
+      return moveCardsLeftWidth;
     }
-  }
+  },
 };
 </script>
 
@@ -97,18 +113,18 @@ export default {
   overflow-x: hidden;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
   .title-row {
     margin: 0;
-    padding: 1rem 0 .8rem 3.1rem;
+    padding: 1.6rem 0 0 3rem;
     text-transform: uppercase;
     font-weight: 400;
     font-style: $fontHeading;
+    line-height: .4rem;
     color: white;
     font-size: 1.4rem;
   }
   .arrow-left {
-    margin: 3.3rem 0 0 0;
+    margin: 3rem 0 0 0;
     align-self: flex-start;
     position: absolute;
     cursor: pointer;
@@ -119,7 +135,7 @@ export default {
       margin: 4rem 0;
       width: 3rem;
       height: 3rem;
-      opacity: 0;
+      opacity: 1;
     }
     &:hover {
       background-color: rgba(0, 0, 0, 0.7);
@@ -129,7 +145,7 @@ export default {
     }
   }
   .arrow-right {
-    margin: 3.3rem 0 0 0;
+    margin: 3rem 0 0 0;
     align-self: flex-end;
     position: absolute;
     cursor: pointer;
@@ -146,38 +162,40 @@ export default {
       background-color: rgba(0, 0, 0, 0.7);
     }
   }
-  .carousel {
-    display: flex;
-    transition: all .7s ease;
-    .card {
-      margin: 0 .2rem 2rem .2rem;
-      height: 10.5rem;
-      min-width: 13.5rem;
-      cursor: default; 
-      overflow: hidden;
-      background-repeat: no-repeat;
-      background-size: 100% 8.5rem;
-      transition: all 0.4s ease;
-      transform: translateX(3rem);
-      will-change: auto;
-      &:hover .card-content {
-        transform: translate(0, -83%);
-      }
-      &:hover {
-        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
-        background-size: 100% 13.5rem;
-      }
-      &:hover #progress-bar-sun {
-        transform: translateX(0);
-      }
-      &:hover #progress-bar-water {
-        transform: translateX(0);
-      }
-      &:hover #progress-bar-care {
-        transform: translateX(0);
+  .carousel-container
+    .carousel {
+      position: relative;
+      display: flex;
+      transition: all .6s ease-in-out;
+      .card {
+        margin: 0 .2rem 1rem .2rem;
+        height: 10.5rem;
+        min-width: 13.5rem;
+        cursor: default; 
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: 100% 8.5rem;
+        transform: translateX(.3rem);
+        transition: all 0.4s ease;
+        will-change: auto;
+        &:hover .card-content {
+          transform: translate(0, -83%);
+        }
+        &:hover {
+          box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+          background-size: 100% 13.5rem;
+        }
+        &:hover #progress-bar-sun {
+          transform: translateX(0);
+        }
+        &:hover #progress-bar-water {
+          transform: translateX(0);
+        }
+        &:hover #progress-bar-care {
+          transform: translateX(0);
+        }
       }
     }
-  }
   .card-content {
     transition: all 0.4s ease;
     .card-title {
@@ -253,8 +271,44 @@ export default {
   }
 }
 
- 
-// HERO
+//******************************************//
+// MODAL COMPONENT
+//******************************************//
+#modal {
+  background: rgba(0, 0, 0, 0.7);
+  width:  100%;
+  height: 100%;
+  position: fixed;
+  top:  0;
+  left: 0;
+  z-index: 777;
+  .modal-body {
+    position: absolute;
+    background: white;
+    top:  50%;
+    left: 50%;
+    padding: 2em;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+// TRANSITION
+.modal-animation-enter {
+  opacity: 0;
+}
+
+.modal-animation-enter-active {
+  transition: all 0.3s;
+}
+
+.modal-animation-leave-active {
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+//******************************************//
+// HERO COMPONENT
+//******************************************//
 .hero {
   display: flex;
   flex-direction: column;
@@ -275,6 +329,9 @@ export default {
     font-family: $fontHeading;
   }
 }
+//******************************************//
+// MEDIA QUERIES
+//******************************************//
 
 //TABLET
 @media screen and (max-width: 768px){

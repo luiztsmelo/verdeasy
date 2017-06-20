@@ -25,19 +25,16 @@
 
 <script>
 import Footer from './components/Footer';
-import PlantModal from './components/PlantModal';
 import { quillEditor } from 'vue-quill-editor';
 
 export default {
-  name: 'app',
   components: {
     'app-footer': Footer,
-    'app-plantmodal': PlantModal,
     'app-quill-editor': quillEditor,
   },
   data() {
     return {
-      showModal: false,
+  
     }
   }
 }

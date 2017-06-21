@@ -240,20 +240,20 @@ export default {
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.6s cubic-bezier(0.370, 0.000, 0.000, 1.235);
+        transition: all 0.6s cubic-bezier(0.377, 0.000, 0.000, 1.077);
       
       }
       #progress-bar-water {
         height: 1.2rem;
         background-color: rgba(100, 181, 246, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.8s cubic-bezier(0.370, 0.000, 0.000, 1.235);
+        transition: all 0.8s cubic-bezier(0.377, 0.000, 0.000, 1.077);
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 1s cubic-bezier(0.370, 0.000, 0.000, 1.235);
+        transition: all 1s cubic-bezier(0.377, 0.000, 0.000, 1.077);
       }
     }
   }

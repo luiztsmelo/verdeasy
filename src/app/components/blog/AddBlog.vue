@@ -11,14 +11,7 @@
       <input v-model.lazy="blog.title" type="text" required>
       <label>Conteúdo</label>
       
-      <quill-editor 
-        v-model="blog.content"
-        ref="myQuillEditor"
-        :options="editorOption"
-        @blur="onEditorBlur($event)"
-        @focus="onEditorFocus($event)"
-        @ready="onEditorReady($event)">
-      </quill-editor>
+      <textarea v-model.lazy="blog.content" cols="30" rows="20"></textarea>
 
     </form>
     
@@ -36,7 +29,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -44,9 +36,6 @@ export default {
         title: '',
         content: ''
       },
-      editorOption: {
-          // some quill options
-        },
       submitted: false
     }
   },
@@ -57,39 +46,12 @@ export default {
         this.submitted = true;
       });
     },
-    onEditorBlur(editor) {
-        console.log('editor blur!', editor)
-      },
-    onEditorFocus(editor) {
-      console.log('editor focus!', editor)
-    },
-    onEditorReady(editor) {
-      console.log('editor ready!', editor)
-    }
-  },
-  computed: {
-    editor() {
-      return this.$refs.myTextEditor.quillEditor
-    }
-  },
-  mounted() {
-    console.log('this is my editor', this.editor)
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
 @import "./../../scss/style.scss";
-
-.quill-editor {
-  background: white;
-  color: $offblack;
-  margin: auto;
-  border: none;
-  width: 60%;
-  height: 100%;
-}
 
 #add-blog {
   display: flex;
@@ -114,6 +76,7 @@ export default {
     margin: auto;
     padding: .4rem;
     width: 60%;
+    outline: none;
   }
   #preview {
     margin: 5rem auto 1rem;

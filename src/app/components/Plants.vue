@@ -22,37 +22,36 @@
         
           <li class="card" 
             v-for="plant in plants" 
-            @click="showModal = !showModal" 
             :style="{ 'background-image': 'url(' + plant.img + ')' }">
             
             <div class="card-content">
               <h3 class="card-title">{{ plant.name }}</h3>
                 
               <div class="card-bar">
-                <div id="progress-bar-sun" :style="'width:' + (plant.sun * 10) + '%'"></div>
+                <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
                 <p id="less">-</p>
                   <h4 class="card-subtitle">Sol</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
-                <div id="progress-bar-water" :style="'width:' + (plant.water * 10) + '%'"></div>
+                <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
                 <p id="less">-</p>
                   <h4 class="card-subtitle">Rega</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
-                <div id="progress-bar-care" :style="'width:' + (plant.care * 10) + '%'"></div>
+                <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
                 <p id="less">-</p>
                   <h4 class="card-subtitle">Cuidados</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @:click="showModal = !showModal">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
               </div>
-            
+          
             </div>
           </li>
         </ul>  
@@ -92,11 +91,11 @@ export default {
 
   methods: {
     moveCardsLeft() {
-      this.moveCardsLeftWidth -= 50
+      this.moveCardsLeftWidth -= 60
       return moveCardsLeftWidth;
     },
     moveCardsRight() {
-      this.moveCardsLeftWidth += 50
+      this.moveCardsLeftWidth += 60
       return moveCardsLeftWidth;
     }
   },
@@ -166,7 +165,7 @@ export default {
     .carousel {
       position: relative;
       display: flex;
-      transition: all .6s ease-in-out;
+      transition: all .6s ease;
       .card {
         margin: 0 .2rem 1rem .2rem;
         height: 10.5rem;
@@ -281,7 +280,7 @@ export default {
   position: fixed;
   top:  0;
   left: 0;
-  z-index: 777;
+  z-index: 9998;
   .modal-body {
     position: absolute;
     background: white;
@@ -304,6 +303,7 @@ export default {
 .modal-animation-leave-active {
   transition: all 0.4s;
   opacity: 0;
+  transform: scale(1.1);
 }
 
 //******************************************//
@@ -349,7 +349,7 @@ export default {
 }
 
 //SMARTPHONE L
-@media screen and (max-width: 425px){
+@media screen and (max-width: 380px){
   .hero {
     margin: 0;
     .title {
@@ -361,5 +361,8 @@ export default {
       line-height: 1.5;
     }
   }
-}
+  .carousel {
+    /*flex-flow: column;*/
+  }
+}  
 </style>

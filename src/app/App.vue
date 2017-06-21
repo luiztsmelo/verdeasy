@@ -16,7 +16,7 @@
     
     <app-plantmodal v-show="showModal"></app-plantmodal>
     
-    <router-view><app-quill-editor></app-quill-editor></router-view>
+    <router-view></router-view>
     
     <app-footer></app-footer>
 
@@ -25,12 +25,10 @@
 
 <script>
 import Footer from './components/Footer';
-import { quillEditor } from 'vue-quill-editor';
 
 export default {
   components: {
     'app-footer': Footer,
-    'app-quill-editor': quillEditor,
   },
   data() {
     return {

@@ -6,6 +6,7 @@ import Sobre      from '../app/components/Sobre.vue';
 import Blog       from '../app/components/blog/Blog.vue';
 import AddBlog    from '../app/components/blog/AddBlog.vue';
 import SingleBlog from '../app/components/blog/SingleBlog.vue';
+import AddPlant   from '../app/components/AddPlant.vue';
 
 
 Vue.use(Router);
@@ -16,4 +17,5 @@ export const routes = [
   { path: '/blog',      component: Blog       },
   { path: '/addblog',   component: AddBlog    },
   { path: '/blog/:id',  component: SingleBlog },
+  { path: '/addplant',  component: AddPlant   },
 ];

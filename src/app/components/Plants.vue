@@ -7,7 +7,7 @@
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
     </div><!--HERO-->
 
-    <!--PLANTS-->
+    <!--PLANTS CONTAINER-->
     <div class="container-card">
       
       
@@ -115,7 +115,7 @@
       
       
       
-    </div><!--PLANTS-->
+    </div><!--PLANTS CONTAINER-->
 
     <!--MODAL-->
     <transition name="modal-animation">
@@ -128,13 +128,12 @@
 
   </div> 
 </template>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_____________________________________________________________________
 <script>
 import lodash from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
-
   mixins: [plantsData],
 
   data() {
@@ -183,7 +182,7 @@ export default {
   },
 };
 </script>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+_____________________________________________________________________
 <style lang="scss" scoped>
 @import "./../scss/style.scss";
 @import "./../scss/_arrows.scss";

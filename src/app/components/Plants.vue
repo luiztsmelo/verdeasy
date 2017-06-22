@@ -215,11 +215,11 @@ _____________________________________________________________________
   }
   .arrow-left-2 {
     @include arrowLeft;
-    margin: 15rem 0 0 0;
+    margin: 16rem 0 0 0;
   }
   .arrow-right-2 {
     @include arrowRight;
-    margin: 15rem 0 0 0;
+    margin: 16rem 0 0 0;
   }
   .carousel-container
     .carousel {

@@ -10,18 +10,19 @@
     <!--PLANTS-->
     <div class="container-card">
       
-      <div class="arrow-left" @click="moveCardsRight" v-show="moveCardsLeftWidth < 0">
-        <img src="./../../../static/utils/arrowL.png">
-      </div>
       
       <!--ERVAS AROMÁTICAS-->
-      <h2 class="title-row">Ervas Aromáticas</h2>
+      <div class="arrow-left-1" @click="moveCardsRight1" v-show="moveCardsLeftWidth1 < 0">
+        <img :src="leftArrowImgSrc">
+      </div>
+
+      <h2 class="container-title">Ervas Aromáticas</h2>
       
       <div class="carousel-container">
-        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth + 'rem)' }">
+        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth1 + 'rem)' }">
         
           <li class="card" 
-            v-for="plant in plants" 
+            v-for="plant in EAFilter" 
             :style="{ 'background-image': 'url(' + plant.img + ')' }">
             
             <div class="card-content">
@@ -55,11 +56,64 @@
             </div>
           </li>
         </ul>  
+      </div>
+
+      <div class="arrow-right-1" @click="moveCardsLeft1">
+        <img :src="rightArrowImgSrc">
       </div><!--ERVAS AROMÁTICAS-->
       
-      <div class="arrow-right" @click="moveCardsLeft">
-        <img src="./../../../static/utils/arrowR.png">
+      <!--ERVAS MEDICINAIS-->
+      <div class="arrow-left-2" @click="moveCardsRight2" v-show="moveCardsLeftWidth2 < 0">
+        <img :src="leftArrowImgSrc">
       </div>
+
+      <h2 class="container-title">Ervas Medicinais</h2>
+      
+      <div class="carousel-container">
+        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth2 + 'rem)' }">
+        
+          <li class="card" 
+            v-for="plant in EMFilter" 
+            :style="{ 'background-image': 'url(' + plant.img + ')' }">
+            
+            <div class="card-content">
+              <h3 class="card-title">{{ plant.name }}</h3>
+                
+              <div class="card-bar">
+                <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Sol</h4>
+                <p id="more">+</p>
+              </div>
+
+              <div class="card-bar">
+                <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Rega</h4>
+                <p id="more">+</p>
+              </div>
+
+              <div class="card-bar">
+                <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                <p id="less">-</p>
+                  <h4 class="card-subtitle">Cuidados</h4>
+                <p id="more">+</p>
+              </div>
+
+              <div class="card-footer">
+                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
+              </div>
+          
+            </div>
+          </li>
+        </ul>  
+      </div>
+
+      <div class="arrow-right-2" @click="moveCardsLeft2">
+        <img :src="rightArrowImgSrc">
+      </div><!--ERVAS MEDICINAIS-->
+      
+      
       
     </div><!--PLANTS-->
 
@@ -74,8 +128,9 @@
 
   </div> 
 </template>
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <script>
+import lodash from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
@@ -85,81 +140,87 @@ export default {
   data() {
     return {
       showModal: false,
-      moveCardsLeftWidth: '',
+      leftArrowImgSrc: './../../../static/utils/arrowL.png',
+      rightArrowImgSrc: './../../../static/utils/arrowR.png',
+      moveCardsLeftWidth1: '',
+      moveCardsLeftWidth2: '',
+    }
+  },
+
+  computed: {
+    // FILTRAR ERVAS AROMÁTICAS
+    EAFilter() {
+      return _.filter(this.plants, ['class', 'EA'])
+    },
+    // FILTRAR ERVAS MEDICINAIS
+    EMFilter() {
+      return _.filter(this.plants, ['class', 'EM'])
+    },
+
+    // ORDENAR POR MENOR NECESSIDADE DE SOL
+    solFilter() {
+      return _.orderBy(this.plants, 'sol');
     }
   },
 
   methods: {
-    moveCardsLeft() {
-      this.moveCardsLeftWidth -= 60
-      return moveCardsLeftWidth;
+    moveCardsLeft1() {
+      this.moveCardsLeftWidth1 -= 60
+      return moveCardsLeftWidth1;
     },
-    moveCardsRight() {
-      this.moveCardsLeftWidth += 60
-      return moveCardsLeftWidth;
-    }
+    moveCardsRight1() {
+      this.moveCardsLeftWidth1 += 60
+      return moveCardsLeftWidth1;
+    },
+    moveCardsLeft2() {
+      this.moveCardsLeftWidth2 -= 60
+      return moveCardsLeftWidth1;
+    },
+    moveCardsRight2() {
+      this.moveCardsLeftWidth2 += 60
+      return moveCardsLeftWidth1;
+    },
   },
 };
 </script>
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <style lang="scss" scoped>
 @import "./../scss/style.scss";
+@import "./../scss/_arrows.scss";
 
 .container-card {
+  padding: 1.7rem 0 0 0;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;
   display: flex;
   flex-flow: column nowrap;
-  .title-row {
+  .container-title {
     margin: 0;
-    padding: 1.6rem 0 0 3rem;
+    padding: 0 0 0 3rem;
     text-transform: uppercase;
     font-weight: 400;
     font-style: $fontHeading;
     line-height: .4rem;
-    color: white;
+    color: $offwhite;
     font-size: 1.4rem;
   }
-  .arrow-left {
-    margin: 3rem 0 0 0;
-    align-self: flex-start;
-    position: absolute;
-    cursor: pointer;
-    height: 10.5rem;
-    transition: .3s ease;
-    z-index: 2;
-    img {
-      margin: 4rem 0;
-      width: 3rem;
-      height: 3rem;
-      opacity: 1;
-    }
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-    &:hover img {
-      opacity: 1;
-    }
+  .arrow-left-1 {
+    @include arrowLeft;
+    margin: 1.7rem 0 0 0;
   }
-  .arrow-right {
-    margin: 3rem 0 0 0;
-    align-self: flex-end;
-    position: absolute;
-    cursor: pointer;
-    height: 10.5rem;
-    transition: .3s ease;
-    z-index: 2;
-    img {
-      margin: 4rem 0;
-      width: 3rem;
-      height: 3rem;
-      opacity: 1;
-    }
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
+  .arrow-right-1 {
+    @include arrowRight;
+    margin: 1.7rem 0 0 0;
+  }
+  .arrow-left-2 {
+    @include arrowLeft;
+    margin: 15rem 0 0 0;
+  }
+  .arrow-right-2 {
+    @include arrowRight;
+    margin: 15rem 0 0 0;
   }
   .carousel-container
     .carousel {
@@ -181,7 +242,7 @@ export default {
           transform: translate(0, -83%);
         }
         &:hover {
-          box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
           background-size: 100% 13.5rem;
         }
         &:hover #progress-bar-sun {
@@ -291,7 +352,7 @@ export default {
   }
 }
 
-// TRANSITION
+// TRANSITIONS
 .modal-animation-enter {
   opacity: 0;
 }

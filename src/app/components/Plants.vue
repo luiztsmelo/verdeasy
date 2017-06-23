@@ -118,7 +118,7 @@
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-if="modalPlantData" >
+      <div id="modal" v-if="modalPlantData">
         <div class="modal-body" @click.stop>
           <h1>{{ modalPlantData.name }}</h1>
           <p>{{ modalPlantData.sol }}</p>

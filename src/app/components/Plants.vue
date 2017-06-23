@@ -31,26 +31,26 @@
               <div class="card-bar">
                 <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Sol</h4>
+                <h4 class="card-subtitle">Sol</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
                 <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Rega</h4>
+                <h4 class="card-subtitle">Rega</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
                 <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
+                <h4 class="card-subtitle">Cuidados</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="showModal = !showModal" :to="'/' + plant.name">Mais informações</h4>
               </div>
           
             </div>
@@ -82,21 +82,21 @@
               <div class="card-bar">
                 <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Sol</h4>
+                <h4 class="card-subtitle">Sol</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
                 <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Rega</h4>
+                <h4 class="card-subtitle">Rega</h4>
                 <p id="more">+</p>
               </div>
 
               <div class="card-bar">
                 <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
                 <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
+                <h4 class="card-subtitle">Cuidados</h4>
                 <p id="more">+</p>
               </div>
 
@@ -113,34 +113,30 @@
         <img :src="rightArrowImgSrc">
       </div><!--ERVAS MEDICINAIS-->
       
-      
+      <app-modal v-show="showModal"></app-modal>
       
     </div><!--PLANTS CONTAINER-->
-
-    <!--MODAL-->
-    <transition name="modal-animation">
-      <div id="modal" v-show="showModal" @click="showModal = !showModal">
-        <div class="modal-body" @click.stop>
-          <h1>MODAL FODA!!</h1>
-        </div>
-      </div>
-    </transition><!--MODAL-->
 
   </div> 
 </template>
 _____________________________________________________________________
 <script>
+import Modal from './Modal';
 import lodash from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
 
+  components: {
+    'app-modal': Modal,
+  },
+
   data() {
     return {
       showModal: false,
-      leftArrowImgSrc: './../../../static/utils/arrowL.png',
-      rightArrowImgSrc: './../../../static/utils/arrowR.png',
+      leftArrowImgSrc: './../../../static/utils/arrowL.svg',
+      rightArrowImgSrc: './../../../static/utils/arrowR.svg',
       moveCardsLeftWidth1: '',
       moveCardsLeftWidth2: '',
     }
@@ -236,12 +232,12 @@ _____________________________________________________________________
         background-size: 100% 8.5rem;
         transform: translateX(.3rem);
         transition: all 0.4s ease;
-        will-change: auto;
         &:hover .card-content {
-          transform: translate(0, -83%);
+          transform: translateY(-85.5%);
+          
         }
         &:hover {
-          box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+          box-shadow: inset 0 0 0 40rem rgba(0,0,0,.4);
           background-size: 100% 13.5rem;
         }
         &:hover #progress-bar-sun {
@@ -256,11 +252,10 @@ _____________________________________________________________________
       }
     }
   .card-content {
-    transition: all 0.4s ease;
+    transition: all 0.5s ease;
     .card-title {
       position: relative;
       margin-top: 8.5rem;
-      margin-bottom: 1.1rem;
       padding: .1rem 0;
       background: white;
       font-size: 1.3rem;
@@ -291,7 +286,6 @@ _____________________________________________________________________
       transform: translateY(-2.2rem);
     }
     .card-bar {
-      position: relative;
       margin: .85rem auto;
       width: 95%;
       height: 1.2rem;
@@ -328,42 +322,6 @@ _____________________________________________________________________
       transform: translateX(-.6rem);
     }
   }
-}
-
-//******************************************//
-// MODAL COMPONENT
-//******************************************//
-#modal {
-  background: rgba(0, 0, 0, 0.7);
-  width:  100%;
-  height: 100%;
-  position: fixed;
-  top:  0;
-  left: 0;
-  z-index: 9998;
-  .modal-body {
-    position: absolute;
-    background: white;
-    top:  50%;
-    left: 50%;
-    padding: 2em;
-    transform: translateX(-50%) translateY(-50%);
-  }
-}
-
-// TRANSITIONS
-.modal-animation-enter {
-  opacity: 0;
-}
-
-.modal-animation-enter-active {
-  transition: all 0.3s;
-}
-
-.modal-animation-leave-active {
-  transition: all 0.4s;
-  opacity: 0;
-  transform: scale(1.1);
 }
 
 //******************************************//

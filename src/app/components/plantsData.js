@@ -4,9 +4,12 @@ export const plantsData = {
       plants: [
         { name: 'Agrião', class: 'EM',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Agrião.jpg' },
         { name: 'Alecrim', class: 'EM',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Alecrim.jpg' },
-        { name: 'Arnica', class: 'EM',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Arnica.jpg' },
+        { name: 'Arnica Montana', class: 'EM',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Arnica-Montana.jpg' },
+        { name: 'Calêndula', class: 'EM',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Calêndula.jpg' },
         { name: 'Camomila', class: 'EM',  dif: 8, sol: 5, rega: 2, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Camomila.jpg' },
+        { name: 'Capim-limão', class: 'EM',  dif: 8, sol: 5, rega: 2, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Capim-limão.jpg' },
         { name: 'Cebolinha', class: 'EA', dif: 3, sol: 7, rega: 4, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Cebolinha.jpg'},
+        { name: 'Coentro', class: 'EA', dif: 3, sol: 7, rega: 4, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Coentro.jpg'},
         { name: 'Erva-cidreira', class: 'EM', dif: 3, sol: 7, rega: 4, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Erva-cidreira.jpg'},
         { name: 'Lavanda', class: 'EM',   dif: 4, sol: 8, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Lavanda.jpg' },
         { name: 'Louro', class: 'EA',   dif: 4, sol: 8, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Louro.jpg' },

@@ -14,8 +14,6 @@
       </nav>
     </header> <!--NAVBAR-->
     
-    <app-plantmodal v-show="showModal"></app-plantmodal>
-    
     <router-view></router-view>
     
     <app-footer></app-footer>
@@ -61,7 +59,7 @@ header {
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   background: $bgopacity;
   .brand {
     margin: 0;

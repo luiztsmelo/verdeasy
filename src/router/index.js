@@ -7,15 +7,17 @@ import Blog       from '../app/components/blog/Blog.vue';
 import AddBlog    from '../app/components/blog/AddBlog.vue';
 import SingleBlog from '../app/components/blog/SingleBlog.vue';
 import AddPlant   from '../app/components/AddPlant.vue';
+import Modal      from '../app/components/Modal.vue';
 
 
 Vue.use(Router);
 
 export const routes = [
-  { path: '/',          component: Plants     },
-  { path: '/sobre',     component: Sobre      },
-  { path: '/blog',      component: Blog       },
-  { path: '/addblog',   component: AddBlog    },
-  { path: '/blog/:id',  component: SingleBlog },
-  { path: '/addplant',  component: AddPlant   },
+  { path: '/',            component: Plants     },
+  { path: '/sobre',       component: Sobre      },
+  { path: '/blog',        component: Blog       },
+  { path: '/addblog',     component: AddBlog    },
+  { path: '/blog/:id',    component: SingleBlog },
+  { path: '/addplant',    component: AddPlant   },
+  { path: '/:plant.name', component: Modal   },
 ];

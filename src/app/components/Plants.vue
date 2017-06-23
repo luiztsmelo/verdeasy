@@ -50,7 +50,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="showModal = !showModal" :to="'/' + plant.name">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
               </div>
           
             </div>
@@ -113,24 +113,28 @@
         <img :src="rightArrowImgSrc">
       </div><!--ERVAS MEDICINAIS-->
       
-      <app-modal v-show="showModal"></app-modal>
+      
       
     </div><!--PLANTS CONTAINER-->
+
+    <!--MODAL-->
+    <transition name="modal-animation">
+      <div id="modal" v-show="showModal" @click="showModal = !showModal">
+        <div class="modal-body" @click.stop>
+          <h1>How can I get the data from v-for list to put here?</h1>
+        </div>
+      </div>
+    </transition><!--MODAL-->
 
   </div> 
 </template>
 _____________________________________________________________________
 <script>
-import Modal from './Modal';
 import lodash from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
   mixins: [plantsData],
-
-  components: {
-    'app-modal': Modal,
-  },
 
   data() {
     return {
@@ -322,6 +326,42 @@ _____________________________________________________________________
       transform: translateX(-.6rem);
     }
   }
+}
+
+//******************************************//
+// MODAL COMPONENT
+//******************************************//
+#modal {
+  background: rgba(0, 0, 0, 0.7);
+  width:  100%;
+  height: 100%;
+  position: fixed;
+  top:  0;
+  left: 0;
+  z-index: 9998;
+  .modal-body {
+    position: absolute;
+    background: white;
+    top:  50%;
+    left: 50%;
+    padding: 2em;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+// TRANSITIONS
+.modal-animation-enter {
+  opacity: 0;
+}
+
+.modal-animation-enter-active {
+  transition: all 0.3s;
+}
+
+.modal-animation-leave-active {
+  transition: all 0.4s;
+  opacity: 0;
+  transform: scale(1.1);
 }
 
 //******************************************//

@@ -59,7 +59,7 @@ header {
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   background: $bgopacity;
   .brand {
     margin: 0;

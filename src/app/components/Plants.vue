@@ -50,7 +50,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="singlePlantData = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -101,7 +101,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="showModal = !showModal">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="singlePlantData = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -114,14 +114,15 @@
       </div><!--ERVAS MEDICINAIS-->
       
       
-      
     </div><!--PLANTS CONTAINER-->
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-show="showModal" @click="showModal = !showModal">
+      <div id="modal" v-if="singlePlantData" >
         <div class="modal-body" @click.stop>
-          <h1>How can I get the data from v-for list to put here?</h1>
+          <h1>{{ plant.name }}</h1>
+          <p>{{ plant.sol }}</p>
+          <p>{{ plant.rega }}</p>
         </div>
       </div>
     </transition><!--MODAL-->
@@ -141,8 +142,9 @@ export default {
       showModal: false,
       leftArrowImgSrc: './../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../static/utils/arrowR.svg',
-      moveCardsLeftWidth1: '',
-      moveCardsLeftWidth2: '',
+      moveCardsLeftWidth1: null,
+      moveCardsLeftWidth2: null,
+      singlePlantData: null
     }
   },
 

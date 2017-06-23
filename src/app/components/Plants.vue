@@ -50,7 +50,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="singlePlantData = plant">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="modalPlantData = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -101,7 +101,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="singlePlantData = plant">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="modalPlantData = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -118,11 +118,11 @@
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-if="singlePlantData" >
+      <div id="modal" v-if="modalPlantData" >
         <div class="modal-body" @click.stop>
-          <h1>{{ plant.name }}</h1>
-          <p>{{ plant.sol }}</p>
-          <p>{{ plant.rega }}</p>
+          <h1>{{ modalPlantData.name }}</h1>
+          <p>{{ modalPlantData.sol }}</p>
+          <p>{{ modalPlantData.rega }}</p>
         </div>
       </div>
     </transition><!--MODAL-->
@@ -144,7 +144,7 @@ export default {
       rightArrowImgSrc: './../../../static/utils/arrowR.svg',
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null,
-      singlePlantData: null
+      modalPlantData: null
     }
   },
 

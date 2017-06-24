@@ -2,7 +2,7 @@
   <div class="home">
 
     <!--HERO-->
-    <div class="hero">
+    <div id="hero">
       <h2 class="title">MORA EM APARTAMENTO?</h2>
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
     </div><!--HERO-->
@@ -202,7 +202,7 @@ _____________________________________________________________________
     text-transform: uppercase;
     font-weight: 400;
     font-style: $fontHeading;
-    line-height: .4rem;
+    line-height: .4;
     color: $offwhite;
     font-size: 1.4rem;
   }
@@ -222,7 +222,7 @@ _____________________________________________________________________
     @include arrowRight;
     margin: 16rem 0 0 0;
   }
-  .carousel-container
+  .carousel-container {
     .carousel {
       position: relative;
       display: flex;
@@ -243,7 +243,7 @@ _____________________________________________________________________
         }
         &:hover {
           box-shadow: inset 0 0 0 40rem rgba(0,0,0,.4);
-          background-size: 100% 13.5rem;
+          background-size: 100% 11.5rem;
         }
         &:hover #progress-bar-sun {
           transform: translateX(0);
@@ -256,6 +256,7 @@ _____________________________________________________________________
         }
       }
     }
+  } 
   .card-content {
     transition: all 0.5s ease;
     .card-title {
@@ -330,10 +331,10 @@ _____________________________________________________________________
 }
 
 //******************************************//
-// MODAL COMPONENT
+// MODAL 
 //******************************************//
 #modal {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.777);
   width:  100%;
   height: 100%;
   position: fixed;
@@ -342,10 +343,12 @@ _____________________________________________________________________
   z-index: 9998;
   .modal-body {
     position: absolute;
+    padding: 2em;
     background: white;
     top:  50%;
     left: 50%;
-    padding: 2em;
+    width: 80%;
+    height: 70%;
     transform: translateX(-50%) translateY(-50%);
   }
 }
@@ -368,7 +371,7 @@ _____________________________________________________________________
 //******************************************//
 // HERO COMPONENT
 //******************************************//
-.hero {
+#hero {
   display: flex;
   flex-direction: column;
   padding: 5rem 0 8rem 0;
@@ -394,7 +397,7 @@ _____________________________________________________________________
 
 //TABLET
 @media screen and (max-width: 768px){
-  .hero {
+  #hero {
     margin: 0;
     .title {
       font-size: 3.3rem;
@@ -407,21 +410,34 @@ _____________________________________________________________________
   }
 }
 
-//SMARTPHONE L
-@media screen and (max-width: 380px){
-  .hero {
+//MOBILE 
+@media screen and (max-width: 425px){
+  #hero {
     margin: 0;
     .title {
-      font-size: 3.2rem;
-      line-height: 1.2;
+      font-size: 2.7rem;
+      line-height: 1.3;
     }
     .subtitle {
       font-size: 2.2rem;
-      line-height: 1.5;
+      line-height: 1.3;
     }
   }
-  .carousel {
-    /*flex-flow: column;*/
+  #modal {
+    .modal-body {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .container-card {
+
+    .carousel {
+      position: static;
+      display: block;
+      .card {
+        width: 100%;
+      }
+    }
   }
 }  
 </style>

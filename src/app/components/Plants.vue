@@ -467,7 +467,8 @@ _____________________________________________________________________
           background-size: 100% 15rem !important;
         }
        .card-content {
-         transition: all .8s;
+         transition: all 1s;
+         will-change: transform;
         .card-title {
           margin-top: 13rem; 
           padding: .3rem 0;

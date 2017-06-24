@@ -414,12 +414,13 @@ _____________________________________________________________________
 @media screen and (max-width: 425px){
   #hero {
     margin: 0;
+    padding: 1rem 0;
     .title {
-      font-size: 2.7rem;
+      font-size: 2.5rem;
       line-height: 1.3;
     }
     .subtitle {
-      font-size: 2.2rem;
+      font-size: 2.0rem;
       line-height: 1.3;
     }
   }
@@ -430,14 +431,34 @@ _____________________________________________________________________
     }
   }
   .container-card {
-
+    background: rgba(#1d1d16, 0.8);
+  }
+  .container-title {
+    padding: 0 0 0 .4rem !important;
+  }
+  .arrow-left-1 {
+    display: none;
+  }
+  .arrow-right-1 {
+    display: none;
+  }
+  .arrow-left-2 {
+    display: none;
+  }
+  .arrow-right-2 {
+    display: none;
+  }
+  .container-card {
     .carousel {
-      position: static;
-      display: block;
+      padding: 0;
+      display: block !important;
       .card {
-        width: 100%;
+        width: 95%;
+
+        transform: translateX(0);
       }
     }
   }
-}  
+} 
+
 </style>

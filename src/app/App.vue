@@ -2,7 +2,7 @@
   <div id="app">
 
     <!--NAVBAR-->
-    <header>
+    <header id="navbar">
       <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
       <nav>
         <ul>
@@ -53,7 +53,7 @@ body {
 }
 
 // NAVBAR
-header {
+#navbar {
   display: flex;
   padding: 0.5rem 3.5rem 0.5rem 3.5rem;
   justify-content: center;
@@ -81,10 +81,10 @@ header {
         font-weight: $fontThin;
         transition: .3s ease;
         border-radius: 2rem 0;
-      &:hover {
-        color: rgba(0, 0, 0, 0.8);
-        background: white;
-        border-radius: 0;
+        &:hover {
+          color: rgba(0, 0, 0, 0.8);
+          background: white;
+          border-radius: 0;
         }
       }
       button {
@@ -106,4 +106,19 @@ header {
   }
 }
 
+//MOBILE 
+@media screen and (max-width: 425px){
+  #navbar {
+    padding: 1rem;
+    display: block;
+    background: rgba(#1d1d16, 0.8);
+
+    .brand {
+      font-size: 2.2rem;
+    }
+  }
+  nav {
+    display: none;
+  }
+}
 </style>

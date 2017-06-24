@@ -108,6 +108,9 @@ body {
 
 //MOBILE 
 @media screen and (max-width: 425px){
+  body {
+    background-attachment: scroll;
+  }
   #navbar {
     padding: 1rem;
     display: block;

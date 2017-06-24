@@ -414,7 +414,7 @@ _____________________________________________________________________
 @media screen and (max-width: 425px){
   #hero {
     margin: 0;
-    padding: 1rem 0;
+    padding: 2rem 0;
     .title {
       font-size: 2.5rem;
       line-height: 1.3;
@@ -456,6 +456,7 @@ _____________________________________________________________________
         width: 95%;
 
         transform: translateX(0);
+   
       }
     }
   }

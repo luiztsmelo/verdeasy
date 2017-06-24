@@ -455,37 +455,51 @@ _____________________________________________________________________
       display: block !important;
       .card {
         width: 95%;
-        height: 13rem !important;
+        height: 15rem !important;
         background-size: 100% 13rem !important;
         transform: translateX(0);
         &:hover .card-content {
-          transform: translateY(-99%) !important;
-          
+          transform: translateY(-98%) !important;
+        }
+        &:hover {
+          background-size: 100% 15rem !important;
         }
        .card-content {
         .card-title {
-          margin-top: 11rem; 
+          margin-top: 13rem; 
           padding: .3rem 0;
         }
+        #less {
+          transform: translateY(-2.1rem);
+          font-size: 2rem;
+        }
+        #more {
+          transform: translateY(-2.7rem);
+          font-size: 1.7rem;
+        }
         .card-subtitle {
-          font-size: 1.1rem;
-          font-weight: 300;
+          font-size: 1.2rem;
+
+          transform: translate(-.7rem, -1.9rem);
         }
         .card-bar { 
-          height: 1.4rem;
+          height: 1.5rem;
+          margin: 1rem auto;
           #progress-bar-sun {
-            height: 1.4rem;
+            height: 1.5rem;
           }
           #progress-bar-water {
-            height: 1.4rem;
+            height: 1.5rem;
           }
           #progress-bar-care {
-            height: 1.4rem;
+            height: 1.5rem;
           }
         }
         .card-footer {
+          padding-top: 1rem;
           .footer-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
+            
           }
           }
         }

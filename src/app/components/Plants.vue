@@ -300,20 +300,20 @@ _____________________________________________________________________
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.6s cubic-bezier(0.377, 0.000, 0.000, 1.077);
+        transition: all 0.6s ease;
       
       }
       #progress-bar-water {
         height: 1.2rem;
         background-color: rgba(100, 181, 246, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.8s cubic-bezier(0.377, 0.000, 0.000, 1.077);
+        transition: all 0.8s ease;
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 1s cubic-bezier(0.377, 0.000, 0.000, 1.077);
+        transition: all 1s ease;
       }
     }
   }
@@ -450,8 +450,10 @@ _____________________________________________________________________
   }
   
   .container-card {
+    
     .carousel {
       padding: 0;
+      position: static !important;
       display: block !important;
       .card {
         width: 95%;
@@ -465,6 +467,7 @@ _____________________________________________________________________
           background-size: 100% 15rem !important;
         }
        .card-content {
+         transition: all .8s;
         .card-title {
           margin-top: 13rem; 
           padding: .3rem 0;

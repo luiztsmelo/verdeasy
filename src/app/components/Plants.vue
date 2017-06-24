@@ -50,7 +50,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
+                <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -101,7 +101,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
+                <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -318,7 +318,7 @@ _____________________________________________________________________
     }
   }
   .card-footer {
-    #footer-subtitle {
+    .footer-subtitle {
       cursor: pointer; 
       margin: 0 0 1rem 0;
       padding: 0;
@@ -414,7 +414,7 @@ _____________________________________________________________________
 @media screen and (max-width: 425px){
   #hero {
     margin: 0;
-    padding: 2rem 0;
+    padding: 3rem 0;
     .title {
       font-size: 2.5rem;
       line-height: 1.3;
@@ -432,31 +432,63 @@ _____________________________________________________________________
   }
   .container-card {
     background: rgb(29, 29, 22);
+    .arrow-left-1 {
+      display: none;
+    }
+    .arrow-right-1 {
+      display: none;
+    }
+    .arrow-left-2 {
+      display: none;
+    }
+    .arrow-right-2 {
+      display: none;
+    }
   }
   .container-title {
     padding: 0 0 0 .4rem !important;
   }
-  .arrow-left-1 {
-    display: none;
-  }
-  .arrow-right-1 {
-    display: none;
-  }
-  .arrow-left-2 {
-    display: none;
-  }
-  .arrow-right-2 {
-    display: none;
-  }
+  
   .container-card {
     .carousel {
       padding: 0;
       display: block !important;
       .card {
         width: 95%;
-
+        height: 13rem !important;
+        background-size: 100% 13rem !important;
         transform: translateX(0);
-   
+        &:hover .card-content {
+          transform: translateY(-99%) !important;
+          
+        }
+       .card-content {
+        .card-title {
+          margin-top: 11rem; 
+          padding: .3rem 0;
+        }
+        .card-subtitle {
+          font-size: 1.1rem;
+          font-weight: 300;
+        }
+        .card-bar { 
+          height: 1.4rem;
+          #progress-bar-sun {
+            height: 1.4rem;
+          }
+          #progress-bar-water {
+            height: 1.4rem;
+          }
+          #progress-bar-care {
+            height: 1.4rem;
+          }
+        }
+        .card-footer {
+          .footer-subtitle {
+            font-size: 1.4rem;
+          }
+          }
+        }
       }
     }
   }

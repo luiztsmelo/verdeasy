@@ -50,7 +50,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="modalPlantData = plant">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -101,7 +101,7 @@
               </div>
 
               <div class="card-footer">
-                <h4 id="footer-subtitle" @click="modalPlantData = plant">Mais informações</h4>
+                <h4 id="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
               </div>
           
             </div>
@@ -118,11 +118,11 @@
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-if="modalPlantData">
+      <div id="modal" v-if="plantModal" @click="plantModal = null">
         <div class="modal-body" @click.stop>
-          <h1>{{ modalPlantData.name }}</h1>
-          <p>{{ modalPlantData.sol }}</p>
-          <p>{{ modalPlantData.rega }}</p>
+          <h1>{{ plantModal.name }}</h1>
+          <p>{{ plantModal.sol }}</p>
+          <p>{{ plantModal.rega }}</p>
         </div>
       </div>
     </transition><!--MODAL-->
@@ -131,7 +131,7 @@
 </template>
 _____________________________________________________________________
 <script>
-import lodash from 'lodash'
+import _ from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
@@ -139,12 +139,11 @@ export default {
 
   data() {
     return {
-      showModal: false,
       leftArrowImgSrc: './../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../static/utils/arrowR.svg',
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null,
-      modalPlantData: null
+      plantModal: null
     }
   },
 

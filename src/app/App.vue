@@ -114,7 +114,7 @@ body {
   #navbar {
     padding: 1rem;
     display: block;
-    background: #1d1d16;
+    background: rgb(37, 37, 30);
 
     .brand {
       font-size: 2.2rem;

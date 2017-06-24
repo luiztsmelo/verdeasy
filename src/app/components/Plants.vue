@@ -431,7 +431,7 @@ _____________________________________________________________________
     }
   }
   .container-card {
-    background: rgba(#1d1d16, 0.8);
+    background: #1d1d16;
   }
   .container-title {
     padding: 0 0 0 .4rem !important;

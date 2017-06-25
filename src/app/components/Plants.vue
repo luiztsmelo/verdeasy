@@ -5,12 +5,28 @@
     <div id="hero">
       <h2 class="title">MORA EM APARTAMENTO?</h2>
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
+      
     </div><!--HERO-->
 
     <!--PLANTS CONTAINER-->
     <div class="container-card">
+
       
-      
+      <!--FILTER-->
+      <div id="filter" @click="showFilter = !showFilter">
+        <img class="filter-img" src="./../../../static/utils/filter.svg" alt="Filtrar">
+        <h3 class="filter-title">FILTRAR</h3>
+      </div>
+      <!--Filter Modal-->
+      <transition name="filter-animation">
+        <div class="filter-modal" v-if="showFilter" @click="showFilter = !showFilter">
+          <div class="filter-modal-body" @click.stop>
+            <h1>Sol</h1>
+          </div>
+        </div>
+      </transition><!--FILTER-->
+
+
       <!--ERVAS AROMÁTICAS-->
       <div class="arrow-left-1" @click="moveCardsRight1" v-show="moveCardsLeftWidth1 < 0">
         <img :src="leftArrowImgSrc">
@@ -62,6 +78,7 @@
         <img :src="rightArrowImgSrc">
       </div><!--ERVAS AROMÁTICAS-->
       
+
       <!--ERVAS MEDICINAIS-->
       <div class="arrow-left-2" @click="moveCardsRight2" v-show="moveCardsLeftWidth2 < 0">
         <img :src="leftArrowImgSrc">
@@ -116,6 +133,7 @@
       
     </div><!--PLANTS CONTAINER-->
 
+
     <!--MODAL-->
     <transition name="modal-animation">
       <div id="modal" v-if="plantModal" @click="plantModal = null">
@@ -139,6 +157,7 @@ export default {
 
   data() {
     return {
+      showFilter: false,
       leftArrowImgSrc: './../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../static/utils/arrowR.svg',
       moveCardsLeftWidth1: null,
@@ -196,6 +215,7 @@ _____________________________________________________________________
   overflow-x: hidden;
   display: flex;
   flex-flow: column nowrap;
+  position: relative;
   .container-title {
     margin: 0;
     padding: 0 0 0 3rem;
@@ -206,21 +226,22 @@ _____________________________________________________________________
     color: $offwhite;
     font-size: 1.4rem;
   }
+  
   .arrow-left-1 {
     @include arrowLeft;
-    margin: 1.7rem 0 0 0;
+    margin: 1.8rem 0 0 0;
   }
   .arrow-right-1 {
     @include arrowRight;
-    margin: 1.7rem 0 0 0;
+    margin: 1.8rem 0 0 0;
   }
   .arrow-left-2 {
     @include arrowLeft;
-    margin: 16rem 0 0 0;
+    margin: 16.3rem 0 0 0;
   }
   .arrow-right-2 {
     @include arrowRight;
-    margin: 16rem 0 0 0;
+    margin: 16.3rem 0 0 0;
   }
   .carousel-container {
     .carousel {
@@ -331,6 +352,64 @@ _____________________________________________________________________
 }
 
 //******************************************//
+// FILTER 
+//******************************************//
+#filter {
+  cursor: pointer;
+  padding: 0 3rem 0 0;
+  top: 3%;
+  color: white;
+  position: absolute;
+  right: 0;
+  .filter-img {
+    display: inline-block;
+    width: 1.5rem;
+    height: auto;
+    margin-right: .2rem;
+  }
+  .filter-title {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+}
+.filter-modal {
+  background: rgba(0, 0, 0, 0.777);
+  width:  100%;
+  height: 100%;
+  position: fixed;
+  top:  0;
+  left: 0;
+  z-index: 9998;
+  .filter-modal-body {
+    position: absolute;
+    padding: 2em;
+    background: white;
+    top:  50%;
+    left: 50%;
+    width: 70%;
+    height: 60%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+// Transition
+.filter-animation-enter {
+  opacity: 0;
+}
+
+.filter-animation-enter-active {
+  transition: all 0.3s;
+}
+
+.filter-animation-leave-active {
+  transition: all 0.4s;
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+//******************************************//
 // MODAL 
 //******************************************//
 #modal {
@@ -353,7 +432,7 @@ _____________________________________________________________________
   }
 }
 
-// TRANSITIONS
+// Transition
 .modal-animation-enter {
   opacity: 0;
 }
@@ -376,6 +455,7 @@ _____________________________________________________________________
   flex-direction: column;
   padding: 5rem 0 8rem 0;
   background: $bgopacity;
+  position: relative;
   .title {
     color: white;
     font-size: 4.2rem;

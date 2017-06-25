@@ -356,8 +356,8 @@ _____________________________________________________________________
 //******************************************//
 #filter {
   cursor: pointer;
-  padding: 0 3rem 0 0;
-  top: 3%;
+  padding: 0 3.5rem 0 0;
+  top: 3.5%;
   color: white;
   position: absolute;
   right: 0;
@@ -391,6 +391,7 @@ _____________________________________________________________________
     width: 70%;
     height: 60%;
     transform: translateX(-50%) translateY(-50%);
+    color: black;
   }
 }
 

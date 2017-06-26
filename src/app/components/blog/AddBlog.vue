@@ -58,7 +58,6 @@ export default {
   flex-flow: column;
   margin: auto;
   width: 100%;
-  background: $bgopacity;
   text-align: center;
   color: white;
   label {

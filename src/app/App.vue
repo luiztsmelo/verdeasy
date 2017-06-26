@@ -8,7 +8,7 @@
         <ul>
           <li><router-link class="link" to="/sobre">Sobre</router-link></li>
           <li><router-link class="link" to="/blog">Blog</router-link></li>
-          <li><router-link class="link" to="#">Contato</router-link></li>
+          <li><router-link class="link" to="/contato">Contato</router-link></li>
           <router-link to="/"><button class="login">Entrar</button></router-link>
         </ul>
       </nav>
@@ -60,7 +60,6 @@ body {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: $bgopacity;
   .brand {
     margin: 0;
     font-size: 2.5rem;

@@ -96,7 +96,7 @@
         <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth2 + 'rem)' }">
         
           <li class="card" 
-            v-for="plant in EMFilter" 
+            v-for="plant in MEDFilter" 
             :style="{ 'background-image': 'url(' + plant.img + ')' }">
             
             <div class="card-content">
@@ -177,9 +177,9 @@ export default {
     EAFilter() {
       return _.filter(this.plants, ['class', 'EA'])
     },
-    // FILTRAR ERVAS MEDICINAIS
-    EMFilter() {
-      return _.filter(this.plants, ['class', 'EM'])
+    // FILTRAR PLANTAS MEDICINAIS
+    MEDFilter() {
+      return _.filter(this.plants, ['class', 'MED'])
     },
 
     // ORDENAR POR MENOR NECESSIDADE DE SOL
@@ -190,19 +190,19 @@ export default {
 
   methods: {
     moveCardsLeft1() {
-      this.moveCardsLeftWidth1 -= 60
+      this.moveCardsLeftWidth1 -= 50
       return moveCardsLeftWidth1;
     },
     moveCardsRight1() {
-      this.moveCardsLeftWidth1 += 60
+      this.moveCardsLeftWidth1 += 50
       return moveCardsLeftWidth1;
     },
     moveCardsLeft2() {
-      this.moveCardsLeftWidth2 -= 60
+      this.moveCardsLeftWidth2 -= 50
       return moveCardsLeftWidth1;
     },
     moveCardsRight2() {
-      this.moveCardsLeftWidth2 += 60
+      this.moveCardsLeftWidth2 += 50
       return moveCardsLeftWidth1;
     },
   },
@@ -243,19 +243,19 @@ _____________________________________________________________________
   
   .arrow-left-1 {
     @include arrowLeft;
-    margin: 2.7rem 0 0 0;
+    margin: 2.9rem 0 0 0;
   }
   .arrow-right-1 {
     @include arrowRight;
-    margin: 2.7rem 0 0 0;
+    margin: 2.9rem 0 0 0;
   }
   .arrow-left-2 {
     @include arrowLeft;
-    margin: 17rem 0 0 0;
+    margin: 17.2rem 0 0 0;
   }
   .arrow-right-2 {
     @include arrowRight;
-    margin: 17rem 0 0 0;
+    margin: 17.2rem 0 0 0;
   }
   .carousel-container {
     .carousel {
@@ -376,12 +376,14 @@ _____________________________________________________________________
   color: white;
   position: absolute;
   right: 0;
+  transition: .2s ease;
+  z-index: 7;
   .filter-img {
     display: inline-block;
     width: 1.9rem;
     height: auto;
     margin-right: .2rem;
-    transition: .2s ease;
+    
   }
   .filter-title {
     display: inline-block;
@@ -389,9 +391,8 @@ _____________________________________________________________________
     font-size: 1.2rem;
     font-weight: 300;
   }
-  &:hover .filter-img {
-    width: 1.7rem;
-    height: auto;
+  &:hover {
+    transform: scale(0.95)
   }
 }
 .filter-modal {
@@ -447,7 +448,7 @@ _____________________________________________________________________
     background: white;
     top:  50%;
     left: 50%;
-    width: 80%;
+    width: 70%;
     height: 70%;
     transform: translateX(-50%) translateY(-50%);
   }
@@ -475,7 +476,6 @@ _____________________________________________________________________
   display: flex;
   flex-direction: column;
   padding: 5rem 0 8rem 0;
-  background: $bgopacity;
   position: relative;
   .title {
     color: white;
@@ -568,7 +568,7 @@ _____________________________________________________________________
           background-size: 100% 15rem !important;
         }
        .card-content {
-         transition: all 1s;
+         transition: all .8s;
          will-change: transform;
         .card-title {
           margin-top: 13rem; 

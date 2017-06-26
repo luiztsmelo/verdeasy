@@ -1,10 +1,12 @@
 <template>
-  <div id="blog">
-    <div class="blog-card" v-for="blog in blogs">
-      <router-link :to="'/blog/' + blog.id"><h1 class="blog-title">{{ blog.title }}</h1></router-link> 
-      <article class="blog-article">{{ blog.content | snippet }}</article>
+  <transition name="blog-animation">
+    <div id="blog">
+      <div class="blog-card" v-for="blog in blogs">
+        <router-link :to="'/blog/' + blog.id"><h1 class="blog-title">{{ blog.title }}</h1></router-link> 
+        <article class="blog-article">{{ blog.content | snippet }}</article>
+      </div>
     </div>
-  </div>
+  </transition>  
 </template>
 
 <script>
@@ -65,4 +67,16 @@ export default {
   }
 }
 
+.blog-animation-enter {
+  opacity: 0;
+}
+
+.blog-animation-enter-active {
+  transition: all 1.3s;
+}
+
+.blog-animation-leave-active {
+  transition: all 1.3s;
+  opacity: 0;
+}
 </style>

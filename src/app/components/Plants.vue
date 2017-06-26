@@ -14,8 +14,8 @@
       
       <!--FILTER-->
       <div id="filter" @click="showFilter = !showFilter">
-        <img class="filter-img" src="./../../../static/utils/filter.svg" alt="Filtrar">
         <h3 class="filter-title">FILTRAR</h3>
+        <img class="filter-img" src="./../../../static/utils/filter.svg" alt="Filtrar">
       </div>
       <!--Filter Modal-->
       <transition name="filter-animation">
@@ -32,8 +32,11 @@
         <img :src="leftArrowImgSrc">
       </div>
 
-      <h2 class="container-title">Ervas Aromáticas</h2>
-      
+      <div class="container-title">
+        <img class="container-title-img" src="./../../../static/utils/EA.svg" alt="Ervas Aromáticas">
+        <h2>Ervas Aromáticas</h2>
+      </div>
+
       <div class="carousel-container">
         <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth1 + 'rem)' }">
         
@@ -79,12 +82,15 @@
       </div><!--ERVAS AROMÁTICAS-->
       
 
-      <!--ERVAS MEDICINAIS-->
+      <!--PLANTAS MEDICINAIS-->
       <div class="arrow-left-2" @click="moveCardsRight2" v-show="moveCardsLeftWidth2 < 0">
         <img :src="leftArrowImgSrc">
       </div>
 
-      <h2 class="container-title">Ervas Medicinais</h2>
+      <div class="container-title">
+        <img class="container-title-img" src="./../../../static/utils/MED.svg" alt="Ervas Aromáticas">
+        <h2>Plantas Medicinais</h2>
+      </div>
       
       <div class="carousel-container">
         <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth2 + 'rem)' }">
@@ -128,7 +134,7 @@
 
       <div class="arrow-right-2" @click="moveCardsLeft2">
         <img :src="rightArrowImgSrc">
-      </div><!--ERVAS MEDICINAIS-->
+      </div><!--PLANTAS MEDICINAIS-->
       
       
     </div><!--PLANTS CONTAINER-->
@@ -208,7 +214,7 @@ _____________________________________________________________________
 @import "./../scss/_arrows.scss";
 
 .container-card {
-  padding: 1.7rem 0 0 0;
+  padding: 1.2rem 0 0 0;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   white-space: nowrap;
@@ -219,35 +225,44 @@ _____________________________________________________________________
   .container-title {
     margin: 0;
     padding: 0 0 0 3rem;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-style: $fontHeading;
-    line-height: .4;
-    color: $offwhite;
-    font-size: 1.4rem;
+    h2 {
+      padding: 0 0 0 .2rem;
+      float: left;
+      text-transform: uppercase;
+      color: $offwhite;
+      font-size: 1.2rem;
+      line-height: 0;
+      transform: translateY(1.1rem);
+    }
+    .container-title-img {
+      float: left;
+      width: 2.2rem;
+      height: auto;
+    }
   }
   
   .arrow-left-1 {
     @include arrowLeft;
-    margin: 1.8rem 0 0 0;
+    margin: 2.7rem 0 0 0;
   }
   .arrow-right-1 {
     @include arrowRight;
-    margin: 1.8rem 0 0 0;
+    margin: 2.7rem 0 0 0;
   }
   .arrow-left-2 {
     @include arrowLeft;
-    margin: 16.3rem 0 0 0;
+    margin: 17rem 0 0 0;
   }
   .arrow-right-2 {
     @include arrowRight;
-    margin: 16.3rem 0 0 0;
+    margin: 17rem 0 0 0;
   }
   .carousel-container {
     .carousel {
       position: relative;
       display: flex;
       transition: all .6s ease;
+      margin: .7rem 0 0 0;
       .card {
         margin: 0 .2rem 1rem .2rem;
         height: 10.5rem;
@@ -321,20 +336,20 @@ _____________________________________________________________________
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.6s ease;
+        transition: all 0.4s ease;
       
       }
       #progress-bar-water {
         height: 1.2rem;
         background-color: rgba(100, 181, 246, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 0.8s ease;
+        transition: all 0.6s ease;
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
         transform: translateX(-13.5rem);
-        transition: all 1s ease;
+        transition: all 0.8s ease;
       }
     }
   }
@@ -356,22 +371,27 @@ _____________________________________________________________________
 //******************************************//
 #filter {
   cursor: pointer;
-  padding: 0 3.5rem 0 0;
-  top: 3.5%;
+  padding: 0 3rem 0 0;
+  top: 5%;
   color: white;
   position: absolute;
   right: 0;
   .filter-img {
     display: inline-block;
-    width: 1.5rem;
+    width: 1.9rem;
     height: auto;
     margin-right: .2rem;
+    transition: .2s ease;
   }
   .filter-title {
     display: inline-block;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
+  }
+  &:hover .filter-img {
+    width: 1.7rem;
+    height: auto;
   }
 }
 .filter-modal {

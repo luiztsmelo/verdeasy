@@ -1,10 +1,12 @@
 <template>
-  <div id="blog">
-    <div class="blog-card" v-for="blog in blogs">
-      <router-link :to="'/blog/' + blog.id"><h1 class="blog-title">{{ blog.title }}</h1></router-link> 
-      <article class="blog-article">{{ blog.content | snippet }}</article>
+  <transition name="component-fade" mode="out-in">
+    <div id="blog">
+      <div class="blog-card" v-for="blog in blogs">
+        <router-link :to="'/blog/' + blog.id"><h1 class="blog-title">{{ blog.title }}</h1></router-link> 
+        <article class="blog-article">{{ blog.content | snippet }}</article>
+      </div>
     </div>
-  </div>
+  </transition>  
 </template>
 
 <script>
@@ -39,6 +41,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "./../../scss/style.scss";
+
+.component-fade-enter-active,  {
+  transition: $comptransition;
+}
+.component-fade-enter, .component-fade-leave-to, .component-fade-leave-active {
+  opacity: 0;
+}
 
 #blog {
   display: flex;

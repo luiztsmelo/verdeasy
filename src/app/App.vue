@@ -1,24 +1,26 @@
 <template>
-  <div id="app">
+  <transition name="component-fade" mode="out-in">
+    <div id="app">
 
-    <!--NAVBAR-->
-    <header id="navbar">
-      <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
-      <nav>
-        <ul>
-          <li><router-link class="link" to="/sobre">Sobre</router-link></li>
-          <li><router-link class="link" to="/blog">Blog</router-link></li>
-          <li><router-link class="link" to="/contato">Contato</router-link></li>
-          <router-link to="/"><button class="login">Entrar</button></router-link>
-        </ul>
-      </nav>
-    </header> <!--NAVBAR-->
-    
-    <router-view></router-view>
-    
-    <app-footer></app-footer>
+      <!--NAVBAR-->
+      <header id="navbar">
+        <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
+        <nav>
+          <ul>
+            <li><router-link class="link" to="/sobre">Sobre</router-link></li>
+            <li><router-link class="link" to="/blog">Blog</router-link></li>
+            <li><router-link class="link" to="/contato">Contato</router-link></li>
+            <router-link to="/"><button class="login">Entrar</button></router-link>
+          </ul>
+        </nav>
+      </header> <!--NAVBAR-->
+      
+      <router-view></router-view>
+      
+      <app-footer></app-footer>
 
-  </div>
+    </div>
+  </transition>   
 </template>
 
 <script>
@@ -62,6 +64,13 @@ export default {
 
 <style lang="scss">
 @import "./scss/style.scss";
+
+.component-fade-enter-active,  {
+  transition: $comptransition;
+}
+.component-fade-enter, .component-fade-leave-to, .component-fade-leave-active {
+  opacity: 0;
+}
 
 body {
   background-image: url('../assets/bgimg/bgimg1.jpg');

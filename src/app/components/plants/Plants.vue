@@ -1,4 +1,5 @@
 <template>
+<transition name="component-fade" mode="out-in">
   <div class="home">
 
     <!--HERO-->
@@ -152,6 +153,7 @@
     </transition><!--MODAL-->
 
   </div> 
+</transition>  
 </template>
 _____________________________________________________________________
 <script>
@@ -215,6 +217,13 @@ _____________________________________________________________________
 @import "./scss/_mediaQueries.scss";
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";
+
+.component-fade-enter-active,  {
+  transition: $comptransition;
+}
+.component-fade-enter, .component-fade-leave-to, .component-fade-leave-active {
+  opacity: 0;
+}
 
 .container-card {
   padding: 1.2rem 0 0 0;

@@ -23,6 +23,7 @@
         <div class="filter-modal" v-if="showFilter" @click="showFilter = !showFilter">
           <div class="filter-modal-body" @click.stop>
             <h1>Sol</h1>
+            <input class="slider" type="range" min="1" max="10">
           </div>
         </div>
       </transition><!--FILTER-->

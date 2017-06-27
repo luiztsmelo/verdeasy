@@ -3,7 +3,9 @@ import VueRouter      from 'vue-router';
 import VueResource    from 'vue-resource';
 import App            from './App';
 import { routes }     from './../router';
+import Meta           from 'vue-meta'
 
+Vue.use(Meta)
 Vue.use(VueResource);
 
 Vue.config.productionTip = false;

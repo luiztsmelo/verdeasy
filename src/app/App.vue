@@ -28,11 +28,35 @@ export default {
   components: {
     'app-footer': Footer,
   },
-  data() {
-    return {
-  
-    }
-  }
+
+  // VUE-META
+  metaInfo: {
+    title: 'Verdeasy',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
+      
+      // GOOGLE
+      { name: 'description', content: 'Catálogo amigável de plantas, selecionadas a dedo, feito especialmente para pessoas leigas na arte do cultivo, e que não possuem uma grande área para plantar, como apartamentos e casas nas grandes cidades.' },
+      { name: 'google-site-verification" content="2iVdMP9nUvh_ac45O4wSphuN20wbNCL6n8waEO4N7yc' },
+      { name: 'google" content="notranslate' },
+      
+      // MOBILE THEMES
+      // Chrome, Firefox OS and Opera / rgb(29, 29, 22)
+      { name: 'theme-color', content: '#1d1d16' },
+      // Windows Phone
+      { name: 'msapplication-navbutton-color', content: '#1d1d16' },
+      // iOS Safari
+      { name: 'apple-mobile-web-app-status-bar-style', content: '#1d1d16' },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/png', href: './../../static/utils/verdeasyG.png' },
+    ],
+    script: [
+      // Google Ads
+      { type: 'text/javascript', src: './../../googleAds.js' },
+    ],
+  },
 }
 </script>
 

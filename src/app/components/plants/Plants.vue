@@ -15,7 +15,7 @@
       <!--FILTER-->
       <div id="filter" @click="showFilter = !showFilter">
         <h3 class="filter-title">FILTRAR</h3>
-        <img class="filter-img" src="./../../../static/utils/filter.svg" alt="Filtrar">
+        <img class="filter-img" src="./../../../../static/utils/filter.svg" alt="Filtrar">
       </div>
       <!--Filter Modal-->
       <transition name="filter-animation">
@@ -33,7 +33,7 @@
       </div>
 
       <div class="container-title">
-        <img class="container-title-img" src="./../../../static/utils/EA.svg" alt="Ervas Aromáticas">
+        <img class="container-title-img" src="./../../../../static/utils/EA.svg" alt="Ervas Aromáticas">
         <h2>Ervas Aromáticas</h2>
       </div>
 
@@ -88,7 +88,7 @@
       </div>
 
       <div class="container-title">
-        <img class="container-title-img" src="./../../../static/utils/MED.svg" alt="Ervas Aromáticas">
+        <img class="container-title-img" src="./../../../../static/utils/MED.svg" alt="Ervas Aromáticas">
         <h2>Plantas Medicinais</h2>
       </div>
       
@@ -144,9 +144,9 @@
     <transition name="modal-animation">
       <div id="modal" v-if="plantModal" @click="plantModal = null">
         <div class="modal-body" @click.stop>
+          
+          <img class="modal-img" :src="plantModal.img" :alt="plantModal.name">
           <h1>{{ plantModal.name }}</h1>
-          <p>{{ plantModal.sol }}</p>
-          <p>{{ plantModal.rega }}</p>
         </div>
       </div>
     </transition><!--MODAL-->
@@ -155,7 +155,7 @@
 </template>
 _____________________________________________________________________
 <script>
-import _ from 'lodash'
+import { filter, orderBy } from 'lodash'
 import { plantsData } from './plantsData'
 
 export default {
@@ -164,11 +164,11 @@ export default {
   data() {
     return {
       showFilter: false,
-      leftArrowImgSrc: './../../../static/utils/arrowL.svg',
-      rightArrowImgSrc: './../../../static/utils/arrowR.svg',
+      plantModal: null,
+      leftArrowImgSrc: './../../../../static/utils/arrowL.svg',
+      rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
       moveCardsLeftWidth1: null,
-      moveCardsLeftWidth2: null,
-      plantModal: null
+      moveCardsLeftWidth2: null, 
     }
   },
 
@@ -210,8 +210,11 @@ export default {
 </script>
 _____________________________________________________________________
 <style lang="scss" scoped>
-@import "./../scss/style.scss";
-@import "./../scss/_arrows.scss";
+@import "./../../scss/style.scss";
+@import "./../../scss/_arrows.scss";
+@import "./scss/_mediaQueries.scss";
+@import "./scss/_modal.scss";
+@import "./scss/filter.scss";
 
 .container-card {
   padding: 1.2rem 0 0 0;
@@ -366,108 +369,7 @@ _____________________________________________________________________
   }
 }
 
-//******************************************//
-// FILTER 
-//******************************************//
-#filter {
-  cursor: pointer;
-  padding: 0 3rem 0 0;
-  top: 5%;
-  color: white;
-  position: absolute;
-  right: 0;
-  transition: .2s ease;
-  z-index: 7;
-  .filter-img {
-    display: inline-block;
-    width: 1.9rem;
-    height: auto;
-    margin-right: .2rem;
-    
-  }
-  .filter-title {
-    display: inline-block;
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 300;
-  }
-  &:hover {
-    transform: scale(0.95)
-  }
-}
-.filter-modal {
-  background: rgba(0, 0, 0, 0.777);
-  width:  100%;
-  height: 100%;
-  position: fixed;
-  top:  0;
-  left: 0;
-  z-index: 9998;
-  .filter-modal-body {
-    position: absolute;
-    padding: 2em;
-    background: white;
-    top:  50%;
-    left: 50%;
-    width: 70%;
-    height: 60%;
-    transform: translateX(-50%) translateY(-50%);
-    color: black;
-  }
-}
 
-// Transition
-.filter-animation-enter {
-  opacity: 0;
-}
-
-.filter-animation-enter-active {
-  transition: all 0.3s;
-}
-
-.filter-animation-leave-active {
-  transition: all 0.4s;
-  opacity: 0;
-  transform: scale(1.1);
-}
-
-//******************************************//
-// MODAL 
-//******************************************//
-#modal {
-  background: rgba(0, 0, 0, 0.777);
-  width:  100%;
-  height: 100%;
-  position: fixed;
-  top:  0;
-  left: 0;
-  z-index: 9998;
-  .modal-body {
-    position: absolute;
-    padding: 2em;
-    background: white;
-    top:  50%;
-    left: 50%;
-    width: 70%;
-    height: 70%;
-    transform: translateX(-50%) translateY(-50%);
-  }
-}
-
-// Transition
-.modal-animation-enter {
-  opacity: 0;
-}
-
-.modal-animation-enter-active {
-  transition: all 0.3s;
-}
-
-.modal-animation-leave-active {
-  transition: all 0.4s;
-  opacity: 0;
-  transform: scale(1.1);
-}
 
 //******************************************//
 // HERO COMPONENT
@@ -492,125 +394,5 @@ _____________________________________________________________________
     font-family: $fontHeading;
   }
 }
-//******************************************//
-// MEDIA QUERIES
-//******************************************//
-
-//TABLET
-@media screen and (max-width: 768px){
-  #hero {
-    margin: 0;
-    .title {
-      font-size: 3.3rem;
-      line-height: 1;
-    }
-    .subtitle {
-      font-size: 2.2rem;
-      line-height: 1;
-    }
-  }
-}
-
-//MOBILE 
-@media screen and (max-width: 425px){
-  #hero {
-    margin: 0;
-    padding: 3rem 0;
-    .title {
-      font-size: 2.5rem;
-      line-height: 1.3;
-    }
-    .subtitle {
-      font-size: 2.0rem;
-      line-height: 1.3;
-    }
-  }
-  #modal {
-    .modal-body {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  .container-card {
-    background: rgb(29, 29, 22);
-    .arrow-left-1 {
-      display: none;
-    }
-    .arrow-right-1 {
-      display: none;
-    }
-    .arrow-left-2 {
-      display: none;
-    }
-    .arrow-right-2 {
-      display: none;
-    }
-  }
-  .container-title {
-    padding: 0 0 0 .4rem !important;
-  }
-  
-  .container-card {
-    
-    .carousel {
-      padding: 0;
-      position: static !important;
-      display: block !important;
-      .card {
-        width: 95%;
-        height: 15rem !important;
-        background-size: 100% 13rem !important;
-        transform: translateX(0);
-        &:hover .card-content {
-          transform: translateY(-98%) !important;
-        }
-        &:hover {
-          background-size: 100% 15rem !important;
-        }
-       .card-content {
-         transition: all .8s;
-         will-change: transform;
-        .card-title {
-          margin-top: 13rem; 
-          padding: .3rem 0;
-        }
-        #less {
-          transform: translateY(-2.1rem);
-          font-size: 2rem;
-        }
-        #more {
-          transform: translateY(-2.7rem);
-          font-size: 1.7rem;
-        }
-        .card-subtitle {
-          font-size: 1.2rem;
-
-          transform: translate(-.7rem, -1.9rem);
-        }
-        .card-bar { 
-          height: 1.5rem;
-          margin: 1rem auto;
-          #progress-bar-sun {
-            height: 1.5rem;
-          }
-          #progress-bar-water {
-            height: 1.5rem;
-          }
-          #progress-bar-care {
-            height: 1.5rem;
-          }
-        }
-        .card-footer {
-          padding-top: 1rem;
-          .footer-subtitle {
-            font-size: 1.5rem;
-            
-          }
-          }
-        }
-      }
-    }
-  }
-} 
 
 </style>

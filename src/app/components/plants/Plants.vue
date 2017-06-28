@@ -145,10 +145,37 @@
     <!--MODAL-->
     <transition name="modal-animation">
       <div id="modal" v-if="plantModal" @click="plantModal = null">
+        <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="">
         <div class="modal-body" @click.stop>
+
+          <!--Modal Sidebar-->
+          <div class="modal-sidebar">
+            <div class="modal-plant-name-box">
+              <h1 class="modal-plant-name">{{ plantModal.name }}</h1>
+            </div>
+            <img class="modal-plant-img" :src="plantModal.img" :alt="plantModal.name">
+          </div><!--Modal Sidebar-->
+
+          <!--Modal Data-->
+          <div class="modal-data">
+            <div class="modal-menu">
+
+              <div class="modal-menu-stats" @click="">
+                <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="">
+                <h2 class="modal-menu-title">Características</h2>
+              </div>
+
+              <div class="modal-menu-howtogrow" @click="">
+                <img class="modal-menu-img" src="./../../../../static/utils/howtogrow.svg" alt="">
+                <h2 class="modal-menu-title">Como plantar</h2>
+              </div>
+            </div>
+
+            <div class="modal-stats">
+              <div>Sol</div>
+            </div>
+          </div><!--Modal Data-->
           
-          <img class="modal-img" :src="plantModal.img" :alt="plantModal.name">
-          <h1>{{ plantModal.name }}</h1>
         </div>
       </div>
     </transition><!--MODAL-->

@@ -1,7 +1,7 @@
 <template>
   <transition name="component-fade" mode="out-in">
-    <div id="about">
-      <h1>Sobre</h1>
+    <div id="sobre">
+      <h1 class="sobre-title">Sobre</h1>
     </div>
   </transition>  
 </template>
@@ -22,7 +22,17 @@ export default {
   opacity: 0;
 }
 
-#about {
+#sobre {
+  display: flex;
   color: white;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  .sobre-title {
+    font-family: $fontHeading;
+    line-height: .3;
+  }
 }
 </style>

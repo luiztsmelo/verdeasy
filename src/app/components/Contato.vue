@@ -59,13 +59,10 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  position: relative;
   .contato-title {
     font-family: $fontHeading;
-    line-height: 0;
+    line-height: .3;
   }
   .submitted {
     .submitted-img {

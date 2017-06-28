@@ -1,7 +1,7 @@
 <template>
-  <transition name="component-fade" mode="out-in">
+  <transition name="component-fade" mode="in-out">
     <div id="single-blog">
-      <div class="box">
+      <div class="body">
         <h1 class="blog-title">{{ blog.title }}</h1>
         <article class="blog-article">{{ blog.content }}</article>
       </div>
@@ -40,7 +40,7 @@ export default {
 #single-blog {
   display: flex;
   flex-flow: column wrap;
-  .box {
+  .body {
     background-color: white;
     margin: .7rem auto;
     width: 60%;

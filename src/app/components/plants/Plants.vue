@@ -148,15 +148,16 @@
         <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="">
         <div class="modal-body" @click.stop>
 
-          <!--Modal Sidebar-->
+          <!--Sidebar-->
           <div class="modal-sidebar">
             <div class="modal-plant-name-box">
               <h1 class="modal-plant-name">{{ plantModal.name }}</h1>
             </div>
             <img class="modal-plant-img" :src="plantModal.img" :alt="plantModal.name">
-          </div><!--Modal Sidebar-->
+            <p class="modal-plant-sci"><i>{{ plantModal.sci }}</i></p>
+          </div><!--Sidebar-->
 
-          <!--Modal Data-->
+          <!-- Data-->
           <div class="modal-data">
             <div class="modal-menu">
 
@@ -174,7 +175,7 @@
             <div class="modal-stats">
               <div>Sol</div>
             </div>
-          </div><!--Modal Data-->
+          </div><!--Data-->
           
         </div>
       </div>

@@ -149,7 +149,8 @@ body {
     background: rgb(37, 37, 30);
 
     .brand {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
+      line-height: .7;
     }
   }
   nav {

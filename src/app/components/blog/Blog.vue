@@ -33,7 +33,7 @@ export default {
   },
   filters: {
     snippet(value){
-      return value.slice(1, 200) + '...';
+      return value.slice(0, 200) + '...';
     }
   }
 }

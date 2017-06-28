@@ -13,10 +13,10 @@
   color: white;
   .modal-exit {
     position: absolute;
-    top: 4%;
-    left: 96%;
+    top: 2.5%;
+    right: 1%;
     cursor: pointer;
-    width: 2.2rem;
+    width: 1.8rem;
     height: auto;
     transition: transform 1s cubic-bezier(.23,1.51,.99,1.03);
     z-index: 9998;
@@ -39,16 +39,24 @@
       flex: 1 0 0;
       background: rgb(17, 17, 17);
       .modal-plant-name-box {
-        height: 2.7rem;
+        height: 2.2rem;
         .modal-plant-name {
-          font-size: 1.7rem;
+          padding-top: .3rem;
+          font-size: 1.4rem;
           text-align: center;
+          color: $offwhite;
         }
       }
       .modal-plant-img {
-        width: 13rem;
+        width: 12rem;
         height: auto;
-        
+     }
+     .modal-plant-sci {
+       font-family: $fontMain;
+       font-size: 1rem;
+       line-height: 0;
+       text-align: center;
+       color: $offwhite;
      }
     }
 
@@ -64,18 +72,19 @@
         flex-flow: row nowrap;
         background: rgb(40, 40, 40);
         padding: 0 .4rem;
-        height: 4rem;
+        height: 3.32rem;
         align-content: center;
         align-items: center;
         justify-content: center;   
         .modal-menu-img {
-          width: 2.4rem;
+          width: 2rem;
           height: auto;
           margin-right: 1rem; 
         }
         .modal-menu-title {
           padding-top: 1rem;
-          font-size: 1.4rem;
+          font-size: 1.3rem;
+          color: $offwhite;
         }
         .modal-menu-stats {
           display: inline-flex;

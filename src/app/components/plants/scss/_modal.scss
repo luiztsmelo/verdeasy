@@ -36,13 +36,13 @@
 
     /*Modal Sidebar*/
     .modal-sidebar {
+      align-content: stretch;
       flex: 1 0 0;
       background: rgb(17, 17, 17);
       .modal-plant-name-box {
-        height: 2.2rem;
+        height: 1.8rem;
         .modal-plant-name {
-          padding-top: .3rem;
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           text-align: center;
           color: $offwhite;
         }
@@ -64,26 +64,25 @@
     .modal-data {
       display: flex;
       flex-flow: column nowrap;
-      flex: 5 0 0;
+      flex: 7 0 0;
 
       .modal-menu {
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
         background: rgb(40, 40, 40);
-        padding: 0 .4rem;
-        height: 3.32rem;
+        height: 2.8rem;
         align-content: center;
         align-items: center;
         justify-content: center;   
         .modal-menu-img {
-          width: 2rem;
+          width: 1.8rem;
           height: auto;
-          margin-right: 1rem; 
+          margin-right: 5%; 
         }
         .modal-menu-title {
-          padding-top: 1rem;
-          font-size: 1.3rem;
+          padding-top: .7rem;
+          font-size: 1.2rem;
           color: $offwhite;
         }
         .modal-menu-stats {
@@ -91,22 +90,61 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-
+          
         }
         .modal-menu-howtogrow {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-  
+          background: rgb(17, 17, 17);
+        }
+        .modal-menu-usos {
+          display: inline-flex;
+          flex: 1 0 0;
+          align-items: center;
+          justify-content: center;
+          background: rgb(17, 17, 17);
         }
       }
       .modal-stats {
-        background: white;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        background: rgb(40, 40, 40);
         height: 100%;
+        .stats-img {
+          position: absolute;
+          left: 28%;
+          width: 2.1rem;
+          height: auto;
+          filter: invert(100%);
+        }
+        #sol {top: 16%;}
+        #rega {top: 26%;}
+        #prag {top: 36%;}
+        #germ {top: 46%;}
+        #cresc {top: 56%;}
+        #alt {top: 66%;}
+        #temp {top: 76%;}
+        #solo {top: 86%;}
+        .stats-bar {
+          position: relative;
+          cursor: help;
+          margin: 2.2% 0;
+          width: 75%;
+          height: 1.1rem;
+          background: rgb(55, 55, 55);
+          
+          .progress-bar {
+            position: absolute;
+            height: 100%;
+            z-index: 1;
+          }
+        }
       }
     }
-    
   }
 }
 

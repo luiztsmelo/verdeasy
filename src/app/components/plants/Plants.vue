@@ -162,19 +162,50 @@
             <div class="modal-menu">
 
               <div class="modal-menu-stats" @click="">
-                <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="">
+                <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="Características">
                 <h2 class="modal-menu-title">Características</h2>
               </div>
 
               <div class="modal-menu-howtogrow" @click="">
-                <img class="modal-menu-img" src="./../../../../static/utils/howtogrow.svg" alt="">
+                <img class="modal-menu-img" src="./../../../../static/utils/howtogrow.svg" alt="Como plantar">
                 <h2 class="modal-menu-title">Como plantar</h2>
               </div>
+              
+              <div class="modal-menu-usos" @click="">
+                <img class="modal-menu-img" src="./../../../../static/utils/usos.svg" alt="Usos">
+                <h2 class="modal-menu-title">Usos</h2>
+              </div>
+
             </div>
 
+            <!--Stats-->
             <div class="modal-stats">
-              <div>Sol</div>
-            </div>
+              <img class="stats-img" id="sol" :src="solPath" alt="Sol">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.sol * 10) + '%; background: rgb(255, 238, 88);'"></div></div>
+
+              <img class="stats-img" id="rega" :src="regaPath" alt="Rega">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.rega * 10) + '%; background: rgb(79, 195, 247);'"></div></div>
+
+              <img class="stats-img" id="prag" :src="pragPath" alt="Propensão a Pragas">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.prag * 10) + '%; background: rgb(229, 115, 115);'"></div></div>
+
+              <img class="stats-img" id="germ" :src="germPath" alt="Velocidade de Germinação">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.germ * 10) + '%; background: rgb(234, 224, 188);'"></div></div>
+
+              <img class="stats-img" id="cresc" :src="crescPath" alt="Velocidade de Crescimento">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.cresc * 10) + '%; background: rgb(174, 213, 129);'"></div></div>
+
+              <img class="stats-img" id="alt" :src="altPath" alt="Altura média">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.alt * 10) + '%; background: rgb(255, 183, 77);'"></div></div>
+
+              <img class="stats-img" id="temp" :src="tempPath" alt="Temperatura">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.temp * 10) + '%; background: rgb(77, 208, 225);'"></div></div>
+
+              <img class="stats-img" id="solo" :src="soloPath" alt="Solo">
+              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.solo * 10) + '%; background: rgb(161, 136, 127);'"></div></div>
+            
+              
+            </div><!--Stats-->
           </div><!--Data-->
           
         </div>
@@ -198,6 +229,14 @@ export default {
       plantModal: null,
       leftArrowImgSrc: './../../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
+      solPath: './../../../../static/utils/sol.svg',
+      regaPath: './../../../../static/utils/rega.svg',
+      pragPath: './../../../../static/utils/prag.svg',
+      germPath: './../../../../static/utils/germ.svg',
+      crescPath: './../../../../static/utils/cresc.svg',
+      altPath: './../../../../static/utils/alt.svg',
+      tempPath: './../../../../static/utils/temp.svg',
+      soloPath: './../../../../static/utils/solo.svg',
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null, 
     }

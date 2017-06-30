@@ -180,29 +180,55 @@
 
             <!--Stats-->
             <div class="modal-stats">
+
               <img class="stats-img" id="sol" :src="solPath" alt="Sol">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.sol * 10) + '%; background: rgb(255, 238, 88);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.sol * 10) + '%; background: rgb(255, 238, 88);'"></div>
+                <div class="reguas"><span id="regua1">2h</span><span id="regua2">4h</span><span id="regua3">6h</span></div>
+              </div>
+              
 
               <img class="stats-img" id="rega" :src="regaPath" alt="Rega">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.rega * 10) + '%; background: rgb(79, 195, 247);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.rega * 10) + '%; background: rgb(79, 195, 247);'"></div>
+                <div class="reguas"><span id="regua1">2/sem.</span><span id="regua2">4/sem.</span><span id="regua3">6/sem.</span></div>
+              </div>
 
               <img class="stats-img" id="prag" :src="pragPath" alt="Propensão a Pragas">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.prag * 10) + '%; background: rgb(229, 115, 115);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.prag * 10) + '%; background: rgb(229, 115, 115);'"></div>
+                <div class="reguas"><span id="regua1">Baixa</span><span id="regua2">Média</span><span id="regua3">Alta</span></div>
+              </div>
 
               <img class="stats-img" id="germ" :src="germPath" alt="Velocidade de Germinação">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.germ * 10) + '%; background: rgb(234, 224, 188);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.germ * 10) + '%; background: rgb(234, 224, 188);'"></div>
+                <div class="reguas"><span id="regua1">1 sem.</span><span id="regua2">2 sem.</span><span id="regua3">3 sem.</span></div>
+              </div>
 
               <img class="stats-img" id="cresc" :src="crescPath" alt="Velocidade de Crescimento">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.cresc * 10) + '%; background: rgb(174, 213, 129);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.cresc * 10) + '%; background: rgb(174, 213, 129);'"></div>
+                <div class="reguas"><span id="regua1">?</span><span id="regua2">?</span><span id="regua3">?</span></div>
+              </div>
 
               <img class="stats-img" id="alt" :src="altPath" alt="Altura média">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.alt * 10) + '%; background: rgb(255, 183, 77);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.alt * 10) + '%; background: rgb(255, 183, 77);'"></div>
+                <div class="reguas"><span id="regua1">30cm</span><span id="regua2">70cm</span><span id="regua3">150cm</span></div>
+              </div>
 
               <img class="stats-img" id="temp" :src="tempPath" alt="Temperatura">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.temp * 10) + '%; background: rgb(77, 208, 225);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.temp * 10) + '%; background: rgb(77, 208, 225);'"></div>
+                <div class="reguas"><span id="regua1">15ºC</span><span id="regua2">20ºC</span><span id="regua3">25ºC</span></div>
+              </div>
 
               <img class="stats-img" id="solo" :src="soloPath" alt="Solo">
-              <div class="stats-bar"><div class="progress-bar" :style="'width:' + (plantModal.solo * 10) + '%; background: rgb(161, 136, 127);'"></div></div>
+              <div class="stats-bar">
+                <div class="progress-bar" :style="'width:' + (plantModal.solo * 10) + '%; background: rgb(161, 136, 127);'"></div>
+                <div class="reguas"><span id="regua1">Arenoso</span><span id="regua2">Médio</span><span id="regua3">Orgânico</span></div>
+              </div>
             
               
             </div><!--Stats-->
@@ -412,11 +438,13 @@ _____________________________________________________________________
       width: 95%;
       height: 1.2rem;
       background-color: rgba(140, 140, 140, 0.5);
+      border-radius: 2rem;
       #progress-bar-sun {
         height: 1.2rem;
         background-color: rgba(245, 231, 118, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.4s ease;
+        border-radius: 2rem;
       
       }
       #progress-bar-water {
@@ -424,12 +452,14 @@ _____________________________________________________________________
         background-color: rgba(100, 181, 246, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.6s ease;
+        border-radius: 2rem;
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.8s ease;
+        border-radius: 2rem;
       }
     }
   }

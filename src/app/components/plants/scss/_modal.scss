@@ -115,33 +115,57 @@
         background: rgb(40, 40, 40);
         height: 100%;
         .stats-img {
+          cursor: help;
           position: absolute;
           left: 28%;
           width: 2.1rem;
           height: auto;
           filter: invert(100%);
         }
-        #sol {top: 16%;}
-        #rega {top: 26%;}
-        #prag {top: 36%;}
-        #germ {top: 46%;}
+        #sol   {top: 16%;}
+        #rega  {top: 26%;}
+        #prag  {top: 36%;}
+        #germ  {top: 46%;}
         #cresc {top: 56%;}
-        #alt {top: 66%;}
-        #temp {top: 76%;}
-        #solo {top: 86%;}
+        #alt   {top: 66%;}
+        #temp  {top: 76%;}
+        #solo  {top: 86%;}
+        .reguas {
+          display: flex;
+          flex-flow: row;
+          font-family: $fontMain;
+          width: 100%;
+          z-index: 2;
+          color: black;
+          #regua1 {
+            margin: auto;
+            z-index: 3;
+          }
+          #regua2 {
+            margin: auto;
+            z-index: 3;
+          }
+          #regua3 {
+            margin: auto;
+            z-index: 3;
+          }
+        }
         .stats-bar {
-          position: relative;
           cursor: help;
+          position: relative;
           margin: 2.2% 0;
           width: 75%;
           height: 1.1rem;
-          background: rgb(55, 55, 55);
-          
+          background: rgb(60, 60, 60);
+          border-radius: 2rem;
+          z-index: 1;
           .progress-bar {
             position: absolute;
             height: 100%;
-            z-index: 1;
+            z-index: 2;
+            border-radius: 2rem;
           }
+          
         }
       }
     }

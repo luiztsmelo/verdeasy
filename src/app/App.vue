@@ -39,7 +39,7 @@ export default {
       { name: 'viewport', content: 'initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
       
       // GOOGLE
-      { name: 'description', content: 'Catálogo amigável de plantas, selecionadas a dedo, feito especialmente para pessoas leigas na arte do cultivo, e que não possuem uma grande área para plantar, como apartamentos e casas nas grandes cidades.' },
+      { name: 'description', content: 'Catálogo moderno e amigável de plantas, feito especialmente para pessoas leigas na arte do cultivo, e que não possuem uma grande área para plantar, como apartamentos.' },
       { name: 'google-site-verification" content="2iVdMP9nUvh_ac45O4wSphuN20wbNCL6n8waEO4N7yc' },
       { name: 'google" content="notranslate' },
       
@@ -116,7 +116,7 @@ body {
         &:hover {
           color: rgba(0, 0, 0, 0.8);
           background: white;
-          border-radius: 0;
+          border-radius: .4rem 0;
         }
       }
       button {
@@ -130,6 +130,7 @@ body {
       text-align: center;
       cursor: pointer;
       transition: .222s ease;
+      border-radius: .4rem 0;
       &:hover {
         background-color: rgb(141, 220, 92);
         }

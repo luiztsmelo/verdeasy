@@ -37,9 +37,9 @@
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: rgb(17, 17, 17);
+      background: rgb(27, 27, 27);
       .modal-plant-name-box {
-        height: 1.8rem;
+        height: 1.7rem;
         .modal-plant-name {
           font-size: 1.3rem;
           text-align: center;
@@ -69,19 +69,18 @@
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
-        background: rgb(40, 40, 40);
-        height: 2.8rem;
+        background: rgb(45, 45, 45);
+        height: 2.6rem;
         align-content: center;
         align-items: center;
         justify-content: center;   
         .modal-menu-img {
-          width: 1.8rem;
+          width: 1.6rem;
           height: auto;
           margin-right: 5%; 
         }
         .modal-menu-title {
-          padding-top: .7rem;
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           color: $offwhite;
         }
         .modal-menu-stats {
@@ -89,29 +88,45 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          
+          background: rgb(27, 27, 27);
+          transition: all .2s ease;
+          &:hover {
+            background: rgb(40, 40, 40);
+          }
         }
-        .modal-menu-howtogrow {
+        .modal-menu-comoplantar {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(17, 17, 17);
+          background: rgb(27, 27, 27);
+          transition: all .3s ease;
+          &:hover {
+            background: rgb(40, 40, 40);
+          }
         }
         .modal-menu-usos {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(17, 17, 17);
+          background: rgb(27, 27, 27);
+          transition: all .2s ease;
+          &:hover {
+            background: rgb(40, 40, 40);
+          }
+        }
+        .activetab {
+          background: rgb(45, 45, 45);
         }
       }
-      .modal-stats {
+      /*****STATS*****/
+      .stats {
         display: flex;
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        background: rgb(40, 40, 40);
+        background: rgb(45, 45, 45);
         height: 100%;
         .stats-img {
           cursor: help;
@@ -136,7 +151,7 @@
           margin: 2.2% 0;
           width: 75%;
           height: 4.3%;
-          background: rgb(60, 60, 60);
+          background: rgb(65, 65, 65);
           border-radius: 2rem;
           z-index: 1;
           .progress-bar {
@@ -167,6 +182,20 @@
             z-index: 3;
           }
         }
+      }
+      /*****COMO PLANTAR*****/
+      .comoplantar {
+        padding: 0 1rem;
+        background: $offwhite;
+        color: $offblack;
+        height: 100%;
+      }
+      /*****USOS*****/
+      .usos {
+        padding: 0 1rem;
+        background: $offwhite;
+        color: $offblack;
+        height: 100%;
       }
     }
   }

@@ -4,7 +4,7 @@ export const plantsData = {
       plants: [
         { name: 'Agrião', class: 'MED',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Agrião.jpg', sci: 'Nasturtium officinale' },
         { name: 'Alecrim', class: 'MED',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Alecrim.jpg' },
-        { name: 'Arnica Montana', class: 'MED',   dif: 4, sol: 5, rega: 3, prag: 6, germ: 5, cresc: 3, solo: 7, alt: 4, temp: 3, img: './../../../static/plants/Arnica-Montana.jpg', sci: 'Arnica Montana' },
+        { name: 'Arnica Montana', class: 'MED',   dif: 4, sol: 5, rega: 3, prag: 6, germ: 6, cresc: 3, solo: 7, alt: 4, temp: 3, img: './../../../static/plants/Arnica-Montana.jpg', sci: 'Arnica Montana', cultivo: 'A Arnica Montana é uma planta...' },
         { name: 'Calêndula', class: 'MED',   dif: 4, sol: 5, rega: 3, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Calêndula.jpg' },
         { name: 'Camomila', class: 'MED',  dif: 8, sol: 5, rega: 2, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Camomila.jpg' },
         { name: 'Capim-limão', class: 'MED',  dif: 8, sol: 5, rega: 2, prag: 0, germ: 0, cresc: 0, solo: 0, alt: 0, temp: 0, img: './../../../static/plants/Capim-limão.jpg' },

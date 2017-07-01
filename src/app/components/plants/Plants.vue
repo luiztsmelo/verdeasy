@@ -161,17 +161,23 @@
           <div class="modal-data">
             <div class="modal-menu">
 
-              <div class="modal-menu-stats" @click="">
+              <div class="modal-menu-stats" 
+              @click="showStats = true, showComoplantar = false, showUsos = false" 
+              :class="{ activetab: showStats }">
                 <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="Características">
                 <h2 class="modal-menu-title">Características</h2>
               </div>
 
-              <div class="modal-menu-howtogrow" @click="">
-                <img class="modal-menu-img" src="./../../../../static/utils/howtogrow.svg" alt="Como plantar">
+              <div class="modal-menu-comoplantar" 
+              @click="showStats = false, showComoplantar = true, showUsos = false"
+              :class="{ activetab: showComoplantar }">
+                <img class="modal-menu-img" src="./../../../../static/utils/comoplantar.svg" alt="Como plantar">
                 <h2 class="modal-menu-title">Como plantar</h2>
               </div>
               
-              <div class="modal-menu-usos" @click="">
+              <div class="modal-menu-usos" 
+              @click="showStats = false, showComoplantar = false, showUsos = true"
+              :class="{ activetab: showUsos }">
                 <img class="modal-menu-img" src="./../../../../static/utils/usos.svg" alt="Usos">
                 <h2 class="modal-menu-title">Usos</h2>
               </div>
@@ -179,7 +185,7 @@
             </div>
 
             <!--Stats-->
-            <div class="modal-stats">
+            <div class="stats" v-if="showStats">
 
               <img class="stats-img" id="sol" :src="solPath" alt="Sol">
               <div class="stats-bar">
@@ -229,9 +235,20 @@
                 <div class="progress-bar" :style="'width:' + (plantModal.solo * 10) + '%; background: rgb(161, 136, 127);'"></div>
                 <div class="reguas"><span id="regua1">Arenoso</span><span id="regua2">Médio</span><span id="regua3">Orgânico</span></div>
               </div>
-            
-              
+
             </div><!--Stats-->
+
+            <!--Como Plantar-->
+            <div class="comoplantar" v-if="showComoplantar">
+              <h1>Cultivo</h1>
+              <p>{{ plantModal.cultivo }}</p> 
+            </div><!--Como Plantar-->
+
+            <!--Usos-->
+            <div class="usos" v-if="showUsos">
+              <h1>Usos</h1>
+            </div><!--Usos-->
+
           </div><!--Data-->
           
         </div>
@@ -251,6 +268,11 @@ export default {
 
   data() {
     return {
+      //Modal Tabs
+      showStats: true,
+      showComoplantar: false,
+      showUsos: false,
+
       showFilter: false,
       plantModal: null,
       leftArrowImgSrc: './../../../../static/utils/arrowL.svg',

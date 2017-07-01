@@ -37,7 +37,7 @@
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: rgb(27, 27, 27);
+      background: rgb(20, 20, 20);
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -75,7 +75,7 @@
         align-items: center;
         justify-content: center;   
         .modal-menu-img {
-          width: 1.6rem;
+          width: 1.7rem;
           height: auto;
           margin-right: 5%; 
         }
@@ -88,8 +88,8 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(27, 27, 27);
-          transition: all .2s ease;
+          background: rgb(20, 20, 20);
+          transition: all .3s ease;
           &:hover {
             background: rgb(40, 40, 40);
           }
@@ -99,7 +99,7 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(27, 27, 27);
+          background: rgb(20, 20, 20);
           transition: all .3s ease;
           &:hover {
             background: rgb(40, 40, 40);
@@ -110,8 +110,8 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(27, 27, 27);
-          transition: all .2s ease;
+          background: rgb(20, 20, 20);
+          transition: all .3s ease;
           &:hover {
             background: rgb(40, 40, 40);
           }

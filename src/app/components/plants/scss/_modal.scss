@@ -36,7 +36,6 @@
 
     /*Modal Sidebar*/
     .modal-sidebar {
-      align-content: stretch;
       flex: 1 0 0;
       background: rgb(17, 17, 17);
       .modal-plant-name-box {
@@ -130,6 +129,24 @@
         #alt   {top: 66%;}
         #temp  {top: 76%;}
         #solo  {top: 86%;}
+       
+        .stats-bar {
+          cursor: default;
+          position: relative;
+          margin: 2.2% 0;
+          width: 75%;
+          height: 4.3%;
+          background: rgb(60, 60, 60);
+          border-radius: 2rem;
+          z-index: 1;
+          .progress-bar {
+            position: absolute;
+            height: 100%;
+            z-index: 2;
+            border-radius: 2rem;
+          }
+          
+        }
         .reguas {
           display: flex;
           flex-flow: row;
@@ -149,23 +166,6 @@
             margin: auto;
             z-index: 3;
           }
-        }
-        .stats-bar {
-          cursor: help;
-          position: relative;
-          margin: 2.2% 0;
-          width: 75%;
-          height: 1.1rem;
-          background: rgb(60, 60, 60);
-          border-radius: 2rem;
-          z-index: 1;
-          .progress-bar {
-            position: absolute;
-            height: 100%;
-            z-index: 2;
-            border-radius: 2rem;
-          }
-          
         }
       }
     }

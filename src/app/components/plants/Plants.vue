@@ -295,11 +295,11 @@ export default {
     },
     moveCardsLeft2() {
       this.moveCardsLeftWidth2 -= 50
-      return moveCardsLeftWidth1;
+      return moveCardsLeftWidth2;
     },
     moveCardsRight2() {
       this.moveCardsLeftWidth2 += 50
-      return moveCardsLeftWidth1;
+      return moveCardsLeftWidth2;
     },
   },
 };

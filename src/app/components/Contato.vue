@@ -13,8 +13,8 @@
         <label required>E-mail</label>
         <input v-model="contato.email" type="text" placeholder="Seu e-mail" required>
         <label>Mensagem</label>
-        <textarea v-model="contato.mensagem" name="" id="" cols="57" rows="7" placeholder="Sua mensagem" required></textarea>
-        <img class="contato-submit" src="./../../../static/utils/contato.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
+        <textarea v-model="contato.mensagem" name="" id="" cols="57" rows="7" placeholder="Sua linda mensagem" required></textarea>
+        <img class="contato-submit" src="./../../../static/utils/pomba.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
       </form>  
     </div>
   </transition>  
@@ -82,6 +82,9 @@ export default {
     label {
       font-family: $fontMain;
       padding: .8rem 0 0 0;
+    }
+    input {
+      width: 40%;
     }
     .contato-submit {
       cursor: pointer;

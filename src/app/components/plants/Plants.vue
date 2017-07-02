@@ -21,9 +21,15 @@
       <!--Filter Modal-->
       <transition name="filter-animation">
         <div class="filter-modal" v-if="showFilter" @click="showFilter = !showFilter">
+          <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="Fechar">
           <div class="filter-modal-body" @click.stop>
-            <h1>Sol</h1>
-            <input class="slider" type="range" min="1" max="10">
+            <div class="filter-modal-title">
+              <h1>Filtrar</h1>
+            </div>
+            <div class="filter-modal-filters">
+              <input class="slider" v-model="filter.sol" type="range" min="1" max="10">
+              <h3>{{filter.sol}}</h3>
+            </div>
           </div>
         </div>
       </transition><!--FILTER-->
@@ -144,8 +150,8 @@
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-if="plantModal" @click="plantModal = null">
-        <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="">
+      <div id="modal" v-if="plantModal" @click="plantModal = null, showStats = true, showComoplantar = false, showUsos = false">
+        <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="Fechar">
         <div class="modal-body" @click.stop>
 
           <!--Sidebar-->
@@ -268,6 +274,9 @@ export default {
 
   data() {
     return {
+      filter: {
+        sol: '',
+      },
       //Modal Tabs
       showStats: true,
       showComoplantar: false,
@@ -275,6 +284,7 @@ export default {
 
       showFilter: false,
       plantModal: null,
+
       leftArrowImgSrc: './../../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
       solPath: './../../../../static/utils/sol.svg',
@@ -285,6 +295,7 @@ export default {
       altPath: './../../../../static/utils/alt.svg',
       tempPath: './../../../../static/utils/temp.svg',
       soloPath: './../../../../static/utils/solo.svg',
+      
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null, 
     }

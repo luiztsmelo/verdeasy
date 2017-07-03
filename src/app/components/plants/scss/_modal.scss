@@ -37,7 +37,7 @@
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: rgb(35, 35, 35);
+      background: rgb(40, 40, 40);
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -47,12 +47,13 @@
         }
       }
       .modal-plant-img {
-        width: 12rem;
+        width: 11rem;
         height: auto;
+        margin: 0 .6rem;
      }
      .modal-plant-sci {
        font-family: $fontMain;
-       font-size: 1rem;
+       font-size: .97rem;
        line-height: 0;
        text-align: center;
        color: $offwhite;
@@ -69,7 +70,7 @@
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
-        background: rgb(60, 60, 60);
+        background: rgb(70, 70, 70);
         height: 2.6rem;
         align-content: center;
         align-items: center;
@@ -88,10 +89,10 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(35, 35, 35);
+          background: rgb(45, 45, 45);
           transition: all .3s ease;
           &:hover {
-            background: rgb(50, 50, 50);
+            background: rgb(65, 65, 65);
           }
         }
         .modal-menu-comoplantar {
@@ -99,10 +100,10 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(35, 35, 35);
+          background: rgb(45, 45, 45);
           transition: all .3s ease;
           &:hover {
-            background: rgb(50, 50, 50);
+            background: rgb(65, 65, 65);
           }
         }
         .modal-menu-usos {
@@ -110,14 +111,14 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(35, 35, 35);
+          background: rgb(45, 45, 45);
           transition: all .3s ease;
           &:hover {
-            background: rgb(50, 50, 50);
+            background: rgb(65, 65, 65);
           }
         }
         .activetab {
-          background: rgb(60, 60, 60);
+          background: rgb(70, 70, 70);
         }
       }
       /*****STATS*****/
@@ -126,7 +127,7 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        background: rgb(60, 60, 60);
+        background: rgb(70, 70, 70);
         height: 100%;
         .stats-img {
           cursor: help;
@@ -151,7 +152,7 @@
           margin: 2.2% 0;
           width: 75%;
           height: 4.3%;
-          background: rgb(75, 75, 75);
+          background: rgb(100,100, 100);
           border-radius: 2rem;
           z-index: 1;
           .progress-bar {

@@ -58,10 +58,10 @@
     width: 50%;
     height: 35%;
     transform: translateX(-50%) translateY(-50%);
-    background: rgb(60, 60, 60);
+    background: rgb(70, 70, 70);
     .filter-modal-title {
       width: 100%;
-      background: rgb(35, 35, 35);
+      background: rgb(45, 45, 45);
       padding: .4rem 0;
       h1 {
         margin: 0;
@@ -79,15 +79,15 @@
       .filter-img {
         cursor: pointer;
         margin: 0 1.2rem;
-        filter: invert(50%);
+        filter: invert(55%);
         width: 2.5rem;
         height: auto;
         &:hover {
-          filter: invert(100%);
+          filter: invert(100%) drop-shadow(8px 8px 10px black) ;
         }
       }
       .selectedfilter {
-        filter: invert(100%);
+        filter: invert(100%) drop-shadow(8px 8px 10px black);
       }
     }
     .filter-submit {
@@ -96,7 +96,7 @@
       justify-content: center;
       align-items: center;
       align-content: center;
-      margin-top: 1rem;
+      margin: .8rem;
       button {
         cursor: pointer;
         width: 7rem;

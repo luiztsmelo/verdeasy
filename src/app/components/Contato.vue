@@ -82,14 +82,15 @@ export default {
     }
     input {
       width: 40%;
-      border-radius: 1rem;
+      border-radius: .7rem 0;
       border: none;
       padding: .2rem .5rem;
     }
     textarea {
-      border-radius: 1rem;
+      border-radius: .7rem 0;
       border: none;
       padding: .5rem;
+      resize: none;
     }
     .contato-submit {
       cursor: pointer;

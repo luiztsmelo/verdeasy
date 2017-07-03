@@ -112,11 +112,11 @@ body {
         font-size: 1.15rem;
         font-weight: $fontThin;
         transition: .3s ease;
-        border-radius: 10rem;
+        border-radius: 2rem 0;
         &:hover {
           color: rgba(0, 0, 0, 0.8);
           background: white;
-          border-radius: 2rem;
+          border-radius: .7rem 0;
         }
       }
       button {
@@ -128,7 +128,7 @@ body {
       width: 4.5rem;
       cursor: pointer;
       transition: .222s ease;
-      border-radius: 2rem;
+      border-radius: .7rem;
       &:hover {
         background-color: rgb(141, 220, 92);
         }

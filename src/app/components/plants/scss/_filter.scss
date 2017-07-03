@@ -76,20 +76,39 @@
       justify-content: center;
       align-items: center;
       align-content: center;
-      .filter-img {
-        cursor: pointer;
-        margin: 0 1.2rem;
-        filter: invert(55%);
-        width: 2.5rem;
-        height: auto;
-        &:hover {
-          filter: invert(100%) drop-shadow(8px 8px 10px black) ;
+      position: relative;
+      .filter-attr {
+        .filter-img {
+          cursor: pointer;
+          margin: 0 1.2rem;
+          filter: invert(55%);
+          width: 2.6rem;
+          height: auto;
+          &:hover {
+            filter: invert(100%) drop-shadow(8px 8px 10px black);
+          }
+      
         }
+          &:hover .attr-info {
+            visibility: visible;
+          }  
+      .attr-info {
+        visibility: hidden;
+        position: absolute;
+        color: rgb(210, 210, 210);
+        font-family: $fontMain; 
+        text-align: center;
+        z-index: 1;
+        top: 65%;
+        left: 0%; 
+        width: 100%;
       }
       .selectedfilter {
         filter: invert(100%) drop-shadow(8px 8px 10px black);
       }
     }
+  }
+     
     .filter-submit {
       display: flex;
       flex-flow: row;
@@ -104,6 +123,7 @@
         border: none;
         background: $green;
         color: white;
+        margin: .7rem 0;
         &:hover {
           background-color: rgb(141, 220, 92);
         }
@@ -119,11 +139,11 @@
 }
 
 .filter-animation-enter-active {
-  transition: all 0.3s;
+  transition: all .4s ease;
 }
 
 .filter-animation-leave-active {
-  transition: all 0.4s;
+  transition: all .7s ease;
   opacity: 0;
   transform: scale(1.1);
 }

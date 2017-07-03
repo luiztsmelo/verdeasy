@@ -155,13 +155,13 @@
           background: rgb(100,100, 100);
           border-radius: 2rem;
           z-index: 1;
+         
           .progress-bar {
             position: absolute;
             height: 100%;
             z-index: 2;
-            border-radius: 2rem;
-          }
-          
+            border-radius: .7rem;
+          } 
         }
         .reguas {
           display: flex;

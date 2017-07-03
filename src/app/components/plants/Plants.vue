@@ -28,134 +28,216 @@
             </div>
             
             <div class="filter-modal-filters">
-      
-              <img class="filter-img" :src="solPath" alt="" @click="solFilter = !solFilter" :class="{ selectedfilter: solFilter }">
-              <img class="filter-img" :src="regaPath" alt="" @click="regaFilter = !regaFilter" :class="{ selectedfilter: regaFilter }">
-              <img class="filter-img" :src="pragPath" alt="" @click="pragFilter = !pragFilter" :class="{ selectedfilter: pragFilter }">
-              <img class="filter-img" :src="germPath" alt="" @click="germFilter = !germFilter" :class="{ selectedfilter: germFilter }">
-              <img class="filter-img" :src="crescPath" alt="" @click="crescFilter = !crescFilter" :class="{ selectedfilter: crescFilter }">
-              <img class="filter-img" :src="altPath" alt="" @click="altFilter = !altFilter" :class="{ selectedfilter: altFilter }">
-              <img class="filter-img" :src="tempPath" alt="" @click="tempFilter = !tempFilter" :class="{ selectedfilter: tempFilter }">
-              <img class="filter-img" :src="soloPath" alt="" @click="soloFilter = !soloFilter" :class="{ selectedfilter: soloFilter }">
+              <div class="filter-attr">
+                <img class="filter-img" :src="solPath" alt="" @click="solFilter = !solFilter" :class="{ selectedfilter: solFilter }">
+                <p class="attr-info">Necessidade de luz solar. Menos para mais</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="regaPath" alt="" @click="regaFilter = !regaFilter" :class="{ selectedfilter: regaFilter }">
+                <p class="attr-info">Necessidade de rega. Menos para mais</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="pragPath" alt="" @click="pragFilter = !pragFilter" :class="{ selectedfilter: pragFilter }">
+                <p class="attr-info">Resistência a pragas. Baixa para alta</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="germPath" alt="" @click="germFilter = !germFilter" :class="{ selectedfilter: germFilter }">
+                <p class="attr-info">Velocidade de germinação. Lenta para Rápida</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="crescPath" alt="" @click="crescFilter = !crescFilter" :class="{ selectedfilter: crescFilter }">
+                <p class="attr-info">Velocidade de crescimento. Lenta para Rápida</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="altPath" alt="" @click="altFilter = !altFilter" :class="{ selectedfilter: altFilter }">
+                <p class="attr-info">Altura média em que alcança. Menor para maior</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="tempPath" alt="" @click="tempFilter = !tempFilter" :class="{ selectedfilter: tempFilter }">
+                <p class="attr-info">Temperatura média agrádavel. Fria para quente</p>
+              </div>
+              <div class="filter-attr">
+                <img class="filter-img" :src="soloPath" alt="" @click="soloFilter = !soloFilter" :class="{ selectedfilter: soloFilter }">
+                <p class="attr-info">Tipo de solo. Arenoso para orgânico</p>
+              </div>
     
             </div>
             <div class="filter-submit">
-              <button>Filtrar</button>
+              <button @click="plantsFiltered = true, showFilter = !showFilter">Filtrar</button>
             </div>
           </div>
         </div>
       </transition><!--FILTER-->
 
+      <!--PLANTAS FILTRADAS-->
+      <div id="category-container" v-if="plantsFiltered">
+        <div class="arrow-left" @click="moveCardsRight1" v-show="moveCardsLeftWidth1 < 0">
+          <img :src="leftArrowImgSrc">
+        </div>
+
+        <div class="container-title">
+          <img class="container-title-img" src="./../../../../static/utils/filter.svg" alt="Ervas Aromáticas">
+          <h2>PLANTAS FILTRADAS</h2>
+        </div>
+
+        <div class="carousel-container">
+          <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth1 + 'rem)' }">
+          
+            <li class="card" 
+              v-for="plant in customFilter" 
+              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              
+              <div class="card-content">
+                <h3 class="card-title">{{ plant.name }}</h3>
+                  
+                <div class="card-bar">
+                  <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Sol</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-bar">
+                  <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Rega</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-bar">
+                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Cuidados</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-footer">
+                  <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
+                </div>
+            
+              </div>
+            </li>
+          </ul>  
+        </div>
+
+        <div class="arrow-right" @click="moveCardsLeft1">
+          <img :src="rightArrowImgSrc">
+        </div>
+      </div><!--PLANTAS FILTRADAS-->
+
 
       <!--ERVAS AROMÁTICAS-->
-      <div class="arrow-left-1" @click="moveCardsRight1" v-show="moveCardsLeftWidth1 < 0">
-        <img :src="leftArrowImgSrc">
-      </div>
+      <div id="category-container">
+        <div class="arrow-left" @click="moveCardsRight2" v-show="moveCardsLeftWidth2 < 0">
+          <img :src="leftArrowImgSrc">
+        </div>
 
-      <div class="container-title">
-        <img class="container-title-img" src="./../../../../static/utils/EA.svg" alt="Ervas Aromáticas">
-        <h2>Ervas Aromáticas</h2>
-      </div>
+        <div class="container-title">
+          <img class="container-title-img" src="./../../../../static/utils/EA.svg" alt="Ervas Aromáticas">
+          <h2>Ervas Aromáticas</h2>
+        </div>
 
-      <div class="carousel-container">
-        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth1 + 'rem)' }">
-        
-          <li class="card" 
-            v-for="plant in EAFilter" 
-            :style="{ 'background-image': 'url(' + plant.img + ')' }">
-            
-            <div class="card-content">
-              <h3 class="card-title">{{ plant.name }}</h3>
-                
-              <div class="card-bar">
-                <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Sol</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-bar">
-                <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Rega</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-bar">
-                <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Cuidados</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-footer">
-                <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
-              </div>
+        <div class="carousel-container">
+          <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth2 + 'rem)' }">
           
-            </div>
-          </li>
-        </ul>  
-      </div>
+            <li class="card" 
+              v-for="plant in EAFilter" 
+              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              
+              <div class="card-content">
+                <h3 class="card-title">{{ plant.name }}</h3>
+                  
+                <div class="card-bar">
+                  <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Sol</h4>
+                  <p id="more">+</p>
+                </div>
 
-      <div class="arrow-right-1" @click="moveCardsLeft1">
-        <img :src="rightArrowImgSrc">
+                <div class="card-bar">
+                  <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Rega</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-bar">
+                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Cuidados</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-footer">
+                  <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
+                </div>
+            
+              </div>
+            </li>
+          </ul>  
+        </div>
+
+        <div class="arrow-right" @click="moveCardsLeft2">
+          <img :src="rightArrowImgSrc">
+        </div>
       </div><!--ERVAS AROMÁTICAS-->
       
 
       <!--PLANTAS MEDICINAIS-->
-      <div class="arrow-left-2" @click="moveCardsRight2" v-show="moveCardsLeftWidth2 < 0">
-        <img :src="leftArrowImgSrc">
-      </div>
+      <div id="category-container">
+        <div class="arrow-left" @click="moveCardsRight3" v-show="moveCardsLeftWidth3 < 0">
+          <img :src="leftArrowImgSrc">
+        </div>
 
-      <div class="container-title">
-        <img class="container-title-img" src="./../../../../static/utils/MED.svg" alt="Ervas Aromáticas">
-        <h2>Plantas Medicinais</h2>
-      </div>
-      
-      <div class="carousel-container">
-        <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth2 + 'rem)' }">
+        <div class="container-title">
+          <img class="container-title-img" src="./../../../../static/utils/MED.svg" alt="Ervas Aromáticas">
+          <h2>Plantas Medicinais</h2>
+        </div>
         
-          <li class="card" 
-            v-for="plant in MEDFilter" 
-            :style="{ 'background-image': 'url(' + plant.img + ')' }">
-            
-            <div class="card-content">
-              <h3 class="card-title">{{ plant.name }}</h3>
-                
-              <div class="card-bar">
-                <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Sol</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-bar">
-                <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Rega</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-bar">
-                <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
-                <p id="less">-</p>
-                <h4 class="card-subtitle">Cuidados</h4>
-                <p id="more">+</p>
-              </div>
-
-              <div class="card-footer">
-                <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
-              </div>
+        <div class="carousel-container">
+          <ul class="carousel" :style="{ 'transform': 'translate(' + moveCardsLeftWidth3 + 'rem)' }">
           
-            </div>
-          </li>
-        </ul>  
-      </div>
+            <li class="card" 
+              v-for="plant in MEDFilter" 
+              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              
+              <div class="card-content">
+                <h3 class="card-title">{{ plant.name }}</h3>
+                  
+                <div class="card-bar">
+                  <div id="progress-bar-sun" :style="'width:' + (plant.sol * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Sol</h4>
+                  <p id="more">+</p>
+                </div>
 
-      <div class="arrow-right-2" @click="moveCardsLeft2">
-        <img :src="rightArrowImgSrc">
-      </div><!--PLANTAS MEDICINAIS-->
-      
+                <div class="card-bar">
+                  <div id="progress-bar-water" :style="'width:' + (plant.rega * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Rega</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-bar">
+                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <p id="less">-</p>
+                  <h4 class="card-subtitle">Cuidados</h4>
+                  <p id="more">+</p>
+                </div>
+
+                <div class="card-footer">
+                  <h4 class="footer-subtitle" @click="plantModal = plant">Mais informações</h4>
+                </div>
+            
+              </div>
+            </li>
+          </ul>  
+        </div>
+
+        <div class="arrow-right" @click="moveCardsLeft3">
+          <img :src="rightArrowImgSrc">
+        </div><!--PLANTAS MEDICINAIS-->
+      </div>
       
     </div><!--PLANTS CONTAINER-->
 
@@ -317,6 +399,7 @@ export default {
       
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null, 
+      moveCardsLeftWidth3: null, 
     }
   },
 
@@ -330,9 +413,9 @@ export default {
       return _.filter(this.plants, ['class', 'MED'])
     },
 
-    // ORDENAR POR MENOR NECESSIDADE DE SOL
-    solFilter() {
-      return _.orderBy(this.plants, 'sol');
+    // FILTRO PERSONALIZADO
+    customFilter() {
+      return _.orderBy(this.plants, 'rega');
     }
   },
 
@@ -353,6 +436,14 @@ export default {
       this.moveCardsLeftWidth2 += 50
       return moveCardsLeftWidth2;
     },
+    moveCardsLeft3() {
+      this.moveCardsLeftWidth3 -= 50
+      return moveCardsLeftWidth3;
+    },
+    moveCardsRight3() {
+      this.moveCardsLeftWidth3 += 50
+      return moveCardsLeftWidth3;
+    },
   },
 };
 </script>
@@ -369,6 +460,11 @@ _____________________________________________________________________
 }
 .component-fade-enter, .component-fade-leave-to, .component-fade-leave-active {
   opacity: 0;
+}
+
+#category-container {
+  display: flex;
+  flex-flow: column;
 }
 
 .container-card {
@@ -398,23 +494,15 @@ _____________________________________________________________________
       height: auto;
     }
   }
-  
-  .arrow-left-1 {
+  .arrow-left {
     @include arrowLeft;
     margin: 2.9rem 0 0 0;
   }
-  .arrow-right-1 {
+  .arrow-right {
     @include arrowRight;
     margin: 2.9rem 0 0 0;
   }
-  .arrow-left-2 {
-    @include arrowLeft;
-    margin: 17.2rem 0 0 0;
-  }
-  .arrow-right-2 {
-    @include arrowRight;
-    margin: 17.2rem 0 0 0;
-  }
+
   .carousel-container {
     .carousel {
       position: relative;
@@ -490,13 +578,13 @@ _____________________________________________________________________
       width: 95%;
       height: 1.2rem;
       background-color: rgba(140, 140, 140, 0.5);
-      border-radius: 2rem;
+      border-radius: .7rem;
       #progress-bar-sun {
         height: 1.2rem;
         background-color: rgba(255, 238, 88, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.4s ease;
-        border-radius: 2rem;
+        border-radius: .7rem;
       
       }
       #progress-bar-water {
@@ -504,14 +592,14 @@ _____________________________________________________________________
         background-color: rgba(79, 195, 247, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.6s ease;
-        border-radius: 2rem;
+        border-radius: .7rem;
       }
       #progress-bar-care {
         height: 1.2rem;
         background-color: rgba(239, 135, 105, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.8s ease;
-        border-radius: 2rem;
+        border-radius: .7rem;
       }
     }
   }

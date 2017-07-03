@@ -37,7 +37,7 @@
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: rgb(20, 20, 20);
+      background: rgb(35, 35, 35);
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -69,7 +69,7 @@
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
-        background: rgb(45, 45, 45);
+        background: rgb(60, 60, 60);
         height: 2.6rem;
         align-content: center;
         align-items: center;
@@ -88,10 +88,10 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(20, 20, 20);
+          background: rgb(35, 35, 35);
           transition: all .3s ease;
           &:hover {
-            background: rgb(40, 40, 40);
+            background: rgb(50, 50, 50);
           }
         }
         .modal-menu-comoplantar {
@@ -99,10 +99,10 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(20, 20, 20);
+          background: rgb(35, 35, 35);
           transition: all .3s ease;
           &:hover {
-            background: rgb(40, 40, 40);
+            background: rgb(50, 50, 50);
           }
         }
         .modal-menu-usos {
@@ -110,14 +110,14 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(20, 20, 20);
+          background: rgb(35, 35, 35);
           transition: all .3s ease;
           &:hover {
-            background: rgb(40, 40, 40);
+            background: rgb(50, 50, 50);
           }
         }
         .activetab {
-          background: rgb(45, 45, 45);
+          background: rgb(60, 60, 60);
         }
       }
       /*****STATS*****/
@@ -126,7 +126,7 @@
         flex-flow: column;
         align-items: center;
         justify-content: center;
-        background: rgb(45, 45, 45);
+        background: rgb(60, 60, 60);
         height: 100%;
         .stats-img {
           cursor: help;
@@ -151,7 +151,7 @@
           margin: 2.2% 0;
           width: 75%;
           height: 4.3%;
-          background: rgb(65, 65, 65);
+          background: rgb(75, 75, 75);
           border-radius: 2rem;
           z-index: 1;
           .progress-bar {

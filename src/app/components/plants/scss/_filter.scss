@@ -29,7 +29,7 @@
   }
 }
 .filter-modal {
-  background: rgba(0, 0, 0, 0.777);
+  background: rgba(0, 0, 0, 0.8);
   width:  100%;
   height: 100%;
   position: fixed;
@@ -55,13 +55,13 @@
     background: white;
     top:  50%;
     left: 50%;
-    width: 60%;
-    height: 70%;
+    width: 50%;
+    height: 35%;
     transform: translateX(-50%) translateY(-50%);
-    background: rgb(45, 45, 45);
+    background: rgb(60, 60, 60);
     .filter-modal-title {
       width: 100%;
-      background: rgb(20, 20, 20);
+      background: rgb(35, 35, 35);
       padding: .4rem 0;
       h1 {
         margin: 0;
@@ -71,12 +71,47 @@
     }
     .filter-modal-filters {
       padding: 2em;
-      .slider {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      .filter-img {
         cursor: pointer;
+        margin: 0 1.2rem;
+        filter: invert(50%);
+        width: 2.5rem;
+        height: auto;
+        &:hover {
+          filter: invert(100%);
+        }
+      }
+      .selectedfilter {
+        filter: invert(100%);
+      }
+    }
+    .filter-submit {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-top: 1rem;
+      button {
+        cursor: pointer;
+        width: 7rem;
+        border-radius: 2rem;
+        border: none;
+        background: $green;
+        color: white;
+        &:hover {
+          background-color: rgb(141, 220, 92);
+        }
       }
     }
   }
 }
+
 
 // TRANSITIONS
 .filter-animation-enter {

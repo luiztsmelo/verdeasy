@@ -112,25 +112,23 @@ body {
         font-size: 1.15rem;
         font-weight: $fontThin;
         transition: .3s ease;
-        border-radius: 2rem 0;
+        border-radius: 10rem;
         &:hover {
           color: rgba(0, 0, 0, 0.8);
           background: white;
-          border-radius: .4rem 0;
+          border-radius: 2rem;
         }
       }
       button {
-      display: flex;
-      justify-content: flex-end;
-      background-color: rgb(110, 200, 80);;
+      background-color: rgb(110, 200, 80);
       border: none;
       font-weight: $fontThin;
       font-size: 1.25rem;
       color: white;
-      text-align: center;
+      width: 4.5rem;
       cursor: pointer;
       transition: .222s ease;
-      border-radius: .4rem 0;
+      border-radius: 2rem;
       &:hover {
         background-color: rgb(141, 220, 92);
         }

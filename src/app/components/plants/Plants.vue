@@ -24,11 +24,23 @@
           <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="Fechar">
           <div class="filter-modal-body" @click.stop>
             <div class="filter-modal-title">
-              <h1>Filtrar</h1>
+              <h1>Filtrar por:</h1>
             </div>
+            
             <div class="filter-modal-filters">
-              <input class="slider" v-model="filter.sol" type="range" min="1" max="10">
-              <h3>{{filter.sol}}</h3>
+      
+              <img class="filter-img" :src="solPath" alt="" @click="solFilter = !solFilter" :class="{ selectedfilter: solFilter }">
+              <img class="filter-img" :src="regaPath" alt="" @click="regaFilter = !regaFilter" :class="{ selectedfilter: regaFilter }">
+              <img class="filter-img" :src="pragPath" alt="" @click="pragFilter = !pragFilter" :class="{ selectedfilter: pragFilter }">
+              <img class="filter-img" :src="germPath" alt="" @click="germFilter = !germFilter" :class="{ selectedfilter: germFilter }">
+              <img class="filter-img" :src="crescPath" alt="" @click="crescFilter = !crescFilter" :class="{ selectedfilter: crescFilter }">
+              <img class="filter-img" :src="altPath" alt="" @click="altFilter = !altFilter" :class="{ selectedfilter: altFilter }">
+              <img class="filter-img" :src="tempPath" alt="" @click="tempFilter = !tempFilter" :class="{ selectedfilter: tempFilter }">
+              <img class="filter-img" :src="soloPath" alt="" @click="soloFilter = !soloFilter" :class="{ selectedfilter: soloFilter }">
+    
+            </div>
+            <div class="filter-submit">
+              <button>Filtrar</button>
             </div>
           </div>
         </div>
@@ -274,9 +286,16 @@ export default {
 
   data() {
     return {
-      filter: {
-        sol: '',
-      },
+      //Filters
+      solFilter: false,
+      regaFilter: false,
+      pragFilter: false,
+      germFilter: false,
+      crescFilter: false,
+      altFilter: false,
+      tempFilter: false,
+      soloFilter: false,
+
       //Modal Tabs
       showStats: true,
       showComoplantar: false,
@@ -474,7 +493,7 @@ _____________________________________________________________________
       border-radius: 2rem;
       #progress-bar-sun {
         height: 1.2rem;
-        background-color: rgba(245, 231, 118, 0.8);
+        background-color: rgba(255, 238, 88, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.4s ease;
         border-radius: 2rem;
@@ -482,7 +501,7 @@ _____________________________________________________________________
       }
       #progress-bar-water {
         height: 1.2rem;
-        background-color: rgba(100, 181, 246, 0.8);
+        background-color: rgba(79, 195, 247, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.6s ease;
         border-radius: 2rem;

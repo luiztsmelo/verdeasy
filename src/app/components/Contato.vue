@@ -5,7 +5,7 @@
 
       <div class="submitted" v-if="submitted">
         <h2 class="submitted-text">Mensagem enviada com sucesso!</h2>
-        <img class="submitted-img" src="./../../../static/utils/pomba.svg" alt="Mensagem enviada com sucesso!">
+        <img class="submitted-img" src="./../../../static/utils/send.svg" alt="Mensagem enviada com sucesso!">
       </div>
 
       <form class="contato-form" v-if="!submitted"> 
@@ -14,7 +14,7 @@
         <input v-model="contato.email" type="text" placeholder="Seu e-mail" required>
         <label>Mensagem</label>
         <textarea v-model="contato.mensagem" name="" id="" cols="57" rows="7" placeholder="Sua linda mensagem" required></textarea>
-        <img class="contato-submit" src="./../../../static/utils/pomba.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
+        <img class="contato-submit" src="./../../../static/utils/send.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
       </form>  
     </div>
   </transition>  
@@ -76,20 +76,31 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    .contato-subtitle {
-
-   }
     label {
       font-family: $fontMain;
-      padding: .8rem 0 0 0;
+      padding: .3rem 0;
     }
     input {
       width: 40%;
+      border-radius: 1rem;
+      border: none;
+      padding: .2rem .5rem;
+    }
+    textarea {
+      border-radius: 1rem;
+      border: none;
+      padding: .5rem;
     }
     .contato-submit {
       cursor: pointer;
-      width: 4rem;
+      width: 3.5rem;
       height: auto;
+      transform: rotate(17deg);
+      padding: .5rem 0 0 0;
+      transition: transform .3s cubic-bezier(.23,1.51,.99,1.03);
+      &:hover {
+        transform: rotate(0deg);
+      }
     }
   }
 }

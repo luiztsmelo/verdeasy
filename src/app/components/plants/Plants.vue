@@ -390,7 +390,7 @@ export default {
       rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
       solPath: './../../../../static/utils/sol.svg',
       regaPath: './../../../../static/utils/rega.svg',
-      pragPath: './../../../../static/utils/prag.svg',
+      pragPath: './../../../../static/utils/praga.svg',
       germPath: './../../../../static/utils/germ.svg',
       crescPath: './../../../../static/utils/cresc.svg',
       altPath: './../../../../static/utils/alt.svg',
@@ -470,6 +470,8 @@ _____________________________________________________________________
 .container-card {
   padding: 1.2rem 0 0 0;
   background: rgba(0, 0, 0, 0.7);
+-webkit-backdrop-filter: blur(2em);
+    backdrop-filter: blur(2em);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;

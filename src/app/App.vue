@@ -10,7 +10,6 @@
             <li><router-link class="link" to="/sobre">Sobre</router-link></li>
             <li><router-link class="link" to="/blog">Blog</router-link></li>
             <li><router-link class="link" to="/contato">Contato</router-link></li>
-            <router-link to="/"><button class="login">Entrar</button></router-link>
           </ul>
         </nav>
       </header> <!--NAVBAR-->
@@ -117,20 +116,6 @@ body {
           color: rgba(0, 0, 0, 0.8);
           background: white;
           border-radius: .7rem 0;
-        }
-      }
-      button {
-      background-color: rgb(110, 200, 80);
-      border: none;
-      font-weight: $fontThin;
-      font-size: 1.25rem;
-      color: white;
-      width: 4.5rem;
-      cursor: pointer;
-      transition: .222s ease;
-      border-radius: .7rem;
-      &:hover {
-        background-color: rgb(141, 220, 92);
         }
       }
     }

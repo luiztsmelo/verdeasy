@@ -4,7 +4,7 @@
       <h1 class="contato-title">Sugestões, Críticas?</h1>
 
       <div class="submitted" v-if="submitted">
-        <h2 class="submitted-text">Mensagem enviada com sucesso!</h2>
+        <h2 class="submitted-text">Aviãozinho da mensagem enviado! Obrigado! :)</h2>
         <img class="submitted-img" src="./../../../static/utils/send.svg" alt="Mensagem enviada com sucesso!">
       </div>
 
@@ -66,8 +66,12 @@ export default {
   }
   .submitted {
     .submitted-img {
-      width: 10rem;
+      width: 6rem;
       height: auto;
+      animation-name: plane;
+      animation-duration: 4s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
     }
   }
   .contato-form {
@@ -106,4 +110,8 @@ export default {
   }
 }
 
+@keyframes plane {
+  0% { transform: translateX(0rem)}
+  100% { transform: translate(70rem, -70rem)}
+}
 </style>

@@ -85,7 +85,7 @@
           
             <li class="card" 
               v-for="plant in customFilter" 
-              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              :style="{ 'background-image': 'url(./../../../static/plants/' + plant.name + '.jpg)' }">
               
               <div class="card-content">
                 <h3 class="card-title">{{ plant.name }}</h3>
@@ -105,9 +105,9 @@
                 </div>
 
                 <div class="card-bar">
-                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <div id="progress-bar-care" :style="'width:' + (plant.facil * 10) + '%'"></div>
                   <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
+                  <h4 class="card-subtitle">Facilidade</h4>
                   <p id="more">+</p>
                 </div>
 
@@ -142,7 +142,7 @@
           
             <li class="card" 
               v-for="plant in EAFilter" 
-              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              :style="{ 'background-image': 'url(./../../../static/plants/' + plant.name + '.jpg)' }">
               
               <div class="card-content">
                 <h3 class="card-title">{{ plant.name }}</h3>
@@ -162,9 +162,9 @@
                 </div>
 
                 <div class="card-bar">
-                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <div id="progress-bar-care" :style="'width:' + (plant.facil * 10) + '%'"></div>
                   <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
+                  <h4 class="card-subtitle">Facilidade</h4>
                   <p id="more">+</p>
                 </div>
 
@@ -199,7 +199,7 @@
           
             <li class="card" 
               v-for="plant in MEDFilter" 
-              :style="{ 'background-image': 'url(' + plant.img + ')' }">
+              :style="{ 'background-image': 'url(./../../../static/plants/' + plant.name + '.jpg)' }">
               
               <div class="card-content">
                 <h3 class="card-title">{{ plant.name }}</h3>
@@ -219,9 +219,9 @@
                 </div>
 
                 <div class="card-bar">
-                  <div id="progress-bar-care" :style="'width:' + (plant.dif * 10) + '%'"></div>
+                  <div id="progress-bar-care" :style="'width:' + (plant.facil * 10) + '%'"></div>
                   <p id="less">-</p>
-                  <h4 class="card-subtitle">Cuidados</h4>
+                  <h4 class="card-subtitle">Facilidade</h4>
                   <p id="more">+</p>
                 </div>
 
@@ -253,7 +253,7 @@
             <div class="modal-plant-name-box">
               <h1 class="modal-plant-name">{{ plantModal.name }}</h1>
             </div>
-            <img class="modal-plant-img" :src="plantModal.img" :alt="plantModal.name">
+            <img class="modal-plant-img" :src="'./../../../static/plants/' + plantModal.name + '.jpg'" :alt="plantModal.name">
             <p class="modal-plant-sci"><i>{{ plantModal.sci }}</i></p>
           </div><!--Sidebar-->
 
@@ -347,6 +347,7 @@
             <!--Usos-->
             <div class="usos" v-if="showUsos">
               <h1>Usos</h1>
+              <p>{{ plantModal.usos }}</p> 
             </div><!--Usos-->
 
           </div><!--Data-->
@@ -361,13 +362,16 @@
 _____________________________________________________________________
 <script>
 import { filter, orderBy } from 'lodash'
-import { plantsData } from './plantsData'
 
 export default {
-  mixins: [plantsData],
 
   data() {
     return {
+      //Data from firebase
+      plants: {},
+      //Getting data from plants object for modal
+      plantModal: null,
+
       //Filters
       solFilter: false,
       regaFilter: false,
@@ -378,13 +382,15 @@ export default {
       tempFilter: false,
       soloFilter: false,
 
+      plantsFiltered: false,
+
       //Modal Tabs
       showStats: true,
       showComoplantar: false,
       showUsos: false,
 
       showFilter: false,
-      plantModal: null,
+      
 
       leftArrowImgSrc: './../../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
@@ -397,10 +403,18 @@ export default {
       tempPath: './../../../../static/utils/temp.svg',
       soloPath: './../../../../static/utils/solo.svg',
       
+      //Arrows
       moveCardsLeftWidth1: null,
       moveCardsLeftWidth2: null, 
       moveCardsLeftWidth3: null, 
     }
+  },
+  created() {
+    this.$http.get('https://verdeasy-d832a.firebaseio.com/plants.json').then(function(data){
+      return data.json();
+    }).then(function(data){
+      this.plants = data;
+    });
   },
 
   computed: {
@@ -450,7 +464,7 @@ export default {
 _____________________________________________________________________
 <style lang="scss" scoped>
 @import "./../../scss/style.scss";
-@import "./../../scss/_arrows.scss";
+@import "./scss/_arrows.scss";
 @import "./scss/_mediaQueries.scss";
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";

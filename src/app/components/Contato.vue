@@ -13,7 +13,7 @@
         <label required>E-mail</label>
         <input v-model="contato.email" type="text" placeholder="Seu e-mail" required>
         <label>Mensagem</label>
-        <textarea v-model="contato.mensagem" name="" id="" cols="57" rows="7" placeholder="Sua linda mensagem" required></textarea>
+        <textarea v-model="contato.mensagem" cols="57" rows="7" placeholder="Sua linda mensagem" required></textarea>
         <img class="contato-submit" src="./../../../static/utils/send.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
       </form>  
     </div>
@@ -26,16 +26,33 @@ export default {
     return {
       contato: {
         email: '',
-        mensagem: ''
+        mensagem: '',
+        date: ''
       },
       submitted: false
     }
   },
   methods: {
     postmsg() {
+      const today = new Date();
+      let dd = today.getDate();
+      let mm = today.getMonth()+1;
+      let yyyy = today.getFullYear();
+      let hour = today.getHours();
+      let minutes = today.getMinutes();
+      if (dd < 10) {
+        dd = '0' + dd
+      } 
+
+      if (mm < 10) {
+          mm = '0' + mm
+      } 
+      this.contato.date = dd + '/' + mm + '/' + yyyy + ' ' + hour + ':' + minutes;
+
       this.$http.post('https://verdeasy-d832a.firebaseio.com/contato.json', this.contato).then(function(data){
         console.log(data);
         this.submitted = true;
+        
       });
     },
   }

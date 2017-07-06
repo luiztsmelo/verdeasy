@@ -34,13 +34,27 @@ export default {
     return {
       blog: {
         title: '',
-        content: ''
+        content: '',
+        date: ''
       },
       submitted: false
     }
   },
   methods: {
     post() {
+      const today = new Date();
+      let dd = today.getDate();
+      let mm = today.getMonth()+1;
+      let yyyy = today.getFullYear();
+        if (dd < 10) {
+        dd = '0' + dd
+      } 
+
+      if (mm < 10) {
+          mm = '0' + mm
+      } 
+      this.blog.date = dd + '/' + mm + '/' + yyyy;
+
       this.$http.post('https://verdeasy-d832a.firebaseio.com/posts.json', this.blog).then(function(data){
         console.log(data);
         this.submitted = true;

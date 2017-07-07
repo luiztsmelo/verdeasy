@@ -27,19 +27,19 @@ export default {
       contato: {
         email: '',
         mensagem: '',
-        date: ''
+        dia: '',
+        hora: ''
       },
       submitted: false
     }
   },
   methods: {
     postmsg() {
-      const today = new Date();
-      let dd = today.getDate();
-      let mm = today.getMonth()+1;
-      let yyyy = today.getFullYear();
-      let hour = today.getHours();
-      let minutes = today.getMinutes();
+      let dd = new Date().getDate();
+      let mm = new Date().getMonth() + 1;
+      let yyyy = new Date().getFullYear();
+      let hour = new Date().getHours();
+      let minutes = new Date().getMinutes();
       if (dd < 10) {
         dd = '0' + dd
       } 
@@ -47,12 +47,12 @@ export default {
       if (mm < 10) {
           mm = '0' + mm
       } 
-      this.contato.date = dd + '/' + mm + '/' + yyyy + ' ' + hour + ':' + minutes;
+      this.contato.dia = dd + '/' + mm + '/' + yyyy;
+      this.contato.hora = hour + ':' + minutes
 
       this.$http.post('https://verdeasy-d832a.firebaseio.com/contato.json', this.contato).then(function(data){
         console.log(data);
         this.submitted = true;
-        
       });
     },
   }

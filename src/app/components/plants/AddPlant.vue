@@ -181,7 +181,7 @@ export default {
       text-align: center;
       label {
         display: block;
-        margin: .5rem;
+        margin: .2rem;
       }
       textarea {
         display: block;
@@ -195,13 +195,14 @@ export default {
   button {
     cursor: pointer;
     align-self: center;
-    width: 12rem;
-    height: 3rem;
+    width: 10rem;
+    height: 2.7rem;
     border-radius: 0  3rem 3rem 0;
     border: none;
     background: $grey;
     color: white;
     margin: .7rem 0;
+    transition: all .3s ease;
     &:hover {
       background-color: $green;
     }

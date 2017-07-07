@@ -50,7 +50,7 @@
               </div>
               <div class="filter-attr">
                 <img class="filter-img" :src="altPath" alt="" @click="altFilter = !altFilter" :class="{ selectedfilter: altFilter }">
-                <p class="attr-info">Altura média em que alcança. Menor para maior</p>
+                <p class="attr-info">Altura média. Menor para maior</p>
               </div>
               <div class="filter-attr">
                 <img class="filter-img" :src="tempPath" alt="" @click="tempFilter = !tempFilter" :class="{ selectedfilter: tempFilter }">
@@ -367,12 +367,14 @@ export default {
 
   data() {
     return {
-      //Data from firebase
+      //Main plants data from firebase
       plants: {},
-      //Getting data from plants object for modal
+      //Plants data inside modal
       plantModal: null,
 
       //Filters
+      showFilter: false,
+
       solFilter: false,
       regaFilter: false,
       pragFilter: false,
@@ -383,15 +385,13 @@ export default {
       soloFilter: false,
 
       plantsFiltered: false,
-
+      
       //Modal Tabs
       showStats: true,
       showComoplantar: false,
       showUsos: false,
 
-      showFilter: false,
-      
-
+      //Img paths
       leftArrowImgSrc: './../../../../static/utils/arrowL.svg',
       rightArrowImgSrc: './../../../../static/utils/arrowR.svg',
       solPath: './../../../../static/utils/sol.svg',
@@ -484,8 +484,6 @@ _____________________________________________________________________
 .container-card {
   padding: 1.2rem 0 0 0;
   background: rgba(0, 0, 0, 0.7);
--webkit-backdrop-filter: blur(2em);
-    backdrop-filter: blur(2em);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;
@@ -612,7 +610,7 @@ _____________________________________________________________________
       }
       #progress-bar-care {
         height: 1.2rem;
-        background-color: rgba(239, 135, 105, 0.8);
+        background-color: rgba(174, 213, 129, 0.8);
         transform: translateX(-13.5rem);
         transition: all 0.8s ease;
         border-radius: .7rem;

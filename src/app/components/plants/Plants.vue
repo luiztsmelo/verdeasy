@@ -429,7 +429,7 @@ export default {
 
     // FILTRO PERSONALIZADO
     customFilter() {
-      return _.orderBy(this.plants, 'rega');
+      return _.orderBy(this.plants, ['rega'], ['asc']);
     }
   },
 
@@ -476,6 +476,12 @@ _____________________________________________________________________
   opacity: 0;
 }
 
+@keyframes container {
+  0% { opacity: 0; margin-top: 10rem;}
+  40% { opacity: 0; margin-top: 10rem;}
+  100% { opacity: 1; margin-top: 0rem;}
+}
+
 #category-container {
   display: flex;
   flex-flow: column;
@@ -490,6 +496,11 @@ _____________________________________________________________________
   display: flex;
   flex-flow: column nowrap;
   position: relative;
+  animation-name: container;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  
   .container-title {
     margin: 0;
     padding: 0 0 0 3rem;
@@ -534,7 +545,7 @@ _____________________________________________________________________
         transform: translateX(.3rem);
         transition: all 0.4s ease;
         &:hover .card-content {
-          transform: translateY(-85.5%);
+          transform: translateY(-88.5%);
           
         }
         &:hover {
@@ -590,27 +601,27 @@ _____________________________________________________________________
     .card-bar {
       margin: .85rem auto;
       width: 95%;
-      height: 1.2rem;
+      height: 1.1rem;
       background-color: rgba(140, 140, 140, 0.5);
       border-radius: .7rem;
       #progress-bar-sun {
-        height: 1.2rem;
-        background-color: rgba(255, 238, 88, 0.8);
+        height: 1.15rem;
+        background-color: rgba(255, 238, 88, 0.7);
         transform: translateX(-13.5rem);
         transition: all 0.4s ease;
         border-radius: .7rem;
       
       }
       #progress-bar-water {
-        height: 1.2rem;
-        background-color: rgba(79, 195, 247, 0.8);
+        height: 1.15rem;
+        background-color: rgba(79, 195, 247, 0.7);
         transform: translateX(-13.5rem);
         transition: all 0.6s ease;
         border-radius: .7rem;
       }
       #progress-bar-care {
-        height: 1.2rem;
-        background-color: rgba(174, 213, 129, 0.8);
+        height: 1.15rem;
+        background-color: rgba(174, 213, 129, 0.7);
         transform: translateX(-13.5rem);
         transition: all 0.8s ease;
         border-radius: .7rem;
@@ -646,6 +657,10 @@ _____________________________________________________________________
     text-align: center;
     font-family: $fontHeading;
     line-height: 0.7;
+    animation-name: title;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
   }
   .subtitle {
     color: white;
@@ -653,7 +668,20 @@ _____________________________________________________________________
     text-align: center;
     line-height: 0.7;
     font-family: $fontHeading;
+    animation-name: subtitle;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
   }
 }
-
+@keyframes title {
+  0% { opacity: 0; transform: scale(0.9)}
+  3% { opacity: 0}
+  100% { opacity: 1; transform: scale(1)}
+}
+@keyframes subtitle {
+  0% { opacity: 0}
+  15% { opacity: 0}
+  100% { opacity: 1}
+}
 </style>

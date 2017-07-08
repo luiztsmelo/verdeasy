@@ -57,7 +57,7 @@ export default {
     margin: .7rem auto;
     width: 60%;
     background-color: white;
-    border-radius: .7rem 0;
+    border-radius: .4rem;
     .blog-title {
       padding: 0 1rem;
       line-height: 1;

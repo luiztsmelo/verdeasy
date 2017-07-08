@@ -4,7 +4,8 @@
       <h1 class="contato-title">Sugestões, Críticas?</h1>
 
       <div class="submitted" v-if="submitted">
-        <h2 class="submitted-text">Aviãozinho da mensagem enviado! Obrigado! :)</h2>
+        <h2 class="submitted-text">Obrigado! <img class="submitted-img-smile" src="./../../../static/utils/happy.svg" alt=""></h2>
+        
         <img class="submitted-img" src="./../../../static/utils/send.svg" alt="Mensagem enviada com sucesso!">
       </div>
 
@@ -86,9 +87,19 @@ export default {
       width: 6rem;
       height: auto;
       animation-name: plane;
-      animation-duration: 4s;
+      animation-duration: 2.2s;
       animation-fill-mode: forwards;
-      animation-timing-function: ease-out;
+      animation-timing-function: cubic-bezier(1.000, -0.050, 1.000, 0.965);
+    }
+    .submitted-img-smile {
+      width: 1.8rem;
+      height: auto;
+    }
+    .submitted-text {
+      margin-top: 7rem;
+      animation-name: thanks;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;
     }
   }
   .contato-form {
@@ -103,19 +114,22 @@ export default {
     }
     input {
       width: 40%;
-      border-radius: .7rem 0;
+      border-radius: .3rem;
       border: none;
       padding: .2rem .5rem;
     }
     textarea {
-      border-radius: .7rem 0;
+      border-radius: .3rem;
       border: none;
       padding: .5rem;
       resize: none;
     }
+    .contato-subtitle {
+      margin-top: 2rem;
+    }
     .contato-submit {
       cursor: pointer;
-      width: 3.5rem;
+      width: 3.7rem;
       height: auto;
       transform: rotate(17deg);
       padding: .5rem 0 0 0;
@@ -129,6 +143,11 @@ export default {
 
 @keyframes plane {
   0% { transform: translateX(0rem)}
-  100% { transform: translate(70rem, -70rem)}
+  60% { transform: translate(140rem, -70rem)}
+  100% { transform: translate(100rem, -70rem)}
+}
+@keyframes thanks {
+  0% { opacity: 0}
+  100% { opacity: 1}
 }
 </style>

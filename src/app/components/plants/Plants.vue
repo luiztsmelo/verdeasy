@@ -1,5 +1,4 @@
 <template>
-<transition name="component-fade" mode="out-in">
   <div class="home">
 
     <!--HERO-->
@@ -357,14 +356,18 @@
     </transition><!--MODAL-->
 
   </div> 
-</transition>  
 </template>
 _____________________________________________________________________
 <script>
+import { db } from './../../firebase';
 import { filter, orderBy } from 'lodash'
 
 export default {
-
+  firebase: {
+    plants: {
+      source: db.ref('plants'),
+    }
+  },
   data() {
     return {
       //Main plants data from firebase
@@ -409,14 +412,7 @@ export default {
       moveCardsLeftWidth3: null, 
     }
   },
-  created() {
-    this.$http.get('https://verdeasy-d832a.firebaseio.com/plants.json').then(function(data){
-      return data.json();
-    }).then(function(data){
-      this.plants = data;
-    });
-  },
-
+  
   computed: {
     // FILTRAR ERVAS AROMÁTICAS
     EAFilter() {
@@ -468,13 +464,6 @@ _____________________________________________________________________
 @import "./scss/_mediaQueries.scss";
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";
-
-.component-fade-enter-active,  {
-  transition: $comptransition;
-}
-.component-fade-enter, .component-fade-leave-to, .component-fade-leave-active {
-  opacity: 0;
-}
 
 @keyframes container {
   0% { opacity: 0; margin-top: 10rem;}

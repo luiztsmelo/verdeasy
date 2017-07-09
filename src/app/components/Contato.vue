@@ -44,10 +44,15 @@ export default {
       if (dd < 10) {
         dd = '0' + dd
       } 
-
       if (mm < 10) {
           mm = '0' + mm
       } 
+      if (hour < 10) {
+        hour = '0' + hour
+      } 
+      if (minutes < 10) {
+        minutes = '0' + minutes
+      }
       this.contato.dia = dd + '/' + mm + '/' + yyyy;
       this.contato.hora = hour + ':' + minutes
 

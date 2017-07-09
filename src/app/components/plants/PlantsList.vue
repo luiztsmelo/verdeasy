@@ -16,20 +16,24 @@
         <th>Alt.</th>
         <th>Temp.</th>
         <th>Solo.</th>
+        <th>Push.</th>
+        <th>Del.</th>
       </tr>
-      <tr v-for="plant in plants">
-        <td>{{ plant.name }}</td>
-        <td><i>{{ plant.sci }}</i></td>
-        <td>{{ plant.class }}</td>
-        <td>{{ plant.facil }}</td>
-        <td>{{ plant.sol }}</td>
-        <td>{{ plant.rega }}</td>
-        <td>{{ plant.prag }}</td>
-        <td>{{ plant.germ }}</td>
-        <td>{{ plant.cresc }}</td>
-        <td>{{ plant.alt }}</td>
-        <td>{{ plant.temp }}</td>
-        <td>{{ plant.solo }}</td>
+      <tr v-for="plant in nameOrder">
+        <td><input :value="plant.name"></td>
+        <td><input :value="plant.sci"></td>
+        <td><input :value="plant.class"></td>
+        <td><input type="number" min="1" max="10" :value="plant.facil"></td>
+        <td><input type="number" min="1" max="10" :value="plant.sol"></td>
+        <td><input type="number" min="1" max="10" :value="plant.rega"></td>
+        <td><input type="number" min="1" max="10" :value="plant.prag"></td>
+        <td><input type="number" min="1" max="10" :value="plant.germ"></td>
+        <td><input type="number" min="1" max="10" :value="plant.cresc"></td>
+        <td><input type="number" min="1" max="10" :value="plant.alt"></td>
+        <td><input type="number" min="1" max="10" :value="plant.temp"></td>
+        <td><input type="number" min="1" max="10" :value="plant.solo"></td>
+        <td><img class="update-img" src="./../../../../static/utils/update.svg" @click="updatePlant"></td>
+        <td><img class="del-img" src="./../../../../static/utils/delete.svg" @click="removePlant"></td>
       </tr>
     </table>
 
@@ -37,20 +41,33 @@
 </template>
 
 <script>
+import { orderBy } from 'lodash'
+import { db } from './../../firebase';
+
 export default {
   data() {
     return {
       plants: {},
-      plantUpdate: null,
     }
   },
-  created() {
-    this.$http.get('https://verdeasy-d832a.firebaseio.com/plants.json').then(function(data){
-      return data.json();
-    }).then(function(data){
-      this.plants = data;
-    });
+  firebase: {
+    plants: {
+      source: db.ref('plants'),
+    }
   },
+  computed: {
+    nameOrder() {
+      return _.orderBy(this.plants, ['name'], ['asc']);
+    }
+  },
+  methods: {
+    updatePlant() {
+      alert("Planta atualizada com sucesso!");
+    },
+    removePlant() {
+      alert('Planta removida com sucesso!');
+    }
+  }
 }  
 </script>
 
@@ -65,34 +82,46 @@ export default {
   align-items: center;
   justify-content: center;
   table {
+    cursor: text;
     font-family: $fontMain;
     font-size: 1.1rem;
-    width: 80%;
+    width: 84%;
     border-collapse: collapse;
     background: rgba(black, .1);
-    font-weight: 300;
     margin-bottom: 2rem;
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: rgba(black, .4) solid;
-      color: white;
-    }
     th {
-      font-size: 1.15rem;
       background: rgba(black, .6);
-      position: static;
       padding: .3rem 0;
-      width: 3rem;
     }
     td {
-      padding: .3rem 0;
-      cursor: pointer;
-      transition: all .07s ease;
+      input {
+        padding: .2rem 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: none;
+        text-align: center;
+        color: white;
+        font-family: $fontMain;
+      }
+      input[type=number] {
+        width: 5rem;
+      }
+      
       &:hover {
         background: rgba($lightgreen, .5);
       }
-      
+      .update-img {
+        cursor: pointer;
+        width: 1.3rem;
+        height: auto;
+      }
+      .del-img {
+        cursor: pointer;
+        width: .9rem;
+        height: auto;
+        margin: 0 1rem;
+      }
     }
     tr:nth-child(even) {
       background: rgba(black, .3);

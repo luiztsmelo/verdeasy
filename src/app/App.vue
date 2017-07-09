@@ -94,7 +94,7 @@ body {
   flex-wrap: wrap;
   .brand {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-family: $fontHeading;
     color: white;
   }

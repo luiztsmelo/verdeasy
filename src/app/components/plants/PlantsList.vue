@@ -1,7 +1,6 @@
 <template>
   <div id="plants-list"> 
-    <h1 class="title">Plants List</h1>
-
+    <h1 class="title">Plants List <router-link to="/addplant"><span class="addplant">+</span></router-link></h1>
     <table>
       <tr>
         <th>Nome</th>
@@ -16,25 +15,25 @@
         <th>Alt.</th>
         <th>Temp.</th>
         <th>Solo.</th>
-        <th>Push.</th>
         <th>Del.</th>
       </tr>
+
       <tr v-for="plant in nameOrder">
-        <td><input :value="plant.name"></td>
-        <td><input :value="plant.sci"></td>
-        <td><input :value="plant.class"></td>
-        <td><input type="number" min="1" max="10" :value="plant.facil"></td>
-        <td><input type="number" min="1" max="10" :value="plant.sol"></td>
-        <td><input type="number" min="1" max="10" :value="plant.rega"></td>
-        <td><input type="number" min="1" max="10" :value="plant.prag"></td>
-        <td><input type="number" min="1" max="10" :value="plant.germ"></td>
-        <td><input type="number" min="1" max="10" :value="plant.cresc"></td>
-        <td><input type="number" min="1" max="10" :value="plant.alt"></td>
-        <td><input type="number" min="1" max="10" :value="plant.temp"></td>
-        <td><input type="number" min="1" max="10" :value="plant.solo"></td>
-        <td><img class="update-img" src="./../../../../static/utils/update.svg" @click="updatePlant"></td>
-        <td><img class="del-img" src="./../../../../static/utils/delete.svg" @click="removePlant"></td>
+        <td><input type="text" :value="plant.name" @input="updateName(plant, $event.target.value)"></td>
+        <td><input type="text" :value="plant.sci" @input="updateSci(plant, $event.target.value)"></td>
+        <td><input type="text" :value="plant.class" @input="updateClass(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.facil" @input="updateFacil(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.sol" @input="updateSol(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.rega" @input="updateRega(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.prag" @input="updatePrag(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.germ" @input="updateGerm(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.cresc" @input="updateCresc(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.alt" @input="updateAlt(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.temp" @input="updateTemp(plant, $event.target.value)"></td>
+        <td><input type="number" min="1" max="10" :value="plant.solo" @input="updateSolo(plant, $event.target.value)"></td>
+        <td><img class="del-img" src="./../../../../static/utils/delete.svg" @click="removePlant(plant)"></td>
       </tr>
+
     </table>
 
   </div>
@@ -58,14 +57,49 @@ export default {
   computed: {
     nameOrder() {
       return _.orderBy(this.plants, ['name'], ['asc']);
-    }
+    },
   },
   methods: {
-    updatePlant() {
-      alert("Planta atualizada com sucesso!");
+    // UPDATE PLANT
+    updateName: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('name').set(newAttr);
     },
-    removePlant() {
-      alert('Planta removida com sucesso!');
+    updateSci: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('sci').set(newAttr);
+    },
+    updateClass: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('class').set(newAttr);
+    },
+    updateFacil: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('facil').set(newAttr);
+    },
+    updateSol: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('sol').set(newAttr);
+    },
+    updateRega: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('rega').set(newAttr);
+    },
+    updatePrag: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('prag').set(newAttr);
+    },
+    updateGerm: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('germ').set(newAttr);
+    },
+    updateCresc: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('cresc').set(newAttr);
+    },
+    updateAlt: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('alt').set(newAttr);
+    },
+    updateTemp: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('temp').set(newAttr);
+    },
+    updateSolo: function (plant, newAttr) {
+      this.$firebaseRefs.plants.child(plant['.key']).child('solo').set(newAttr);
+    },
+    // REMOVE PLANT
+    removePlant: function (plant) {
+      this.$firebaseRefs.plants.child(plant['.key']).remove()
     }
   }
 }  
@@ -81,6 +115,14 @@ export default {
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  .addplant {
+    color: rgb(200, 200, 200);
+    font-size: 2.5rem;
+    transition: .2s ease;
+    &:hover {
+      color: $green;
+    }
+  }
   table {
     cursor: text;
     font-family: $fontMain;
@@ -115,6 +157,7 @@ export default {
         cursor: pointer;
         width: 1.3rem;
         height: auto;
+        margin: 0 1rem;
       }
       .del-img {
         cursor: pointer;

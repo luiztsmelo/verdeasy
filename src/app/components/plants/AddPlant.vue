@@ -1,10 +1,12 @@
 <template>
   <div id="addplant">
     <h1 class="title" v-if="!submitted">Add Plant</h1>
+    <router-link to="/plantslist" class="plantslist-return"><h3 v-if="!submitted">< Voltar</h3></router-link>
 
     <div class="submitted" v-if="submitted">
       <h2>Planta adicionada com sucesso!</h2>
-      <button @click="submitted = false">Add mais!</button>
+      <button @click="submitted = false">Adicionar mais!</button>
+      <button class="list-btn"><router-link to="/plantslist"><a>Ver lista</a></router-link></button>
     </div>
 
     <div class="form" v-if="!submitted">
@@ -70,6 +72,7 @@
     </div>
 
     <button @click.prevent="addPlant" @click="submitted = true" v-if="!submitted">Adicionar</button>
+    
   </div>
 </template>
 
@@ -111,6 +114,16 @@ export default {
   flex-flow: row wrap;
   align-items: center;
   text-align: center;
+  .plantslist-return {
+    position: absolute;
+    color: rgb(200, 200, 200);
+    left: 2.5%;
+    bottom: 23%;
+    transition: .2s ease;
+    &:hover {
+      color: $lightgreen;
+    }
+  }
   .title {
     color: white;
     text-align: center;
@@ -124,6 +137,16 @@ export default {
     color: white;
     text-align: center;
     text-align: center;
+    .list-btn {
+      a{
+        color: white;
+         &:hover {
+        color: $green;
+        background: transparent;
+      }
+      }
+      margin-top: 2rem;
+    }
     button {
       position: absolute;
       margin: auto;

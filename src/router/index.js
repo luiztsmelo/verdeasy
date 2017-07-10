@@ -9,7 +9,6 @@ import Contato    from '../app/components/Contato.vue';
 import Blog       from '../app/components/blog/Blog.vue';
 import AddBlog    from '../app/components/blog/AddBlog.vue';
 import SingleBlog from '../app/components/blog/SingleBlog.vue';
-import NotFound   from '../app/components/NotFound.vue';
 
 
 
@@ -24,5 +23,5 @@ export const routes = [
   { path: '/blog/:id',    component: SingleBlog },
   { path: '/addplant',    component: AddPlant   },
   { path: '/plantslist',  component: PlantsList },
-  { path: '*',            component: NotFound   },
+  { path: '*',            redirect: '/'         },
 ];

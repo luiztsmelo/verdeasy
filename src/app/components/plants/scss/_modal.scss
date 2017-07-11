@@ -38,6 +38,7 @@
     .modal-sidebar {
       flex: 1 0 0;
       background: rgb(40, 40, 40);
+      text-align: center;
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -50,14 +51,33 @@
         width: 11rem;
         height: auto;
         margin: 0 .6rem;
-     }
-     .modal-plant-sci {
-       font-family: $fontMain;
-       font-size: .97rem;
-       line-height: 0;
-       text-align: center;
-       color: $offwhite;
-     }
+      }
+      .modal-plant-sci {
+        font-family: $fontMain;
+        font-size: .97rem;
+        line-height: 0;
+        text-align: center;
+        color: $offwhite;
+      }
+    
+      a {
+        cursor: pointer;
+        background: rgb(70, 70, 70);
+        position: absolute;
+        bottom: 5%;
+        left: 1.2%;
+        width: 11rem;
+        height: 1.8rem;
+        transition: all .4s ease;
+        .modal-plant-btn {
+          font-size: .95rem;
+          color: white;
+          font-weight: 300;
+        }
+        &:hover {
+          background: rgba($green, 0.7);
+        }
+      }
     }
 
     /*Modal Data*/

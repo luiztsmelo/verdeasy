@@ -6,7 +6,7 @@
     <div class="submitted" v-if="submitted">
       <h2>Planta adicionada com sucesso!</h2>
       <button @click="submitted = false">Adicionar mais!</button>
-      <button class="list-btn"><router-link to="/plantslist"><a>Ver lista</a></router-link></button>
+      <button class="list-btn"><router-link to="/plantslist">Ver lista</router-link></button>
     </div>
 
     <div class="form" v-if="!submitted">
@@ -138,12 +138,12 @@ export default {
     text-align: center;
     text-align: center;
     .list-btn {
-      a{
+      a {
         color: white;
-         &:hover {
-        color: $green;
-        background: transparent;
-      }
+        &:hover {
+          color: $green;
+          background: transparent;
+        }
       }
       margin-top: 2rem;
     }

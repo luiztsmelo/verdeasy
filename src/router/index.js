@@ -23,5 +23,4 @@ export const routes = [
   { path: '/blog/:id',    component: SingleBlog },
   { path: '/addplant',    component: AddPlant   },
   { path: '/plantslist',  component: PlantsList },
-  { path: '*',            redirect: '/'         },
 ];

@@ -254,6 +254,7 @@
             </div>
             <img class="modal-plant-img" :src="'./../../../static/plants/' + plantModal.name + '.jpg'" :alt="plantModal.name">
             <p class="modal-plant-sci"><i>{{ plantModal.sci }}</i></p>
+            <router-link to="/"><span class="modal-plant-btn">PLANTAR</span></router-link>
           </div><!--Sidebar-->
 
           <!-- Data-->
@@ -420,14 +421,14 @@ export default {
     },
     // FILTRAR PLANTAS MEDICINAIS
     MEDFilter() {
-      return _.filter(this.plants, ['class', 'MED'])
+      return _.filter(this.plants, ['class', 'MED']) 
     },
 
     // FILTRO PERSONALIZADO
     customFilter() {
-      return _.orderBy(this.plants, ['rega'], ['asc']);
-    }
-  },
+      return _.orderBy(this.plants, ['sol'], ['asc']);
+      }
+    },
 
   methods: {
     moveCardsLeft1() {
@@ -467,7 +468,7 @@ _____________________________________________________________________
 
 @keyframes container {
   0% { opacity: 0; margin-top: 10rem;}
-  40% { opacity: 0; margin-top: 10rem;}
+  50% { opacity: 0; margin-top: 10rem;}
   100% { opacity: 1; margin-top: 0rem;}
 }
 
@@ -494,8 +495,6 @@ _____________________________________________________________________
     margin: 0;
     padding: 0 0 0 3rem;
     h2 {
-      padding: 0 0 0 .2rem;
-      float: left;
       text-transform: uppercase;
       color: $offwhite;
       font-size: 1.2rem;
@@ -638,14 +637,14 @@ _____________________________________________________________________
 #hero {
   display: flex;
   flex-direction: column;
-  padding: 5rem 0 8rem 0;
+  padding: 7rem 0 8rem 0;
   position: relative;
   .title {
     color: white;
-    font-size: 4.2rem;
+    font-size: 3.7rem;
     text-align: center;
     font-family: $fontHeading;
-    line-height: 0.7;
+    line-height: 0.3;
     animation-name: title;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -653,7 +652,7 @@ _____________________________________________________________________
   }
   .subtitle {
     color: white;
-    font-size: 2.8rem;
+    font-size: 2.7rem;
     text-align: center;
     line-height: 0.7;
     font-family: $fontHeading;
@@ -664,13 +663,13 @@ _____________________________________________________________________
   }
 }
 @keyframes title {
-  0% { opacity: 0; transform: scale(0.9)}
+  0% { opacity: 0; transform: scale(0.9) }
   3% { opacity: 0}
-  100% { opacity: 1; transform: scale(1)}
+  100% { opacity: 1; transform: scale(1) }
 }
 @keyframes subtitle {
   0% { opacity: 0}
-  15% { opacity: 0}
+  12% { opacity: 0}
   100% { opacity: 1}
 }
 </style>

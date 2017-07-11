@@ -3,7 +3,8 @@
     <div id="app">
 
       <!--NAVBAR-->
-      <header id="navbar">
+      <header class="navbar">
+        <img class="brand-img" src="./../../static/utils/verdeasy.svg" alt="verdeasy">
         <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
         <nav>
           <ul>
@@ -39,8 +40,8 @@ export default {
       
       // GOOGLE
       { name: 'description', content: 'Catálogo moderno e amigável de plantas, feito especialmente para pessoas leigas na arte do cultivo, e que não possuem uma grande área para plantar, como apartamentos.' },
-      { name: 'google-site-verification" content="2iVdMP9nUvh_ac45O4wSphuN20wbNCL6n8waEO4N7yc' },
-      { name: 'google" content="notranslate' },
+      { name: 'google-site-verification', content: '2iVdMP9nUvh_ac45O4wSphuN20wbNCL6n8waEO4N7yc' },
+      { name: 'google', content: 'notranslate' },
       
       // MOBILE THEMES
       // Chrome, Firefox OS and Opera / rgb(29, 29, 22)
@@ -51,11 +52,11 @@ export default {
       { name: 'apple-mobile-web-app-status-bar-style', content: '#1d1d16' },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: './../../static/utils/verdeasyG.png' },
+ 
+      { rel: 'icon', type: 'image/png', sizes: '24x24', href: './../../static/utils/verdeasy24.png' },
     ],
     script: [
-      // Google Ads
-      { type: 'text/javascript', src: './../../googleAds.js' },
+
     ],
   },
 }
@@ -85,17 +86,20 @@ body {
 }
 
 // NAVBAR
-#navbar {
+.navbar {
   display: flex;
   padding: 0.5rem 3rem 0.5rem 3rem;
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
+  .brand-img {
+    width: 2.7rem;
+  }
   .brand {
     margin: 0;
     font-size: 2.3rem;
-    font-family: $fontHeading;
+    font-family: $fontMain;
     color: white;
   }
   nav {

@@ -34,9 +34,9 @@ $offwhite: rgb(247, 247, 247);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Shadows+Into+Light+Two|Raleway:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Nothing+You+Could+Do|Raleway:400,400i,700');
 
-$fontHeading: 'Shadows Into Light Two', cursive;
+$fontHeading: 'Nothing You Could Do', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
 $fontText: 'Raleway', sans-serif;
 
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5 {
 	margin: 0.5em 0 0.5em 0;
 }
 
-h1 { font-size: 2.2rem; }
+h1 { font-size: 2.5rem; }
 h2 { font-size: 1.7rem; }
 h3 { font-size: 1.4rem; }
 h4 { font-size: 1.05rem; }

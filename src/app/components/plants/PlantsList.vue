@@ -100,6 +100,9 @@ export default {
     // REMOVE PLANT
     removePlant: function (plant) {
       this.$firebaseRefs.plants.child(plant['.key']).remove()
+      .then(() => {
+        alert(plant.name + ' removida com sucesso!');
+      })
     }
   }
 }  

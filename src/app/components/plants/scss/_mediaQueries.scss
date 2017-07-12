@@ -23,14 +23,14 @@
   // Hero
   #hero {
     margin: 0 !important;
-    padding: 15% 0 !important;
+    padding: 40% 0 !important;
     .title {
-      font-size: 2.1rem !important;
-      line-height: 1.2 !important;
+      font-size: 2.2rem !important;
+      line-height: .5 !important;
     }
     .subtitle {
-      font-size: 1.6rem !important;
-      line-height: 1.4 !important;
+      font-size: 1.9rem !important;
+      line-height: .5 !important;
     }
   }
 
@@ -43,18 +43,13 @@
   }
   .container-card {
     background: rgb(29, 29, 22) !important;
-    .arrow-left-1 {
-      display: none;
+    .arrow-left {
+      display: none !important;
     }
-    .arrow-right-1 {
-      display: none;
+    .arrow-right {
+      display: none !important;
     }
-    .arrow-left-2 {
-      display: none;
-    }
-    .arrow-right-2 {
-      display: none;
-    }
+
   }
   .container-title {
     padding: 0 0 0 6% !important;

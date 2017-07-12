@@ -254,7 +254,7 @@
             </div>
             <img class="modal-plant-img" :src="'./../../../static/plants/' + plantModal.name + '.jpg'" :alt="plantModal.name">
             <p class="modal-plant-sci"><i>{{ plantModal.sci }}</i></p>
-            <router-link to="/"><span class="modal-plant-btn">PLANTAR</span></router-link>
+            <router-link to="/minha-horta"><span class="modal-plant-btn">PLANTAR</span></router-link>
           </div><!--Sidebar-->
 
           <!-- Data-->
@@ -479,7 +479,7 @@ _____________________________________________________________________
 
 .container-card {
   padding: 1.2rem 0 0 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, .7);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;
@@ -641,10 +641,10 @@ _____________________________________________________________________
   position: relative;
   .title {
     color: white;
-    font-size: 4rem;
+    font-size: 4.4rem;
     text-align: center;
     font-family: $fontHeading;
-    line-height: 0.3;
+    line-height: 0.2;
     animation-name: title;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -652,9 +652,9 @@ _____________________________________________________________________
   }
   .subtitle {
     color: white;
-    font-size: 2.8rem;
+    font-size: 4rem;
     text-align: center;
-    line-height: 0.7;
+    line-height: 0.2;
     font-family: $fontHeading;
     animation-name: subtitle;
     animation-duration: 6s;

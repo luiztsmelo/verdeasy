@@ -86,6 +86,7 @@ export default {
   .contato-title {
     font-family: $fontHeading;
     line-height: .3;
+    text-transform: uppercase;
   }
   .submitted {
     .submitted-img {

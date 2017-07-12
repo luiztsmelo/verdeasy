@@ -65,6 +65,7 @@ export default {
       font-size: $fontSizeBlogTitle;
       color: $grey;
       font-family: $fontHeading;
+      text-transform: uppercase;
     }
     .blog-article {
       padding: 0 1rem 1rem;

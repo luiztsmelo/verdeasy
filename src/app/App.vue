@@ -4,8 +4,8 @@
 
       <!--NAVBAR-->
       <header class="navbar">
-        <img class="brand-img" src="./../../static/utils/verdeasy.svg" alt="verdeasy">
-        <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
+        <router-link to="/"><img class="brand-img" src="./../../static/utils/verdeasy.svg" alt="verdeasy"></router-link>
+        <router-link to="/"><h1 class="brand">VERDEASY</h1></router-link>
         <nav>
           <ul>
             <li><router-link class="link" to="/sobre">Sobre</router-link></li>
@@ -98,8 +98,8 @@ body {
     margin-right: .3rem;
   }
   .brand {
-    margin: 0;
-    font-size: 2.3rem;
+    margin: .7rem 0 0 0;
+    font-size: 1.8rem;
     font-family: $fontHeading;
     color: white;
   }
@@ -138,7 +138,7 @@ body {
     background: rgb(37, 37, 30);
 
     .brand {
-      font-size: 1.8rem;
+      font-size: 2rem;
       line-height: .7;
     }
   }

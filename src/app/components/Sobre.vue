@@ -33,6 +33,7 @@ export default {
   .sobre-title {
     font-family: $fontHeading;
     line-height: .3;
+    text-transform: uppercase;
   }
 }
 </style>

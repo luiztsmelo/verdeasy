@@ -641,7 +641,7 @@ _____________________________________________________________________
   position: relative;
   .title {
     color: white;
-    font-size: 3.7rem;
+    font-size: 4rem;
     text-align: center;
     font-family: $fontHeading;
     line-height: 0.3;
@@ -652,7 +652,7 @@ _____________________________________________________________________
   }
   .subtitle {
     color: white;
-    font-size: 2.7rem;
+    font-size: 2.8rem;
     text-align: center;
     line-height: 0.7;
     font-family: $fontHeading;
@@ -663,7 +663,7 @@ _____________________________________________________________________
   }
 }
 @keyframes title {
-  0% { opacity: 0; transform: scale(0.9) }
+  0% { opacity: 0; transform: scale(0.87) }
   3% { opacity: 0}
   100% { opacity: 1; transform: scale(1) }
 }

@@ -58,10 +58,10 @@
     width: 50%;
     height: 35%;
     transform: translateX(-50%) translateY(-50%);
-    background: rgb(70, 70, 70);
+    background: rgb(100, 100, 100);
     .filter-modal-title {
       width: 100%;
-      background: rgb(45, 45, 45);
+      background: rgb(65, 65, 65);
       padding: .4rem 0;
       h1 {
         margin: 0;
@@ -81,7 +81,7 @@
         .filter-img {
           cursor: pointer;
           margin: 0 1.2rem;
-          filter: invert(55%);
+          filter: invert(75%);
           width: 2.6rem;
           height: auto;
           &:hover {
@@ -121,11 +121,12 @@
         width: 7rem;
         border-radius: 2rem;
         border: none;
-        background: $green;
+        background: rgb(75, 75, 75);
         color: white;
         margin: .7rem 0;
+        transition: all .3s ease;
         &:hover {
-          background-color: rgb(141, 220, 92);
+          background-color: $green;
         }
       }
     }

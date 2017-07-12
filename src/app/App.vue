@@ -73,7 +73,7 @@ export default {
 }
 
 body {
-  background-image: url('../assets/bgimg/bgimg1.jpg');
+  background: url('../assets/bgimg/bgimg1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -95,11 +95,12 @@ body {
   flex-wrap: wrap;
   .brand-img {
     width: 2.7rem;
+    margin-right: .3rem;
   }
   .brand {
     margin: 0;
     font-size: 2.3rem;
-    font-family: $fontMain;
+    font-family: $fontHeading;
     color: white;
   }
   nav {

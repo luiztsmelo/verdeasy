@@ -1,16 +1,30 @@
 <template>
   <div id="minhahorta">
     <h1 class="minhahorta-title">Minha Horta</h1>
+    <ul>
+      <li v-for="plant of plants">
+        <p>{{plant.name}}</p>
+      </li>
+    </ul>
+   
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
+import axios from 'axios';
 
-    }
-  },
+export default {
+  data: () => ({
+    plants: [],
+  }),
+     
+   
+  created() {
+    axios.get('https://verdeasy-d832a.firebaseio.com/plants.json')
+    .then(response => {
+      this.plants = response.data
+    })
+  }
 }
 </script>
 

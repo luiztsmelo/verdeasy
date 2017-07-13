@@ -534,7 +534,6 @@ _____________________________________________________________________
         transition: all 0.4s ease;
         &:hover .card-content {
           transform: translateY(-88.5%);
-          
         }
         &:hover {
           box-shadow: inset 0 0 0 40rem rgba(0,0,0,.4);
@@ -641,10 +640,10 @@ _____________________________________________________________________
   position: relative;
   .title {
     color: white;
-    font-size: 4.4rem;
+    font-size: 4rem;
     text-align: center;
     font-family: $fontHeading;
-    line-height: 0.2;
+    line-height: 0.4;
     animation-name: title;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -652,9 +651,9 @@ _____________________________________________________________________
   }
   .subtitle {
     color: white;
-    font-size: 4rem;
+    font-size: 2.8rem;
     text-align: center;
-    line-height: 0.2;
+    line-height: 0.4;
     font-family: $fontHeading;
     animation-name: subtitle;
     animation-duration: 6s;

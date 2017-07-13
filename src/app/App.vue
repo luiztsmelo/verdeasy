@@ -95,7 +95,6 @@ body {
   flex-wrap: wrap;
   .brand-img {
     width: 2.7rem;
-    margin-right: .3rem;
   }
   .brand {
     margin: .7rem 0 0 0;
@@ -114,7 +113,7 @@ body {
         padding: 0 0.7rem;
         color: white;
         font-size: 1.15rem;
-        font-weight: $fontThin;
+        font-weight: 300;
         transition: .3s ease;
         border-radius: 2rem 0;
         &:hover {

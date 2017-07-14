@@ -20,7 +20,7 @@ export default {
 footer {
   display: flex;
   justify-content: center;
-  background: rgba(0, 0, 0, .7);
+  background: rgb(22, 23, 15);
   color: white;
   position: absolute; 
   left: 0 ; right: 0; bottom: 0; 

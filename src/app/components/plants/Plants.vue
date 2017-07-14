@@ -479,7 +479,7 @@ _____________________________________________________________________
 
 .container-card {
   padding: 1.2rem 0 0 0;
-  background: rgba(0, 0, 0, .7);
+  background: rgb(22, 23, 15);
   color: white;
   white-space: nowrap;
   overflow-x: hidden;

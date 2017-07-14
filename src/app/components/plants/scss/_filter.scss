@@ -6,7 +6,7 @@
   cursor: pointer;
   padding: 0 3rem 0 0;
   top: 5%;
-  color: white;
+  color: $offwhite;
   position: absolute;
   right: 0;
   
@@ -52,7 +52,7 @@
 
   .filter-modal-body {
     position: absolute;
-    background: white;
+    background: $offwhite;
     top:  50%;
     left: 50%;
     width: 50%;
@@ -85,7 +85,7 @@
           width: 2.6rem;
           height: auto;
           &:hover {
-            filter: invert(100%) drop-shadow(8px 8px 10px black);
+            filter: invert(100%) drop-shadow(8px 8px 10px $offblack);
           }
       
         }
@@ -104,7 +104,7 @@
         width: 100%;
       }
       .selectedfilter {
-        filter: invert(100%) drop-shadow(8px 8px 10px black);
+        filter: invert(100%) drop-shadow(8px 8px 10px $offblack);
       }
     }
   }
@@ -122,7 +122,7 @@
         border-radius: 2rem;
         border: none;
         background: rgb(75, 75, 75);
-        color: white;
+        color: $offwhite;
         margin: .7rem 0;
         transition: all .3s ease;
         &:hover {

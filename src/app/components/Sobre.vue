@@ -24,7 +24,7 @@ export default {
 
 #sobre {
   display: flex;
-  color: white;
+  color: $offwhite;
   flex-flow: column;
   align-items: center;
   justify-content: center;

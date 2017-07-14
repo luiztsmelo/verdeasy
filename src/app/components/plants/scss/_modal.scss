@@ -10,7 +10,7 @@
   top:  0;
   left: 0;
   z-index: 7777;
-  color: white;
+  color: $offwhite;
   .modal-exit {
     position: absolute;
     top: 2.5%;
@@ -30,18 +30,19 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60%;
-    height: 70%;
+    width: 62%;
+    height: 72%;
     transform: translateX(-50%) translateY(-50%);
 
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: rgb(65, 65, 65);
+      background: linear-gradient(rgb(147, 161, 132), rgb(50, 50, 50));
       text-align: center;
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
+          margin: .5rem 0 0 0;
           font-size: 1.3rem;
           text-align: center;
           color: $offwhite;
@@ -50,7 +51,7 @@
       .modal-plant-img {
         width: 11rem;
         height: auto;
-        margin: 0 .6rem;
+        margin: .1rem .6rem 0 .6rem;
       }
       .modal-plant-sci {
         font-family: $fontMain;
@@ -62,20 +63,23 @@
     
       a {
         cursor: pointer;
-        background: rgb(100, 100, 100);
+        background: transparent;
+        border: rgb(170, 170, 170) solid 1px;
+        border-radius: 1rem;
         position: absolute;
-        bottom: 5%;
+        bottom: 4%;
         left: 1.2%;
         width: 11rem;
         height: 1.8rem;
-        transition: all .4s ease;
+        transition: all .4s ease-in-out;
         .modal-plant-btn {
-          font-size: .95rem;
-          color: white;
+          font-size: .9rem;
+          color: $offwhite;
           font-weight: 300;
         }
         &:hover {
-          background: rgba($green, 0.7);
+          background: $green;
+          border: rgb(70, 70, 70) solid 1px;
         }
       }
     }
@@ -90,7 +94,7 @@
         cursor: pointer;
         display: flex;
         flex-flow: row nowrap;
-        background: rgb(100, 100, 100);
+        background: rgb(70, 70, 70);
         height: 2.6rem;
         align-content: center;
         align-items: center;
@@ -109,112 +113,53 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(65, 65, 65);
-          transition: all .3s ease;
-          &:hover {
-            background: rgb(85, 85, 85);
-          }
+          background: rgb(60, 60, 60);
+          transition: all .3s ease-in-out;
         }
         .modal-menu-comoplantar {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(65, 65, 65);
-          transition: all .3s ease;
-          &:hover {
-            background: rgb(85, 85, 85);
-          }
+          background: rgb(60, 60, 60);
+          transition: all .3s ease-in-out;
         }
         .modal-menu-usos {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(65, 65, 65);
-          transition: all .3s ease;
-          &:hover {
-            background: rgb(85, 85, 85);
-          }
+          background: rgb(60, 60, 60);
+          transition: all .3s ease-in-out;
         }
         .activetab {
-          background: rgb(100, 100, 100);
+          background: $honeydew;
+          color: black;
+        }
+        .activetabtext {
+          color: black;
+        }
+        .activetabimg {
+          filter: invert(100%);
         }
       }
       /*****STATS*****/
       .stats {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        background: rgb(100, 100, 100);
+        background: $honeydew;
         height: 100%;
-        .stats-img {
-          cursor: help;
-          position: absolute;
-          left: 28%;
-          width: 2.1rem;
-          height: auto;
-          filter: invert(100%);
-        }
-        #sol   {top: 16%;}
-        #rega  {top: 26%;}
-        #prag  {top: 36%;}
-        #germ  {top: 46%;}
-        #cresc {top: 56%;}
-        #alt   {top: 66%;}
-        #temp  {top: 76%;}
-        #solo  {top: 86%;}
        
-        .stats-bar {
-          cursor: default;
-          position: relative;
-          margin: 2.2% 0;
-          width: 75%;
-          height: 4.3%;
-          background: rgb(140,140, 140);
-          border-radius: 2rem;
-          z-index: 1;
-         
-          .progress-bar {
-            position: absolute;
-            height: 100%;
-            z-index: 2;
-            border-radius: .7rem;
-          } 
-        }
-        .reguas {
-          display: flex;
-          flex-flow: row;
-          font-family: $fontMain;
-          width: 100%;
-          z-index: 2;
-          color: black;
-          #regua1 {
-            margin: auto;
-            z-index: 3;
-          }
-          #regua2 {
-            margin: auto;
-            z-index: 3;
-          }
-          #regua3 {
-            margin: auto;
-            z-index: 3;
-          }
-        }
       }
       /*****COMO PLANTAR*****/
       .comoplantar {
         padding: 0 1rem;
-        background: white;
+        background: $honeydew;
         color: $offblack;
         height: 100%;
       }
       /*****USOS*****/
       .usos {
         padding: 0 1rem;
-        background: white;
+        background: $honeydew;
         color: $offblack;
         height: 100%;
       }

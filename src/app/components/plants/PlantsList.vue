@@ -113,7 +113,7 @@ export default {
 
 #plants-list {
   display: flex;
-  color: white;
+  color: $offwhite;
   text-align: center;
   flex-flow: column;
   align-items: center;
@@ -132,10 +132,10 @@ export default {
     font-size: 1.1rem;
     width: 84%;
     border-collapse: collapse;
-    background: rgba(black, .1);
+    background: rgba($offblack, .1);
     margin-bottom: 2rem;
     th {
-      background: rgba(black, .6);
+      background: rgba($offblack, .6);
       padding: .3rem 0;
     }
     td {
@@ -146,7 +146,7 @@ export default {
         background: transparent;
         border: none;
         text-align: center;
-        color: white;
+        color: $offwhite;
         font-family: $fontMain;
       }
       input[type=number] {
@@ -154,7 +154,7 @@ export default {
       }
       
       &:hover {
-        background: rgba($lightgreen, .5);
+        background: rgba($green, .8);
       }
       .update-img {
         cursor: pointer;
@@ -170,7 +170,7 @@ export default {
       }
     }
     tr:nth-child(even) {
-      background: rgba(black, .3);
+      background: rgba($offblack, .3);
     }
   }
 }

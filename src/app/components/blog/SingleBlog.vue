@@ -41,7 +41,7 @@ export default {
   display: flex;
   flex-flow: column wrap;
   .body {
-    background-color: white;
+    background-color: $honeydew;
     margin: .7rem auto;
     width: 60%;
     .blog-title {

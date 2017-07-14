@@ -264,77 +264,28 @@
               <div class="modal-menu-stats" 
               @click="showStats = true, showComoplantar = false, showUsos = false" 
               :class="{ activetab: showStats }">
-                <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="Características">
-                <h2 class="modal-menu-title">Características</h2>
+                <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="Características" :class="{ activetabimg: showStats }">
+                <h2 class="modal-menu-title" :class="{ activetabtext: showStats }">Características</h2>
               </div>
 
               <div class="modal-menu-comoplantar" 
               @click="showStats = false, showComoplantar = true, showUsos = false"
               :class="{ activetab: showComoplantar }">
-                <img class="modal-menu-img" src="./../../../../static/utils/comoplantar.svg" alt="Como plantar">
-                <h2 class="modal-menu-title">Como plantar</h2>
+                <img class="modal-menu-img" src="./../../../../static/utils/comoplantar.svg" alt="Como plantar" :class="{ activetabimg: showComoplantar }">
+                <h2 class="modal-menu-title" :class="{ activetabtext: showComoplantar }">Como plantar</h2>
               </div>
               
               <div class="modal-menu-usos" 
               @click="showStats = false, showComoplantar = false, showUsos = true"
               :class="{ activetab: showUsos }">
-                <img class="modal-menu-img" src="./../../../../static/utils/usos.svg" alt="Usos">
-                <h2 class="modal-menu-title">Usos</h2>
+                <img class="modal-menu-img" src="./../../../../static/utils/usos.svg" alt="Usos" :class="{ activetabimg: showUsos }">
+                <h2 class="modal-menu-title" :class="{ activetabtext: showUsos }">Usos</h2>
               </div>
 
             </div>
 
             <!--Stats-->
             <div class="stats" v-if="showStats">
-
-              <img class="stats-img" id="sol" :src="solPath" alt="Sol">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.sol * 10) + '%; background: rgb(255, 238, 88);'"></div>
-                <div class="reguas"><span id="regua1">2h</span><span id="regua2">4h</span><span id="regua3">6h</span></div>
-              </div>
-              
-
-              <img class="stats-img" id="rega" :src="regaPath" alt="Rega">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.rega * 10) + '%; background: rgb(79, 195, 247);'"></div>
-                <div class="reguas"><span id="regua1">2/sem.</span><span id="regua2">4/sem.</span><span id="regua3">6/sem.</span></div>
-              </div>
-
-              <img class="stats-img" id="prag" :src="pragPath" alt="Propensão a Pragas">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.prag * 10) + '%; background: rgb(229, 115, 115);'"></div>
-                <div class="reguas"><span id="regua1">Baixa</span><span id="regua2">Média</span><span id="regua3">Alta</span></div>
-              </div>
-
-              <img class="stats-img" id="germ" :src="germPath" alt="Velocidade de Germinação">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.germ * 10) + '%; background: rgb(234, 224, 188);'"></div>
-                <div class="reguas"><span id="regua1">1 sem.</span><span id="regua2">2 sem.</span><span id="regua3">3 sem.</span></div>
-              </div>
-
-              <img class="stats-img" id="cresc" :src="crescPath" alt="Velocidade de Crescimento">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.cresc * 10) + '%; background: rgb(174, 213, 129);'"></div>
-                <div class="reguas"><span id="regua1">?</span><span id="regua2">?</span><span id="regua3">?</span></div>
-              </div>
-
-              <img class="stats-img" id="alt" :src="altPath" alt="Altura média">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.alt * 10) + '%; background: rgb(255, 183, 77);'"></div>
-                <div class="reguas"><span id="regua1">30cm</span><span id="regua2">70cm</span><span id="regua3">150cm</span></div>
-              </div>
-
-              <img class="stats-img" id="temp" :src="tempPath" alt="Temperatura">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.temp * 10) + '%; background: rgb(77, 208, 225);'"></div>
-                <div class="reguas"><span id="regua1">15ºC</span><span id="regua2">20ºC</span><span id="regua3">25ºC</span></div>
-              </div>
-
-              <img class="stats-img" id="solo" :src="soloPath" alt="Solo">
-              <div class="stats-bar">
-                <div class="progress-bar" :style="'width:' + (plantModal.solo * 10) + '%; background: rgb(161, 136, 127);'"></div>
-                <div class="reguas"><span id="regua1">Arenoso</span><span id="regua2">Médio</span><span id="regua3">Orgânico</span></div>
-              </div>
 
             </div><!--Stats-->
 
@@ -479,8 +430,8 @@ _____________________________________________________________________
 
 .container-card {
   padding: 1.2rem 0 0 0;
-  background: rgb(22, 23, 15);
-  color: white;
+  background: rgba(black, .7);
+  color: $offwhite;
   white-space: nowrap;
   overflow-x: hidden;
   display: flex;
@@ -557,7 +508,7 @@ _____________________________________________________________________
       position: relative;
       margin-top: 8.5rem;
       padding: .1rem 0;
-      background: white;
+      background: $honeydew;
       font-size: 1.3rem;
       font-weight: 300;
       text-align: center;
@@ -639,7 +590,7 @@ _____________________________________________________________________
   padding: 7rem 0 8rem 0;
   position: relative;
   .title {
-    color: white;
+    color: $offwhite;
     font-size: 4rem;
     text-align: center;
     font-family: $fontHeading;
@@ -650,7 +601,7 @@ _____________________________________________________________________
     animation-timing-function: ease;
   }
   .subtitle {
-    color: white;
+    color: $offwhite;
     font-size: 2.8rem;
     text-align: center;
     line-height: 0.4;

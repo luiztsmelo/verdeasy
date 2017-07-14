@@ -20,8 +20,8 @@ export default {
 footer {
   display: flex;
   justify-content: center;
-  background: rgb(22, 23, 15);
-  color: white;
+  background: $green;
+  color: $offwhite;
   position: absolute; 
   left: 0 ; right: 0; bottom: 0; 
   height: 3rem;
@@ -30,7 +30,7 @@ footer {
     font-size: 1.1rem;
   }
   span {
-    font-weight: $fontThin;
+    font-weight: $fontLight;
   }
 }
 </style>

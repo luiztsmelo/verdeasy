@@ -100,7 +100,7 @@ body {
     margin: .7rem 0 0 0;
     font-size: 1.8rem;
     font-family: $fontHeading;
-    color: white;
+    color: $offwhite;
   }
   nav {
     flex: 3 0 0;
@@ -111,14 +111,14 @@ body {
       padding: 1rem 0;
       .link {
         padding: 0 0.7rem;
-        color: white;
+        color: $offwhite;
         font-size: 1.15rem;
         font-weight: 300;
         transition: .3s ease;
         border-radius: 2rem 0;
         &:hover {
           color: rgba(0, 0, 0, 0.8);
-          background: white;
+          background: $offwhite;
           border-radius: .7rem 0;
         }
       }

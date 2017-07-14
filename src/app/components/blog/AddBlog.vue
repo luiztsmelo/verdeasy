@@ -73,7 +73,7 @@ export default {
   margin: auto;
   width: 100%;
   text-align: center;
-  color: white;
+  color: $offwhite;
   label {
     display: block;
     margin: .5rem 0 .5rem;
@@ -95,8 +95,8 @@ export default {
     margin: 5rem auto 1rem;
     width: 60%;
     padding: .5rem 1rem;
-    background: white;
-    color: black;
+    background: $offwhite;
+    color: $offblack;
     text-align: left;
     border-radius: 20px;
     h2 {
@@ -113,7 +113,7 @@ export default {
     background-color: $offblack;
     border: none;
     font-size: 1.7rem;
-    color: white;
+    color: $offwhite;
     text-align: center;
     border-radius: 30px;
     cursor: pointer;

@@ -121,11 +121,11 @@ export default {
     bottom: 23%;
     transition: .2s ease;
     &:hover {
-      color: $lightgreen;
+      color: $green;
     }
   }
   .title {
-    color: white;
+    color: $offwhite;
     text-align: center;
     margin: 0 1rem 0 2rem;
   }
@@ -134,12 +134,12 @@ export default {
     left: 0%; 
     width: 100%;
     margin: 3rem 0;
-    color: white;
+    color: $offwhite;
     text-align: center;
     text-align: center;
     .list-btn {
       a {
-        color: white;
+        color: $offwhite;
         &:hover {
           color: $green;
           background: transparent;
@@ -163,7 +163,7 @@ export default {
   }
   .form {
     display: flex;
-    color: white;
+    color: $offwhite;
     flex-flow: row;
     align-items: center;
     margin: 0 1.5rem;
@@ -186,13 +186,13 @@ export default {
           width: 5rem;
         }
         select {
-          background: rgba(white, .1);
+          background: rgba($offwhite, .1);
           width: 2.7rem;
           border: none;
-          color: white;
+          color: $offwhite;
           border-radius: 1rem;
           option {
-            color: black;
+            color: $offblack;
           }
         }
       }
@@ -223,7 +223,7 @@ export default {
     border-radius: 0  3rem 3rem 0;
     border: none;
     background: $grey;
-    color: white;
+    color: $offwhite;
     margin: .7rem 0;
     transition: all .3s ease;
     &:hover {

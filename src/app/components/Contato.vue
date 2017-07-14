@@ -77,7 +77,7 @@ export default {
 
 #contato {
   display: flex;
-  color: white;
+  color: $offwhite;
   flex-flow: column;
   align-items: center;
   justify-content: center;
@@ -119,12 +119,16 @@ export default {
       padding: .3rem 0;
     }
     input {
+      background-color: $honeydew;
+      color: $grey;
       width: 40%;
       border-radius: .3rem;
       border: none;
       padding: .2rem .5rem;
     }
     textarea {
+      background-color: $honeydew;
+      color: $grey;
       border-radius: .3rem;
       border: none;
       padding: .5rem;

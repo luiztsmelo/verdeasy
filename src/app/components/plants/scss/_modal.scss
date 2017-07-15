@@ -33,12 +33,13 @@
     width: 62%;
     height: 72%;
     transform: translateX(-50%) translateY(-50%);
-
+    
     /*Modal Sidebar*/
     .modal-sidebar {
       flex: 1 0 0;
-      background: linear-gradient(rgb(147, 161, 132), rgb(50, 50, 50));
+      background: linear-gradient(rgb(147, 161, 132), rgb(40, 40, 40));
       text-align: center;
+
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -64,14 +65,14 @@
       a {
         cursor: pointer;
         background: transparent;
-        border: rgb(170, 170, 170) solid 1px;
+        border: rgb(130, 130, 130) solid 1px;
         border-radius: 1rem;
         position: absolute;
         bottom: 4%;
         left: 1.2%;
         width: 11rem;
         height: 1.8rem;
-        transition: all .4s ease-in-out;
+        transition: all .3s ease-in-out;
         .modal-plant-btn {
           font-size: .9rem;
           color: $offwhite;
@@ -113,7 +114,7 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(60, 60, 60);
+          background: rgb(70, 70, 70);
           transition: all .3s ease-in-out;
         }
         .modal-menu-comoplantar {
@@ -121,7 +122,7 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(60, 60, 60);
+          background: rgb(70, 70, 70);
           transition: all .3s ease-in-out;
         }
         .modal-menu-usos {
@@ -129,7 +130,7 @@
           flex: 1 0 0;
           align-items: center;
           justify-content: center;
-          background: rgb(60, 60, 60);
+          background: rgb(70, 70, 70);
           transition: all .3s ease-in-out;
         }
         .activetab {
@@ -145,9 +146,59 @@
       }
       /*****STATS*****/
       .stats {
-        background: $honeydew;
+        position: relative;
         height: 100%;
-       
+        .sol {
+          position: absolute;
+          top: 5%;
+          right: 5%;
+          width: 11%;
+          height: auto;
+        }
+        .vaso {
+          position: absolute;
+          bottom: 20%;
+          right: 34%;
+          width: 25%;
+          height: auto;
+        }
+        .alt {
+          position: absolute;
+          height: auto;
+          bottom: 37%
+        }
+        .temp {
+          position: absolute;
+          bottom: 20%;
+          right: 5%;
+          width: 12%;
+          height: auto;
+        }
+
+        .epoca-plantio {
+          table {
+            position: absolute;
+            bottom: 5%;
+            width: 90%;
+            height: 6%;
+            left: 0; 
+            right: 0; 
+            margin-left: auto; 
+            margin-right: auto; 
+            font-family: $fontMain;
+            background: transparent;
+            border-collapse: collapse;
+            td {
+              text-align: center;
+              width: 8.3333333333%;
+              color: $offblack;
+              &:hover {
+                background: rgba(95, 202, 140, .7);
+                color: $offwhite;
+              }
+            }
+          }
+        }
       }
       /*****COMO PLANTAR*****/
       .comoplantar {

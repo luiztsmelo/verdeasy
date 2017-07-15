@@ -5,7 +5,7 @@
       <!--NAVBAR-->
       <header class="navbar">
         <router-link to="/"><img class="brand-img" src="./../../static/utils/verdeasy.svg" alt="verdeasy"></router-link>
-        <router-link to="/"><h1 class="brand">VERDEASY</h1></router-link>
+        <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
         <nav>
           <ul>
             <li><router-link class="link" to="/sobre">Sobre</router-link></li>
@@ -97,8 +97,8 @@ body {
     width: 2.7rem;
   }
   .brand {
-    margin: .7rem 0 0 0;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 2.2rem;
     font-family: $fontHeading;
     color: $offwhite;
   }

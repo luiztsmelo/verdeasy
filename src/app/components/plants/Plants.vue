@@ -285,8 +285,30 @@
             </div>
 
             <!--Stats-->
-            <div class="stats" v-if="showStats">
+            <div class="stats" v-if="showStats" :style="solbg()">
+              <img class="sol" :src="sol()" alt="">
+              <img class="alt" src="./../../../../static/utils/alt1.svg" alt="" :style="alt()">
+              <img class="vaso" src="./../../../../static/utils/vaso.svg" alt="" :style="">
+              <img class="temp" :src="temp()" alt="">
 
+              <div class="epoca-plantio">
+                <table>
+                  <tr>
+                    <td><span>J</span></td>
+                    <td><span>F</span></td>
+                    <td><span>M</span></td>
+                    <td><span>A</span></td>
+                    <td><span>M</span></td>
+                    <td><span>J</span></td>
+                    <td><span>J</span></td>
+                    <td><span>A</span></td>
+                    <td><span>S</span></td>
+                    <td><span>O</span></td>
+                    <td><span>N</span></td>
+                    <td><span>D</span></td>
+                  </tr>
+                </table>
+              </div>
             </div><!--Stats-->
 
             <!--Como Plantar-->
@@ -359,9 +381,9 @@ export default {
       soloPath: './../../../../static/utils/solo.svg',
       
       //Arrows
-      moveCardsLeftWidth1: null,
-      moveCardsLeftWidth2: null, 
-      moveCardsLeftWidth3: null, 
+      moveCardsLeftWidth1: '',
+      moveCardsLeftWidth2: '', 
+      moveCardsLeftWidth3: '', 
     }
   },
   
@@ -382,6 +404,44 @@ export default {
     },
 
   methods: {
+    // STATS
+    solbg() {
+       if (this.plantModal.sol >= 7) {
+        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(255, 249, 196));';
+      } else if (this.plantModal.sol > 3 ) {
+        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(179, 229, 252));';
+      } else {
+        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(207, 216, 220));';
+      }
+    },
+    sol() {
+      if (this.plantModal.sol >= 7) {
+        return './../../../../static/utils/sol3.svg';
+      } else if (this.plantModal.sol > 3 ) {
+        return './../../../../static/utils/sol2.svg';
+      } else {
+        return './../../../../static/utils/sol1.svg';
+      }
+    }, 
+    alt() {
+      if (this.plantModal.alt >= 7) {
+        return 'width: 36%; right: 28%';
+      } else if (this.plantModal.alt > 3 ) {
+        return 'width: 26%; right: 32%';
+      } else {
+        return 'width: 16%; right: 38%';
+      }
+    },
+    temp() {
+      if (this.plantModal.temp >= 7) {
+        return './../../../../static/utils/temp3.svg';
+      } else if (this.plantModal.temp > 3 ) {
+        return './../../../../static/utils/temp2.svg';
+      } else {
+        return './../../../../static/utils/temp1.svg';
+      }
+    },
+
     moveCardsLeft1() {
       this.moveCardsLeftWidth1 -= 50
       return moveCardsLeftWidth1;
@@ -417,11 +477,11 @@ _____________________________________________________________________
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";
 
-@keyframes container {
+/* @keyframes container {
   0% { opacity: 0; margin-top: 10rem;}
   50% { opacity: 0; margin-top: 10rem;}
   100% { opacity: 1; margin-top: 0rem;}
-}
+} */
 
 #category-container {
   display: flex;

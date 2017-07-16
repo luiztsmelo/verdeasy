@@ -286,10 +286,26 @@
 
             <!--Stats-->
             <div class="stats" v-if="showStats" :style="solbg()">
+              <img class="facil" :src="facil()" alt="">
+              <span class="facil-text">{{ facilText() }}</span>
+              
               <img class="sol" :src="sol()" alt="">
-              <img class="alt" src="./../../../../static/utils/alt1.svg" alt="" :style="alt()">
+              <span class="sol-text">{{ solText() }}</span>
+              
+              <img class="alt" src="./../../../../static/utils/alt.svg" alt="" :style="alt()">
+              
               <img class="vaso" src="./../../../../static/utils/vaso.svg" alt="" :style="">
-              <img class="temp" :src="temp()" alt="">
+              
+              <img class="temp" src="./../../../../static/utils/temp.svg" alt="">
+              <span class="temp-text">{{ tempText() }}</span>
+
+              <img class="germ" src="./../../../../static/utils/germ.svg" alt="">
+              <span class="germ-text">{{ germText() }}</span>
+              
+              <img class="rega" src="./../../../../static/utils/rega.svg" alt="" :style="rega()">
+              <span class="rega-text">{{ regaText() }}</span>
+
+              <span class="solo-text">{{ soloText() }}</span>
 
               <div class="epoca-plantio">
                 <table>
@@ -407,11 +423,29 @@ export default {
     // STATS
     solbg() {
        if (this.plantModal.sol >= 7) {
-        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(255, 249, 196));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(255, 236, 189));';
       } else if (this.plantModal.sol > 3 ) {
-        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(179, 229, 252));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(154, 222, 250));';
       } else {
-        return 'background: linear-gradient(45deg, rgb(235, 250, 236) 50%, rgb(207, 216, 220));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(148, 202, 214));';
+      }
+    },
+    facil() {
+      if (this.plantModal.facil >= 7) {
+        return './../../../../static/utils/facil3.svg';
+      } else if (this.plantModal.facil > 3 ) {
+        return './../../../../static/utils/facil2.svg';
+      } else {
+        return './../../../../static/utils/facil1.svg';
+      }
+    }, 
+    facilText() {
+      if (this.plantModal.facil >= 7) {
+        return 'Pouco exigente';
+      } else if (this.plantModal.facil > 3 ) {
+        return 'Equilibrada';
+      } else {
+        return 'Chatinha';
       }
     },
     sol() {
@@ -423,22 +457,67 @@ export default {
         return './../../../../static/utils/sol1.svg';
       }
     }, 
+    solText() {
+      if (this.plantModal.sol >= 7) {
+        return 'Sol Pleno';
+      } else if (this.plantModal.sol > 3 ) {
+        return 'Meia Sombra';
+      } else {
+        return 'Sombra';
+      }
+    }, 
     alt() {
       if (this.plantModal.alt >= 7) {
-        return 'width: 36%; right: 28%';
+        return 'width: 36%; right: 29%';
       } else if (this.plantModal.alt > 3 ) {
-        return 'width: 26%; right: 32%';
+        return 'width: 26%; right: 34%';
       } else {
-        return 'width: 16%; right: 38%';
+        return 'width: 16%; right: 39%';
       }
     },
-    temp() {
-      if (this.plantModal.temp >= 7) {
-        return './../../../../static/utils/temp3.svg';
-      } else if (this.plantModal.temp > 3 ) {
-        return './../../../../static/utils/temp2.svg';
+    rega() {
+       if (this.plantModal.rega >= 7) {
+        return '';
+      } else if (this.plantModal.rega > 3 ) {
+        return '';
       } else {
-        return './../../../../static/utils/temp1.svg';
+        return '';
+      }
+    },
+    regaText() {
+      if (this.plantModal.rega >= 7) {
+        return 'Muita sede';
+      } else if (this.plantModal.rega > 3 ) {
+        return 'Rega moderada';
+      } else {
+        return 'Pouca sede';
+      }
+    },
+    tempText() {
+      if (this.plantModal.temp >= 7) {
+        return '25ºC';
+      } else if (this.plantModal.temp > 3 ) {
+        return '20ºC';
+      } else {
+        return '15ºC';
+      }
+    },
+    germText() {
+      if (this.plantModal.germ >= 7) {
+        return 'Germina em 7 dias';
+      } else if (this.plantModal.germ > 3 ) {
+        return 'Germina em 14 dias';
+      } else {
+        return 'Germina em 21 dias';
+      }
+    },
+    soloText() {
+      if (this.plantModal.solo >= 7) {
+        return 'Solo Orgânico';
+      } else if (this.plantModal.solo > 3 ) {
+        return 'Solo Misto';
+      } else {
+        return 'Solo Arenoso';
       }
     },
 

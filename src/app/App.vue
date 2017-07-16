@@ -4,7 +4,7 @@
 
       <!--NAVBAR-->
       <header class="navbar">
-        <router-link to="/"><img class="brand-img" src="./../../static/utils/verdeasy.svg" alt="verdeasy"></router-link>
+        <router-link to="/"><img class="brand-img" src="./../../static/utils/verdeasyb.svg" alt="verdeasy"></router-link>
         <router-link to="/"><h1 class="brand">verdeasy</h1></router-link>
         <nav>
           <ul>
@@ -95,12 +95,14 @@ body {
   flex-wrap: wrap;
   .brand-img {
     width: 2.7rem;
+    filter: invert(100%);
   }
   .brand {
     margin: 0;
     font-size: 2.2rem;
     font-family: $fontHeading;
     color: $offwhite;
+    
   }
   nav {
     flex: 3 0 0;

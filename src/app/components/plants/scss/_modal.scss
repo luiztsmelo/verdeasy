@@ -39,7 +39,7 @@
       flex: 1 0 0;
       background: linear-gradient(rgb(147, 161, 132), rgb(40, 40, 40));
       text-align: center;
-
+      box-shadow: inset -15px -9px 53px -26px rgba(0,0,0,.4);
       .modal-plant-name-box {
         height: 1.7rem;
         .modal-plant-name {
@@ -53,6 +53,7 @@
         width: 11rem;
         height: auto;
         margin: .1rem .6rem 0 .6rem;
+        
       }
       .modal-plant-sci {
         font-family: $fontMain;
@@ -145,15 +146,41 @@
         }
       }
       /*****STATS*****/
+   
       .stats {
         position: relative;
         height: 100%;
+        .facil {
+          position: absolute;
+          top: 7.5%;
+          left: 5%;
+          width: 6.5%;
+          height: auto;
+          filter: invert(40%);
+        }
+        .facil-text {
+          position: absolute;
+          top: 10%;
+          left: 13%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
+        }
         .sol {
           position: absolute;
-          top: 5%;
+          top: 0%;
           right: 5%;
           width: 11%;
           height: auto;
+          filter: invert(40%);
+        }
+        .sol-text {
+          position: absolute;
+          top: 19%;
+          right: 4%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
         }
         .vaso {
           position: absolute;
@@ -165,14 +192,67 @@
         .alt {
           position: absolute;
           height: auto;
-          bottom: 37%
+          bottom: 37%;
+          filter: invert(40%);
         }
         .temp {
           position: absolute;
-          bottom: 20%;
-          right: 5%;
-          width: 12%;
+          bottom: 50%;
+          left: 4%;
+          width: 9%;
           height: auto;
+          filter: invert(40%);
+        }
+        .temp-text {
+          position: absolute;
+          bottom: 54%;
+          left: 11%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
+        }
+        .germ {
+          position: absolute;
+          bottom: 20%;
+          left: 5%;
+          width: 7.4%;
+          height: auto;
+          filter: invert(40%);
+        }
+        .germ-text {
+          position: absolute;
+          bottom: 22%;
+          left: 14%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
+        }
+        .solo-text {
+          position: absolute;
+          width: 8rem;
+          bottom: 22%;
+          right: 20%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
+        }
+        .rega {
+          position: absolute;
+          bottom: 37%; 
+          right: 32%;
+          width: 10%;
+          height: auto;
+          transform: rotate(-45deg);
+          filter: invert(40%);
+        }
+        .rega-text {
+          position: absolute;
+          width: 12rem;
+          bottom: 41%;
+          right: 1%;
+          color: $offblack;
+          font-family: $fontMain;
+          font-size: 1.2rem;
         }
 
         .epoca-plantio {

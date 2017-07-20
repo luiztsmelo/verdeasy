@@ -363,7 +363,7 @@ export default {
       //Main plants data from firebase
       plants: {},
       //Plants data inside modal
-      plantModal: null,
+      plantModal: '',
 
       //Filters
       showFilter: false,
@@ -423,9 +423,9 @@ export default {
     // STATS
     solbg() {
        if (this.plantModal.sol >= 7) {
-        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(255, 236, 189));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(255, 249, 176));';
       } else if (this.plantModal.sol > 3 ) {
-        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(154, 222, 250));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(129, 212, 250));';
       } else {
         return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(148, 202, 214));';
       }
@@ -445,7 +445,7 @@ export default {
       } else if (this.plantModal.facil > 3 ) {
         return 'Equilibrada';
       } else {
-        return 'Chatinha';
+        return 'Exigente';
       }
     },
     sol() {

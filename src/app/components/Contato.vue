@@ -119,7 +119,7 @@ export default {
       padding: .3rem 0;
     }
     input {
-      background-color: $honeydew;
+      background-color: $offwhite;
       color: $grey;
       width: 40%;
       border-radius: .3rem;
@@ -127,7 +127,7 @@ export default {
       padding: .2rem .5rem;
     }
     textarea {
-      background-color: $honeydew;
+      background-color: $offwhite;
       color: $grey;
       border-radius: .3rem;
       border: none;

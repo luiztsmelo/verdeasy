@@ -56,7 +56,7 @@ export default {
   .blog-card {
     margin: .7rem auto;
     width: 60%;
-    background-color: $honeydew;
+    background-color: $offwhite;
     border-radius: .4rem;
     .blog-title {
       padding: 0 1rem;

@@ -10,11 +10,11 @@
       </div>
 
       <form class="contato-form" v-if="!submitted"> 
-        <h2 class="contato-subtitle">Sua opinião é muito importante para nós! Deixe seu recado!</h2>
+        <span class="contato-subtitle">Sua opinião é muito importante para nós! Deixe seu recado!</span>
         <label required>E-mail</label>
         <input v-model="contato.email" type="text" placeholder="Seu e-mail" required>
         <label>Mensagem</label>
-        <textarea v-model="contato.mensagem" cols="57" rows="7" placeholder="Sua linda mensagem" required></textarea>
+        <textarea v-model="contato.mensagem" cols="57" rows="6" placeholder="Sua linda mensagem" required></textarea>
         <img class="contato-submit" src="./../../../static/utils/send.svg" alt="Enviar mensagem!" @click.prevent="postmsg">
       </form>  
     </div>
@@ -90,7 +90,7 @@ export default {
   }
   .submitted {
     .submitted-img {
-      width: 6rem;
+      width: 5rem;
       height: auto;
       animation-name: plane;
       animation-duration: 2.2s;
@@ -116,7 +116,8 @@ export default {
     text-align: center;
     label {
       font-family: $fontMain;
-      padding: .3rem 0;
+      padding: .7rem 0 0 0;
+      font-size: 1.2rem;
     }
     input {
       background-color: $offwhite;
@@ -136,6 +137,7 @@ export default {
     }
     .contato-subtitle {
       margin-top: 2rem;
+      font-size: 1.5rem;
     }
     .contato-submit {
       cursor: pointer;

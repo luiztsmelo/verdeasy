@@ -556,11 +556,11 @@ _____________________________________________________________________
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";
 
-/* @keyframes container {
+@keyframes container {
   0% { opacity: 0; margin-top: 10rem;}
   50% { opacity: 0; margin-top: 10rem;}
   100% { opacity: 1; margin-top: 0rem;}
-} */
+} 
 
 #category-container {
   display: flex;
@@ -587,7 +587,7 @@ _____________________________________________________________________
     h2 {
       text-transform: uppercase;
       color: $offwhite;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       line-height: 0;
       transform: translateY(1.1rem);
     }

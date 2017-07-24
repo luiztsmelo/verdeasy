@@ -27,7 +27,7 @@ footer {
   height: 3rem;
   p {
     font-family: $fontMain;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
   span {
     font-weight: $fontLight;

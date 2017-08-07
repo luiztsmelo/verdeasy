@@ -556,11 +556,11 @@ _____________________________________________________________________
 @import "./scss/_modal.scss";
 @import "./scss/filter.scss";
 
-@keyframes container {
+/* @keyframes container {
   0% { opacity: 0; margin-top: 10rem;}
   50% { opacity: 0; margin-top: 10rem;}
   100% { opacity: 1; margin-top: 0rem;}
-} 
+}  */
 
 #category-container {
   display: flex;
@@ -647,7 +647,7 @@ _____________________________________________________________________
       position: relative;
       margin-top: 8.5rem;
       padding: .1rem 0;
-      background: $honeydew;
+      background: $offwhite;
       font-size: 1.3rem;
       font-weight: 300;
       text-align: center;

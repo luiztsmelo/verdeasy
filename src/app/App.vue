@@ -93,6 +93,7 @@ body {
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
+  background: linear-gradient(rgba(black, .6), rgba(black, .0)) ;
   .brand-img {
     width: 2.7rem;
     filter: invert(100%);

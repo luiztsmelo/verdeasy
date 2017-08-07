@@ -135,7 +135,7 @@
           transition: all .3s ease-in-out;
         }
         .activetab {
-          background: $honeydew;
+          background: $offwhite;
           color: black;
         }
         .activetabtext {
@@ -165,7 +165,7 @@
           left: 13%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
         .sol {
           position: absolute;
@@ -181,7 +181,7 @@
           right: 4%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
         .vaso {
           position: absolute;
@@ -210,7 +210,7 @@
           left: 11%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
         .germ {
           position: absolute;
@@ -226,7 +226,7 @@
           left: 14%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
         .solo-text {
           position: absolute;
@@ -235,7 +235,7 @@
           right: 20%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
         .rega {
           position: absolute;
@@ -253,7 +253,7 @@
           right: 1%;
           color: $offblack;
           font-family: $fontMain;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
         }
 
         .epoca-plantio {
@@ -284,14 +284,14 @@
       /*****COMO PLANTAR*****/
       .comoplantar {
         padding: 0 1rem;
-        background: $honeydew;
+        background: $offwhite;
         color: $offblack;
         height: 100%;
       }
       /*****USOS*****/
       .usos {
         padding: 0 1rem;
-        background: $honeydew;
+        background: $offwhite;
         color: $offblack;
         height: 100%;
       }

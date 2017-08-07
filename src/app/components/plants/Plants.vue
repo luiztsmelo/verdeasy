@@ -3,9 +3,8 @@
 
     <!--HERO-->
     <div id="hero">
-      <h2 class="title">MORA EM APARTAMENTO?</h2>
+      <h2 class="title">Mora em Apartamento?</h2>
       <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
-      
     </div><!--HERO-->
 
     <!--PLANTS CONTAINER-->
@@ -310,18 +309,18 @@
               <div class="epoca-plantio">
                 <table>
                   <tr>
-                    <td><span>J</span></td>
-                    <td><span>F</span></td>
-                    <td><span>M</span></td>
-                    <td><span>A</span></td>
-                    <td><span>M</span></td>
-                    <td><span>J</span></td>
-                    <td><span>J</span></td>
-                    <td><span>A</span></td>
-                    <td><span>S</span></td>
-                    <td><span>O</span></td>
-                    <td><span>N</span></td>
-                    <td><span>D</span></td>
+                    <td>J</td>
+                    <td>F</td>
+                    <td>M</td>
+                    <td>A</td>
+                    <td>M</td>
+                    <td>J</td>
+                    <td>J</td>
+                    <td>A</td>
+                    <td>S</td>
+                    <td>O</td>
+                    <td>N</td>
+                    <td>D</td>
                   </tr>
                 </table>
               </div>
@@ -407,6 +406,7 @@ export default {
     // FILTRAR ERVAS AROMÁTICAS
     EAFilter() {
       return _.filter(this.plants, ['class', 'EA'])
+      return _.orderBy(this.plants, ['name'], ['asc'])
     },
     // FILTRAR PLANTAS MEDICINAIS
     MEDFilter() {
@@ -415,7 +415,7 @@ export default {
 
     // FILTRO PERSONALIZADO
     customFilter() {
-      return _.orderBy(this.plants, ['sol'], ['asc']);
+      return _.orderBy(this.plants, ['sol'], ['asc'])
       }
     },
 
@@ -726,11 +726,11 @@ _____________________________________________________________________
 #hero {
   display: flex;
   flex-direction: column;
-  padding: 7rem 0 8rem 0;
+  padding: 9rem 0 8rem 0;
   position: relative;
   .title {
     color: $offwhite;
-    font-size: 4rem;
+    font-size: 5rem;
     text-align: center;
     font-family: $fontHeading;
     line-height: 0.4;
@@ -741,7 +741,7 @@ _____________________________________________________________________
   }
   .subtitle {
     color: $offwhite;
-    font-size: 2.8rem;
+    font-size: 3.0rem;
     text-align: center;
     line-height: 0.4;
     font-family: $fontHeading;
@@ -752,13 +752,13 @@ _____________________________________________________________________
   }
 }
 @keyframes title {
-  0% { opacity: 0; transform: scale(0.87) }
+  0% { opacity: 0; transform: scale(0.7) }
   3% { opacity: 0}
   100% { opacity: 1; transform: scale(1) }
 }
 @keyframes subtitle {
   0% { opacity: 0}
-  12% { opacity: 0}
+  15% { opacity: 0}
   100% { opacity: 1}
 }
 </style>

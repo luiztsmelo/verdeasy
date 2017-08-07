@@ -42,6 +42,8 @@ export default {
 <style lang="scss" scoped>
 @import "./../../scss/style.scss";
 
+
+
 .component-fade-enter-active,  {
   transition: $comptransition;
 }
@@ -57,7 +59,6 @@ export default {
     margin: .7rem auto;
     width: 60%;
     background-color: $offwhite;
-    border-radius: .4rem;
     .blog-title {
       padding: 0 1rem;
       line-height: 1;
@@ -65,7 +66,6 @@ export default {
       font-size: $fontSizeBlogTitle;
       color: $grey;
       font-family: $fontHeading;
-      text-transform: uppercase;
     }
     .blog-article {
       padding: 0 1rem 1rem;

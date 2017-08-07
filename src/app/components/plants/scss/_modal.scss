@@ -53,7 +53,6 @@
         width: 11rem;
         height: auto;
         margin: .1rem .6rem 0 .6rem;
-        
       }
       .modal-plant-sci {
         font-family: $fontMain;
@@ -62,7 +61,6 @@
         text-align: center;
         color: $offwhite;
       }
-    
       a {
         cursor: pointer;
         background: transparent;
@@ -73,7 +71,7 @@
         left: 1.2%;
         width: 11rem;
         height: 1.8rem;
-        transition: all .3s ease-in-out;
+        transition: all .25s ease-in-out;
         .modal-plant-btn {
           font-size: .9rem;
           color: $offwhite;
@@ -146,7 +144,8 @@
         }
       }
       /*****STATS*****/
-   
+      $sizetext: 1.4rem;
+
       .stats {
         cursor: default;
         position: relative;
@@ -164,8 +163,8 @@
           top: 10%;
           left: 13%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
         .sol {
           position: absolute;
@@ -180,8 +179,8 @@
           top: 19%;
           right: 4%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
         .vaso {
           position: absolute;
@@ -209,8 +208,8 @@
           bottom: 54%;
           left: 11%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
         .germ {
           position: absolute;
@@ -225,8 +224,8 @@
           bottom: 22%;
           left: 14%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
         .solo-text {
           position: absolute;
@@ -234,8 +233,8 @@
           bottom: 22%;
           right: 20%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
         .rega {
           position: absolute;
@@ -252,8 +251,8 @@
           bottom: 41%;
           right: 1%;
           color: $offblack;
-          font-family: $fontMain;
-          font-size: 1.05rem;
+          font-family: $fontHeading;
+          font-size: $sizetext;
         }
 
         .epoca-plantio {
@@ -266,10 +265,12 @@
             right: 0; 
             margin-left: auto; 
             margin-right: auto; 
-            font-family: $fontMain;
+            font-family: $fontHeading;
+            font-size: $sizetext;
             background: transparent;
             border-collapse: collapse;
             td {
+              
               text-align: center;
               width: 8.3333333333%;
               color: $offblack;

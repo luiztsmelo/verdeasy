@@ -118,11 +118,11 @@ body {
         font-size: 1.15rem;
         font-weight: 300;
         transition: .3s ease;
-        border-radius: 2rem 0;
+
         &:hover {
           color: rgba(0, 0, 0, 0.8);
           background: $offwhite;
-          border-radius: .7rem 0;
+          border-radius: 0;
         }
       }
     }

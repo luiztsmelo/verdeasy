@@ -33,9 +33,9 @@ $offwhite: rgb(255, 255, 255);
 //******************************************//
 // FONTS
 //******************************************//
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Shadows+Into+Light+Two|Raleway:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Amatic+SC|Raleway:400,400i,700');
 
-$fontHeading: 'Shadows Into Light Two', cursive;
+$fontHeading: 'Amatic SC', cursive;
 $fontMain: 'Josefin Sans', sans-serif;
 $fontText: 'Raleway', sans-serif;
 
@@ -77,5 +77,5 @@ article {
 	line-height: 1.7;
 }
 
-$fontSizeBlogTitle: 1.8rem;
+$fontSizeBlogTitle: 2.0rem;
 $fontSizeBlogArticle: 1.2rem;

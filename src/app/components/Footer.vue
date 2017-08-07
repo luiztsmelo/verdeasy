@@ -25,6 +25,7 @@ footer {
   position: absolute; 
   left: 0 ; right: 0; bottom: 0; 
   height: 3rem;
+  background-attachment: fixed;
   p {
     font-family: $fontMain;
     font-size: 1.05rem;

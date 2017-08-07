@@ -51,7 +51,6 @@ export default {
     font-weight: 500;
     color: $grey;
     font-family: $fontHeading;
-    text-transform: uppercase;
     }
     .blog-article {
       padding: 0 1rem 1rem;

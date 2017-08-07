@@ -86,7 +86,6 @@ export default {
   .contato-title {
     font-family: $fontHeading;
     line-height: .3;
-    text-transform: uppercase;
   }
   .submitted {
     .submitted-img {
@@ -123,14 +122,12 @@ export default {
       background-color: $offwhite;
       color: $grey;
       width: 40%;
-      border-radius: .3rem;
       border: none;
       padding: .2rem .5rem;
     }
     textarea {
       background-color: $offwhite;
       color: $grey;
-      border-radius: .3rem;
       border: none;
       padding: .5rem;
       resize: none;

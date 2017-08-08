@@ -87,20 +87,22 @@ body {
 
 // NAVBAR
 .navbar {
+  cursor: default;
+  user-select: none;
   display: flex;
   padding: 0.5rem 3rem 0.5rem 3rem;
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
   flex-wrap: wrap;
-  background: linear-gradient(rgba(black, .6), rgba(black, .0)) ;
+  background: linear-gradient(rgba(black, .65), rgba(black, .0));
   .brand-img {
-    width: 2.7rem;
+    width: 2.5rem;
     filter: invert(100%);
   }
   .brand {
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-family: $fontHeading;
     color: $offwhite;
     
@@ -111,7 +113,6 @@ body {
       display: flex;
       margin: 0;
       justify-content: flex-end;
-      padding: 1rem 0;
       .link {
         padding: 0 0.7rem;
         color: $offwhite;

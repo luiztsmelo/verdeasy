@@ -89,7 +89,6 @@
       display: flex;
       flex-flow: column nowrap;
       flex: 7 0 0;
-
       .modal-menu {
         cursor: pointer;
         display: flex;
@@ -116,7 +115,7 @@
           background: rgb(70, 70, 70);
           transition: all .3s ease-in-out;
         }
-        .modal-menu-comoplantar {
+        .modal-menu-cultivo {
           display: inline-flex;
           flex: 1 0 0;
           align-items: center;
@@ -144,7 +143,7 @@
         }
       }
       /*****STATS*****/
-      $sizetext: 1.4rem;
+      $sizetext: 1.5rem;
 
       .stats {
         cursor: default;
@@ -163,7 +162,7 @@
           top: 10%;
           left: 13%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
         .sol {
@@ -179,7 +178,7 @@
           top: 19%;
           right: 4%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
         .vaso {
@@ -208,7 +207,7 @@
           bottom: 54%;
           left: 11%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
         .germ {
@@ -224,7 +223,7 @@
           bottom: 22%;
           left: 14%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
         .solo-text {
@@ -233,7 +232,7 @@
           bottom: 22%;
           right: 20%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
         .rega {
@@ -251,7 +250,7 @@
           bottom: 41%;
           right: 1%;
           color: $offblack;
-          font-family: $fontHeading;
+          font-family: $fontDraw;
           font-size: $sizetext;
         }
 
@@ -265,12 +264,11 @@
             right: 0; 
             margin-left: auto; 
             margin-right: auto; 
-            font-family: $fontHeading;
-            font-size: $sizetext;
+            font-family: $fontDraw;
+            font-size: 1.4rem;
             background: transparent;
             border-collapse: collapse;
             td {
-              
               text-align: center;
               width: 8.3333333333%;
               color: $offblack;
@@ -283,7 +281,7 @@
         }
       }
       /*****COMO PLANTAR*****/
-      .comoplantar {
+      .cultivo {
         padding: 0 1rem;
         background: $offwhite;
         color: $offblack;

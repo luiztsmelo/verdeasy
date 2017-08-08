@@ -242,7 +242,7 @@
 
     <!--MODAL-->
     <transition name="modal-animation">
-      <div id="modal" v-if="plantModal" @click="plantModal = null, showStats = true, showComoplantar = false, showUsos = false">
+      <div id="modal" v-if="plantModal" @click="plantModal = null, showStats = true, showCultivo = false, showUsos = false">
         <img class="modal-exit" src="./../../../../static/utils/exit.svg" alt="Fechar">
         <div class="modal-body" @click.stop>
 
@@ -261,21 +261,21 @@
             <div class="modal-menu">
 
               <div class="modal-menu-stats" 
-              @click="showStats = true, showComoplantar = false, showUsos = false" 
+              @click="showStats = true, showCultivo = false, showUsos = false" 
               :class="{ activetab: showStats }">
                 <img class="modal-menu-img" src="./../../../../static/utils/stats.svg" alt="Características" :class="{ activetabimg: showStats }">
                 <h2 class="modal-menu-title" :class="{ activetabtext: showStats }">Características</h2>
               </div>
 
-              <div class="modal-menu-comoplantar" 
-              @click="showStats = false, showComoplantar = true, showUsos = false"
-              :class="{ activetab: showComoplantar }">
-                <img class="modal-menu-img" src="./../../../../static/utils/comoplantar.svg" alt="Como plantar" :class="{ activetabimg: showComoplantar }">
-                <h2 class="modal-menu-title" :class="{ activetabtext: showComoplantar }">Como plantar</h2>
+              <div class="modal-menu-cultivo" 
+              @click="showStats = false, showCultivo = true, showUsos = false"
+              :class="{ activetab: showCultivo }">
+                <img class="modal-menu-img" src="./../../../../static/utils/cultivo.svg" alt="Como plantar" :class="{ activetabimg: showCultivo }">
+                <h2 class="modal-menu-title" :class="{ activetabtext: showCultivo }">Cultivo</h2>
               </div>
               
               <div class="modal-menu-usos" 
-              @click="showStats = false, showComoplantar = false, showUsos = true"
+              @click="showStats = false, showCultivo = false, showUsos = true"
               :class="{ activetab: showUsos }">
                 <img class="modal-menu-img" src="./../../../../static/utils/usos.svg" alt="Usos" :class="{ activetabimg: showUsos }">
                 <h2 class="modal-menu-title" :class="{ activetabtext: showUsos }">Usos</h2>
@@ -327,7 +327,7 @@
             </div><!--Stats-->
 
             <!--Como Plantar-->
-            <div class="comoplantar" v-if="showComoplantar">
+            <div class="cultivo" v-if="showCultivo">
               <h1>Cultivo</h1>
               <p>{{ plantModal.cultivo }}</p> 
             </div><!--Como Plantar-->
@@ -380,7 +380,7 @@ export default {
       
       //Modal Tabs
       showStats: true,
-      showComoplantar: false,
+      showCultivo: false,
       showUsos: false,
 
       //Img paths
@@ -495,11 +495,11 @@ export default {
     },
     tempText() {
       if (this.plantModal.temp >= 7) {
-        return '25ºC';
+        return '25ºC em média';
       } else if (this.plantModal.temp > 3 ) {
-        return '20ºC';
+        return '20ºC em média';
       } else {
-        return '15ºC';
+        return '15ºC em média';
       }
     },
     germText() {
@@ -563,6 +563,8 @@ _____________________________________________________________________
 }  */
 
 #category-container {
+  cursor: default;
+  user-select: none;
   display: flex;
   flex-flow: column;
 }
@@ -724,9 +726,11 @@ _____________________________________________________________________
 // HERO COMPONENT
 //******************************************//
 #hero {
+  cursor: default;
+  user-select: none;
   display: flex;
   flex-direction: column;
-  padding: 9rem 0 8rem 0;
+  padding: 8rem 0;
   position: relative;
   .title {
     color: $offwhite;

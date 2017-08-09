@@ -2,6 +2,7 @@
   <div id="plants-list"> 
     <h1 class="title">Plants List <span class="addplant" @click="addPlant(plant)">+</span></h1>
     <table>
+
       <tr>
         <th>Img.</th>
         <th>Nome</th>
@@ -16,6 +17,7 @@
         <th>Alt.</th>
         <th>Temp.</th>
         <th>Solo</th>
+        <th>Época</th>
         <th>Cult.</th>
         <th>Usos</th>
         <th>Del.</th>
@@ -35,27 +37,69 @@
         <td><input type="number" min="1" max="10" :value="plant.alt" @input="updateAlt(plant, $event.target.value)"></td>
         <td><input type="number" min="1" max="10" :value="plant.temp" @input="updateTemp(plant, $event.target.value)"></td>
         <td><input type="number" min="1" max="10" :value="plant.solo" @input="updateSolo(plant, $event.target.value)"></td>
+        <td><img class="epoca-img" src="./../../../../static/utils/epoca.svg" @click="plantModalEpoca = plant"></td>
         <td><img class="cultivo-img" src="./../../../../static/utils/cultivo.svg" @click="plantModalCult = plant"></td>
         <td><img class="usos-img" src="./../../../../static/utils/usos.svg" @click="plantModalUsos = plant"></td>
         <td><img class="del-img" src="./../../../../static/utils/delete.svg" @click="removePlant(plant)"></td>
-        
       </tr>
 
     </table>
 
+
+    <!-- MODAL EPOCA -->
+    <div class="modal-epoca" v-if="plantModalEpoca" @click="plantModalEpoca = null">
+      <div class="body-modal-epoca" @click.stop>
+        <h1>Época de Cultivo - {{ plantModalEpoca.name }}</h1>
+        <table>
+          <th :style="jan()">J</th>
+          <th :style="fev()">F</th>
+          <th :style="mar()">M</th>
+          <th :style="abr()">A</th>
+          <th>M</th>
+          <th>J</th>
+          <th>J</th>
+          <th>A</th>
+          <th>S</th>
+          <th>O</th>
+          <th>N</th>
+          <th>D</th>
+
+          <tr>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.jan" @input="updateEpocaJan(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.fev" @input="updateEpocaFev(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.mar" @input="updateEpocaMar(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.abr" @input="updateEpocaAbr(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.mai" @input="updateEpocaMai(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.jun" @input="updateEpocaJun(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.jul" @input="updateEpocaJul(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.ago" @input="updateEpocaAgo(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.set" @input="updateEpocaSet(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.out" @input="updateEpocaOut(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.nov" @input="updateEpocaNov(plantModalEpoca, $event.target.value)"></td>
+            <td><input type="number" min="0" max="1" :value="plantModalEpoca.dez" @input="updateEpocaDez(plantModalEpoca, $event.target.value)"></td>
+          </tr>
+
+        </table>
+      </div>
+    </div><!-- MODAL EPOCA -->
+
+
+    <!-- MODAL CULTIVO -->
     <div class="modal-cultivo" v-if="plantModalCult" @click="plantModalCult = null">
       <div class="body-modal-cultivo" @click.stop>
-        <h1>Cultivo {{ plantModalCult.name }}</h1>
+        <h1>Cultivo - {{ plantModalCult.name }}</h1>
         <textarea class="box-text-cultivo" @input="updateCultivo(plantModalCult, $event.target.value)">{{ plantModalCult.cultivo }}</textarea>
       </div>
-    </div>
+    </div><!-- MODAL CULTIVO -->
 
+
+    <!-- MODAL USOS -->
     <div class="modal-usos" v-if="plantModalUsos" @click="plantModalUsos = null">
       <div class="body-modal-usos" @click.stop>
-        <h1>Usos {{ plantModalUsos.name }}</h1>
+        <h1>Usos - {{ plantModalUsos.name }}</h1>
         <textarea class="box-text-usos" @input="updateUsos(plantModalUsos, $event.target.value)">{{ plantModalUsos.usos }}</textarea>
       </div>
-    </div>
+    </div><!-- MODAL USOS -->
 
   </div>
 </template>
@@ -69,6 +113,7 @@ export default {
     return {
       plants: {},
       plant: '',
+      plantModalEpoca: '',
       plantModalCult: '',
       plantModalUsos: '',
     }
@@ -122,12 +167,14 @@ export default {
       this.$firebaseRefs.plants.child(plant['.key']).child('solo').set(newAttr);
     },
 
+    
     updateCultivo: function (plantModalCult, newAttr) {
       this.$firebaseRefs.plants.child(plantModalCult['.key']).child('cultivo').set(newAttr);
     },
     updateUsos: function (plantModalUsos, newAttr) {
       this.$firebaseRefs.plants.child(plantModalUsos['.key']).child('usos').set(newAttr);
     },
+   
 
     // REMOVE PLANT
     removePlant: function (plant) {
@@ -140,7 +187,74 @@ export default {
       this.$firebaseRefs.plants.push({
         name: this.plant
       })
-    }
+    },
+
+    /* EPOCA PLANTIO */
+    updateEpocaJan: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('jan').set(newAttr);
+    },
+    updateEpocaFev: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('fev').set(newAttr);
+    },
+    updateEpocaMar: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('mar').set(newAttr);
+    },
+    updateEpocaAbr: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('abr').set(newAttr);
+    },
+    updateEpocaMai: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('mai').set(newAttr);
+    },
+    updateEpocaJun: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('jun').set(newAttr);
+    },
+    updateEpocaJul: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('jul').set(newAttr);
+    },
+    updateEpocaAgo: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('ago').set(newAttr);
+    },
+    updateEpocaSet: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('set').set(newAttr);
+    },
+    updateEpocaOut: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('out').set(newAttr);
+    },
+    updateEpocaNov: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('nov').set(newAttr);
+    },
+    updateEpocaDez: function (plantModalEpoca, newAttr) {
+      this.$firebaseRefs.plants.child(plantModalEpoca['.key']).child('dez').set(newAttr);
+    },
+
+    jan() {
+      if (this.plantModalEpoca.jan == 0) {
+        return '';
+      } else if (this.plantModalEpoca.jan == 1) {
+        return 'background: rgb(129, 199, 132)';
+      }
+    },
+    fev() {
+      if (this.plantModalEpoca.fev == 0) {
+        return '';
+      } else if (this.plantModalEpoca.fev == 1) {
+        return 'background: rgb(129, 199, 132)';
+      }
+    },
+    mar() {
+      if (this.plantModalEpoca.mar == 0) {
+        return '';
+      } else if (this.plantModalEpoca.mar == 1) {
+        return 'background: rgb(129, 199, 132)';
+      }
+    },
+    abr() {
+      if (this.plantModalEpoca.abr == 0) {
+        return '';
+      } else if (this.plantModalEpoca.abr == 1) {
+        return 'background: rgb(129, 199, 132)';
+      }
+    },
   }
 }  
 </script>
@@ -165,6 +279,42 @@ export default {
     }
   }
 
+  /* MODAL ÉPOCA */
+  .modal-epoca {
+    background: rgba(0, 0, 0, 0.8);
+    width:  100%;
+    height: 100%;
+    position: fixed;
+    top:  0;
+    left: 0;
+    z-index: 7777;
+    color: $offwhite;
+    .body-modal-epoca {
+      display: flex;
+      flex-flow: column;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50%;
+      height: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      table {
+        th {
+          font-weight: 300;
+        }
+        tr {
+          td {
+            background: $offwhite;
+            input {
+              width: 100%;
+              height: 100%;
+              color: $offblack;
+            }
+          }
+        }
+      }
+    }
+  }
 
   /* MODAL CULTIVO */
   .modal-cultivo {
@@ -192,6 +342,8 @@ export default {
       }
     }
   }
+
+  /* MODAL USOS */
   .modal-usos {
     background: rgba(0, 0, 0, 0.8);
     width:  100%;
@@ -270,6 +422,12 @@ export default {
         &:hover {
           transform: scale(2.2);
         }
+      }
+      .epoca-img {
+        cursor: pointer;
+        width: 1.6rem;
+        height: auto;
+        margin: 0 1rem;
       }
       .cultivo-img {
         cursor: pointer;

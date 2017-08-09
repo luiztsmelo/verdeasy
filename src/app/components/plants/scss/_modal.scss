@@ -143,7 +143,7 @@
         }
       }
       /*****STATS*****/
-      $sizetext: 1.5rem;
+      $sizetext: 1.45rem;
 
       .stats {
         cursor: default;
@@ -153,13 +153,13 @@
           position: absolute;
           top: 7.5%;
           left: 5%;
-          width: 6.5%;
+          width: 6.2%;
           height: auto;
           filter: invert(40%);
         }
         .facil-text {
           position: absolute;
-          top: 10%;
+          top: 9%;
           left: 13%;
           color: $offblack;
           font-family: $fontDraw;
@@ -196,16 +196,32 @@
         }
         .temp {
           position: absolute;
-          bottom: 50%;
+          bottom: 60%;
           left: 4%;
-          width: 9%;
+          width: 8%;
           height: auto;
           filter: invert(40%);
         }
         .temp-text {
           position: absolute;
-          bottom: 54%;
+          bottom: 63%;
           left: 11%;
+          color: $offblack;
+          font-family: $fontDraw;
+          font-size: $sizetext;
+        }
+        .praga {
+          position: absolute;
+          bottom: 40%;
+          left: 4%;
+          width: 8%;
+          height: auto;
+          filter: invert(40%);
+        }
+        .praga-text {
+          position: absolute;
+          bottom: 43%;
+          left: 12%;
           color: $offblack;
           font-family: $fontDraw;
           font-size: $sizetext;
@@ -214,7 +230,7 @@
           position: absolute;
           bottom: 20%;
           left: 5%;
-          width: 7.4%;
+          width: 6.7%;
           height: auto;
           filter: invert(40%);
         }
@@ -241,7 +257,6 @@
           right: 32%;
           width: 10%;
           height: auto;
-          transform: rotate(-45deg);
           filter: invert(40%);
         }
         .rega-text {
@@ -264,18 +279,14 @@
             right: 0; 
             margin-left: auto; 
             margin-right: auto; 
-            font-family: $fontDraw;
-            font-size: 1.4rem;
+            font-family: $fontMain;
+            font-size: 1.2rem;
             background: transparent;
             border-collapse: collapse;
             td {
               text-align: center;
               width: 8.3333333333%;
               color: $offblack;
-              &:hover {
-                background: rgba(95, 202, 140, .7);
-                color: $offwhite;
-              }
             }
           }
         }

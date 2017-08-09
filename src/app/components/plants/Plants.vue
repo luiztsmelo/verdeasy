@@ -4,7 +4,7 @@
     <!--HERO-->
     <div id="hero">
       <h2 class="title">Mora em Apartamento?</h2>
-      <h2 class="subtitle">Não sabe como, e o quê plantar?</h2>
+      <h2 class="subtitle">Não sabe como, e o quê pode plantar?</h2>
     </div><!--HERO-->
 
     <!--PLANTS CONTAINER-->
@@ -298,6 +298,9 @@
               <img class="temp" src="./../../../../static/utils/temp.svg" alt="">
               <span class="temp-text">{{ tempText() }}</span>
 
+              <img class="praga" src="./../../../../static/utils/praga.svg" alt="">
+              <span class="praga-text">{{ pragaText() }}</span>
+
               <img class="germ" src="./../../../../static/utils/germ.svg" alt="">
               <span class="germ-text">{{ germText() }}</span>
               
@@ -309,18 +312,18 @@
               <div class="epoca-plantio">
                 <table>
                   <tr>
-                    <td>J</td>
-                    <td>F</td>
-                    <td>M</td>
-                    <td>A</td>
-                    <td>M</td>
-                    <td>J</td>
-                    <td>J</td>
-                    <td>A</td>
-                    <td>S</td>
-                    <td>O</td>
-                    <td>N</td>
-                    <td>D</td>
+                    <td :style="jan()">J</td>
+                    <td :style="fev()">F</td>
+                    <td :style="mar()">M</td>
+                    <td :style="abr()">A</td>
+                    <td :style="mai()">M</td>
+                    <td :style="jun()">J</td>
+                    <td :style="jul()">J</td>
+                    <td :style="ago()">A</td>
+                    <td :style="set()">S</td>
+                    <td :style="out()">O</td>
+                    <td :style="nov()">N</td>
+                    <td :style="dez()">D</td>
                   </tr>
                 </table>
               </div>
@@ -406,7 +409,6 @@ export default {
     // FILTRAR ERVAS AROMÁTICAS
     EAFilter() {
       return _.filter(this.plants, ['class', 'EA'])
-      return _.orderBy(this.plants, ['name'], ['asc'])
     },
     // FILTRAR PLANTAS MEDICINAIS
     MEDFilter() {
@@ -423,11 +425,11 @@ export default {
     // STATS
     solbg() {
        if (this.plantModal.sol >= 7) {
-        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(255, 249, 176));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(255, 249, 176))';
       } else if (this.plantModal.sol > 3 ) {
-        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(129, 212, 250));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(129, 212, 250))';
       } else {
-        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(148, 202, 214));';
+        return 'background: linear-gradient(35deg, rgb(235, 250, 236) 40%, rgb(148, 202, 214))';
       }
     },
     facil() {
@@ -477,11 +479,11 @@ export default {
     },
     rega() {
        if (this.plantModal.rega >= 7) {
-        return '';
+        return 'transform: rotate(-65deg);';
       } else if (this.plantModal.rega > 3 ) {
-        return '';
+        return 'transform: rotate(-45deg);';
       } else {
-        return '';
+        return 'transform: rotate(-25deg);';
       }
     },
     regaText() {
@@ -491,6 +493,15 @@ export default {
         return 'Rega moderada';
       } else {
         return 'Pouca sede';
+      }
+    },
+    pragaText() {
+      if (this.plantModal.praga >= 7) {
+        return 'Baixa resistência';
+      } else if (this.plantModal.praga > 3 ) {
+        return '20ºC em média';
+      } else {
+        return 'Alta resistência';
       }
     },
     tempText() {
@@ -518,6 +529,92 @@ export default {
         return 'Solo Misto';
       } else {
         return 'Solo Arenoso';
+      }
+    },
+
+    /* ÉPOCA PLANTIO */
+     jan() {
+      if (this.plantModal.jan == 0) {
+        return '';
+      } else if (this.plantModal.jan == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    fev() {
+      if (this.plantModal.fev == 0) {
+        return '';
+      } else if (this.plantModal.fev == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    mar() {
+      if (this.plantModal.mar == 0) {
+        return '';
+      } else if (this.plantModal.mar == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    abr() {
+      if (this.plantModal.abr == 0) {
+        return '';
+      } else if (this.plantModal.abr == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    mai() {
+      if (this.plantModal.mai == 0) {
+        return '';
+      } else if (this.plantModal.mai == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    jun() {
+      if (this.plantModal.jun == 0) {
+        return '';
+      } else if (this.plantModal.jun == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    jul() {
+      if (this.plantModal.jul == 0) {
+        return '';
+      } else if (this.plantModal.jul == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    ago() {
+      if (this.plantModal.ago == 0) {
+        return '';
+      } else if (this.plantModal.ago == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    set() {
+      if (this.plantModal.set == 0) {
+        return '';
+      } else if (this.plantModal.set == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    out() {
+      if (this.plantModal.out == 0) {
+        return '';
+      } else if (this.plantModal.out == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    nov() {
+      if (this.plantModal.nov == 0) {
+        return '';
+      } else if (this.plantModal.nov == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
+      }
+    },
+    dez() {
+      if (this.plantModal.dez == 0) {
+        return '';
+      } else if (this.plantModal.dez == 1) {
+        return 'background: rgba(129, 199, 132, .6); color: white';
       }
     },
 
